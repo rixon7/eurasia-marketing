@@ -34,9 +34,9 @@ export default function Home() {
   return (
     <>
       <Hero
-        title="Hounslow's Best"
-        highlight="Digital Marketing Agency"
-        subtitle="Expert website designers, SEO specialists, and social media managers in Hounslow. We help businesses grow with data-driven marketing strategies that deliver real results."
+        title="Grow Your Brand"
+        highlight="With Confidence"
+        subtitle="We help businesses build powerful marketing strategies that drive real results and lasting growth."
         buttons={[
           { label: 'Get Started →', href: '/contact', variant: 'primary' },
           { label: 'Our Services', href: '/services', variant: 'outline' },
