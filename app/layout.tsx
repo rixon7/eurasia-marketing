@@ -3,6 +3,7 @@ import { DM_Sans, DM_Mono } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import './globals.css';
 
 const dmSans = DM_Sans({
@@ -142,6 +143,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${dmSans.variable} ${dmMono.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
+        <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Navbar />
           <main>{children}</main>
