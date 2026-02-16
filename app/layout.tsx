@@ -19,12 +19,112 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Eurasia Marketing',
-    template: '%s | Eurasia Marketing',
+    default: 'Eurasia Marketing | Best Digital Marketing Agency in Hounslow',
+    template: '%s | Eurasia Marketing Hounslow',
   },
-  description: 'Helping businesses build powerful marketing strategies that drive real results and lasting growth.',
+  description: 'Eurasia Marketing is the best digital marketing agency in Hounslow. Expert website designer, SEO specialist, and social media manager in Hounslow. Grow your business with our proven strategies.',
+  keywords: [
+    'best digital marketing in Hounslow',
+    'website designer in Hounslow',
+    'SEO specialist in Hounslow',
+    'social media manager in Hounslow',
+    'digital marketing agency Hounslow',
+    'web design Hounslow',
+    'SEO services Hounslow',
+    'social media management Hounslow',
+    'marketing agency near me',
+    'Hounslow marketing company',
+  ],
+  authors: [{ name: 'Eurasia Marketing' }],
+  creator: 'Eurasia Marketing',
+  publisher: 'Eurasia Marketing',
   icons: {
     icon: '/favicon.svg',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    siteName: 'Eurasia Marketing',
+    title: 'Eurasia Marketing | Best Digital Marketing Agency in Hounslow',
+    description: 'Expert website designer, SEO specialist, and social media manager in Hounslow. We help businesses grow with data-driven digital marketing strategies.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Eurasia Marketing | Best Digital Marketing in Hounslow',
+    description: 'Expert website designer, SEO specialist, and social media manager in Hounslow. Grow your business with proven marketing strategies.',
+  },
+  alternates: {
+    canonical: 'https://eurasiamarketing.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://eurasiamarketing.com',
+  name: 'Eurasia Marketing',
+  description: 'Best digital marketing agency in Hounslow offering website design, SEO, social media management, and digital advertising services.',
+  url: 'https://eurasiamarketing.com',
+  telephone: '+4407949774856',
+  email: 'info@eurasiamarketing.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '65-73 Staines Road',
+    addressLocality: 'Hounslow',
+    addressRegion: 'London',
+    postalCode: 'TW3 3HW',
+    addressCountry: 'GB',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 51.4685,
+    longitude: -0.3614,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '10:00',
+      closes: '18:30',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '10:00',
+      closes: '15:00',
+    },
+  ],
+  sameAs: [
+    'https://facebook.com/eurasiamarketing',
+    'https://instagram.com/eurasiamarketing',
+    'https://linkedin.com/company/eurasiamarketing',
+  ],
+  priceRange: '££',
+  areaServed: {
+    '@type': 'City',
+    name: 'Hounslow',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Digital Marketing Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Website Design in Hounslow' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO Services in Hounslow' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Social Media Management in Hounslow' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Digital Advertising in Hounslow' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Email Marketing in Hounslow' } },
+    ],
   },
 };
 
@@ -35,6 +135,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${dmSans.variable} ${dmMono.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Navbar />

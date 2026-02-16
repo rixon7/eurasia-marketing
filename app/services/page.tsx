@@ -6,8 +6,8 @@ import ProcessStep from '@/components/ProcessStep';
 import CTA from '@/components/CTA';
 
 export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Full-service marketing solutions designed to elevate your brand and accelerate growth.',
+  title: 'Digital Marketing Services in Hounslow | Website Design, SEO & Social Media',
+  description: 'Expert website designer, SEO specialist, and social media manager in Hounslow. Full-service digital marketing including web design, search engine optimisation, content marketing, and paid advertising.',
 };
 
 const services = [
@@ -32,7 +32,7 @@ export default function ServicesPage() {
       <Hero
         title="Our"
         highlight="Services"
-        subtitle="Full-service marketing solutions designed to elevate your brand and accelerate growth."
+        subtitle="Full-service digital marketing in Hounslow — website design, SEO, social media management, and more."
       />
 
       <section className="py-16 px-6">

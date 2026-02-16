@@ -7,8 +7,8 @@ import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'A passionate team of marketers helping brands reach their full potential.',
+  title: 'About Eurasia Marketing | Hounslow Digital Marketing Experts',
+  description: 'Learn about Eurasia Marketing — Hounslow\'s trusted digital marketing agency. Our team of website designers, SEO specialists, and social media managers deliver results for local businesses.',
 };
 
 const stats = [

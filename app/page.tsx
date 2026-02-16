@@ -34,9 +34,9 @@ export default function Home() {
   return (
     <>
       <Hero
-        title="Grow Your Brand"
-        highlight="With Confidence"
-        subtitle="We help businesses build powerful marketing strategies that drive real results and lasting growth."
+        title="Hounslow's Best"
+        highlight="Digital Marketing Agency"
+        subtitle="Expert website designers, SEO specialists, and social media managers in Hounslow. We help businesses grow with data-driven marketing strategies that deliver real results."
         buttons={[
           { label: 'Get Started →', href: '/contact', variant: 'primary' },
           { label: 'Our Services', href: '/services', variant: 'outline' },
@@ -50,8 +50,8 @@ export default function Home() {
       <section className="py-24 px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
-            title="What We Do"
-            subtitle="Marketing solutions tailored to your business goals"
+            title="Digital Marketing Services in Hounslow"
+            subtitle="From website design to SEO and social media — tailored solutions for your business"
           />
           <div className="grid md:grid-cols-3 gap-[10px]">
             {services.map((s, i) => (
@@ -64,8 +64,8 @@ export default function Home() {
       <section className="py-24 px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
-            title="Why Choose Eurasia?"
-            subtitle="Results-driven marketing backed by data"
+            title="Why Hounslow Businesses Choose Eurasia"
+            subtitle="Results-driven digital marketing backed by data and local expertise"
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[10px]">
             {features.map((f, i) => (

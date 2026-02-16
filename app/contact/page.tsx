@@ -5,8 +5,8 @@ import ContactForm from '@/components/ContactForm';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Ready to take your marketing to the next level? Let\'s talk about your goals.',
+  title: 'Contact Eurasia Marketing | Digital Marketing Agency Hounslow',
+  description: 'Get in touch with Hounslow\'s best digital marketing agency. Contact our website designers, SEO specialists, and social media managers for a free consultation. Based at 65-73 Staines Road, Hounslow.',
 };
 
 const details = [
