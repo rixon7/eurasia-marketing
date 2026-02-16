@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     template: '%s | Eurasia Marketing',
   },
   description: 'Helping businesses build powerful marketing strategies that drive real results and lasting growth.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
