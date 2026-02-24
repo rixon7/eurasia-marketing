@@ -61,6 +61,12 @@ const areas: Record<string, {
     intro: 'Our digital marketing team helps Hayes businesses build a strong online presence. Whether you need a new website, better Google rankings, or a stronger social media presence, we provide the full range of digital marketing services tailored to the Hayes market.',
     nearby: ['Heston', 'Feltham', 'Brentford', 'Hounslow'],
   },
+  staines: {
+    name: 'Staines',
+    description: 'Digital marketing agency in Staines-upon-Thames. Expert website design, SEO, social media management, and digital advertising for Staines businesses.',
+    intro: 'We help Staines-upon-Thames businesses grow their online presence with tailored digital marketing strategies. From the town centre to the surrounding business parks, our team delivers results-driven campaigns that connect you with more local customers.',
+    nearby: ['Hounslow', 'Feltham', 'Sunbury', 'Hampton'],
+  },
 };
 
 const services = [

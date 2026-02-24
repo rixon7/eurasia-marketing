@@ -23,6 +23,7 @@ const areas = [
   { href: '/areas/heston',    label: 'Heston' },
   { href: '/areas/brentford', label: 'Brentford' },
   { href: '/areas/hayes',     label: 'Hayes' },
+  { href: '/areas/staines',   label: 'Staines' },
 ];
 
 export default function Navbar() {
