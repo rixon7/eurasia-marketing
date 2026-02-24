@@ -9,21 +9,22 @@ import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
 import FAQ from '@/components/FAQ';
 import { getAllPosts } from '@/lib/blog';
+import { client, homepageSettingsQuery } from '@/lib/sanity';
 
-const services = [
+const defaultServices = [
   { icon: '🎯', title: 'Brand Strategy',      href: '/services/brand-strategy',     description: 'Define your brand identity, voice, and positioning to stand out in a crowded marketplace.' },
   { icon: '📈', title: 'Digital Advertising',  href: '/services/digital-advertising', description: 'Targeted ad campaigns across search, social, and display channels that maximize your ROI.' },
   { icon: '✍️', title: 'Content Marketing',    href: '/services/content-marketing',   description: 'Compelling content that engages your audience and establishes authority in your industry.' },
 ];
 
-const features = [
+const defaultFeatures = [
   { icon: '💡', title: 'Creative Approach', description: 'Fresh ideas and innovative campaigns that capture attention.' },
   { icon: '📊', title: 'Data-Driven', description: 'Every decision backed by analytics for measurable outcomes.' },
   { icon: '🤝', title: 'Dedicated Support', description: 'A committed team that treats your business like their own.' },
   { icon: '⚡', title: 'Fast Turnaround', description: 'Quick execution without compromising on quality or strategy.' },
 ];
 
-const testimonials = [
+const defaultTestimonials = [
   { quote: 'Eurasia Marketing transformed our online presence completely. Our leads have tripled in just six months.', initials: 'AK', name: 'Amira Khan', role: 'CEO, TechFlow Solutions' },
   { quote: 'Professional, creative, and always on top of the latest trends. They feel like an extension of our team.', initials: 'DM', name: 'David Morris', role: 'Founder, GreenLeaf Co.' },
 ];
@@ -42,16 +43,35 @@ const faqSchema = {
   ],
 };
 
-export default function Home() {
-  const posts = getAllPosts();
+type HomepageSettings = {
+  heroTitle?: string;
+  heroHighlight?: string;
+  heroSubtitle?: string;
+  featuredServices?: { icon: string; title: string; href: string; description: string }[];
+  features?: { icon: string; title: string; description: string }[];
+  testimonials?: { quote: string; initials: string; name: string; role: string }[];
+};
+
+export default async function Home() {
+  const [posts, settings] = await Promise.all([
+    getAllPosts(),
+    client.fetch<HomepageSettings | null>(homepageSettingsQuery),
+  ]);
+
+  const heroTitle = settings?.heroTitle ?? 'Grow Your Brand';
+  const heroHighlight = settings?.heroHighlight ?? 'With Confidence';
+  const heroSubtitle = settings?.heroSubtitle ?? 'We help businesses build powerful marketing strategies that drive real results and lasting growth.';
+  const services = settings?.featuredServices ?? defaultServices;
+  const features = settings?.features ?? defaultFeatures;
+  const testimonials = settings?.testimonials ?? defaultTestimonials;
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Hero
-        title="Grow Your Brand"
-        highlight="With Confidence"
-        subtitle="We help businesses build powerful marketing strategies that drive real results and lasting growth."
+        title={heroTitle}
+        highlight={heroHighlight}
+        subtitle={heroSubtitle}
         buttons={[
           { label: 'Get Started →', href: '/contact', variant: 'primary' },
           { label: '📅 Book a Free Call', href: 'https://calendly.com/rixon7/30min', variant: 'blue', external: true },

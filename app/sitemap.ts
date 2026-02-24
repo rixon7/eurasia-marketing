@@ -1,10 +1,14 @@
 import type { MetadataRoute } from 'next';
-import { getAllPosts } from '@/lib/blog';
+import { client } from '@/lib/sanity';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://eurasiamarketing.com';
 
-  const posts = getAllPosts().map((post) => ({
+  const rawPosts = await client.fetch<{ slug: string; date: string }[]>(
+    `*[_type == "blogPost" && publishedAt <= now()] | order(publishedAt desc) { "slug": slug.current, "date": publishedAt }`
+  );
+
+  const posts = rawPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,

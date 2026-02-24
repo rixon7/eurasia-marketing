@@ -1,8 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-
-const postsDirectory = path.join(process.cwd(), 'content/blog');
+import { client, allPostsQuery, postBySlugQuery, allPostSlugsQuery, urlFor } from './sanity';
+import type { SanityImageSource } from '@sanity/image-url';
 
 export interface PostMeta {
   slug: string;
@@ -14,50 +11,91 @@ export interface PostMeta {
   image: string;
 }
 
-export function getAllPosts(): PostMeta[] {
-  const files = fs.readdirSync(postsDirectory);
-  const posts = files
-    .filter((f) => f.endsWith('.mdx'))
-    .map((filename) => {
-      const slug = filename.replace(/\.mdx$/, '');
-      const filePath = path.join(postsDirectory, filename);
-      const fileContents = fs.readFileSync(filePath, 'utf8');
-      const { data, content } = matter(fileContents);
-      const words = content.split(/\s+/).length;
-      const readingTime = `${Math.ceil(words / 200)} min read`;
-
-      return {
-        slug,
-        title: data.title,
-        date: data.date,
-        excerpt: data.excerpt,
-        tags: data.tags || [],
-        readingTime,
-        image: data.image || '',
-      };
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  return posts;
+function estimateReadingTime(body: unknown[]): string {
+  if (!Array.isArray(body)) return '1 min read';
+  let wordCount = 0;
+  for (const block of body) {
+    if (
+      block &&
+      typeof block === 'object' &&
+      '_type' in block &&
+      block._type === 'block' &&
+      'children' in block &&
+      Array.isArray((block as { children: unknown[] }).children)
+    ) {
+      for (const child of (block as { children: { text?: string }[] }).children) {
+        if (child.text) {
+          wordCount += child.text.split(/\s+/).filter(Boolean).length;
+        }
+      }
+    }
+  }
+  return `${Math.max(1, Math.ceil(wordCount / 200))} min read`;
 }
 
-export function getPostBySlug(slug: string) {
-  const filePath = path.join(postsDirectory, `${slug}.mdx`);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContents);
-  const words = content.split(/\s+/).length;
-  const readingTime = `${Math.ceil(words / 200)} min read`;
+function resolveImage(mainImage: SanityImageSource | null | undefined): string {
+  if (!mainImage) return '';
+  try {
+    return urlFor(mainImage).width(1200).quality(80).auto('format').url();
+  } catch {
+    return '';
+  }
+}
+
+export async function getAllPosts(): Promise<PostMeta[]> {
+  const raw = await client.fetch<
+    {
+      slug: string;
+      title: string;
+      date: string;
+      excerpt: string;
+      tags: string[] | null;
+      mainImage: SanityImageSource | null;
+      body?: unknown[];
+    }[]
+  >(allPostsQuery);
+
+  return raw.map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    date: post.date,
+    excerpt: post.excerpt ?? '',
+    tags: post.tags ?? [],
+    readingTime: estimateReadingTime(post.body ?? []),
+    image: resolveImage(post.mainImage),
+  }));
+}
+
+export async function getPostBySlug(slug: string): Promise<{
+  meta: PostMeta;
+  body: unknown[];
+}> {
+  const post = await client.fetch<{
+    slug: string;
+    title: string;
+    date: string;
+    excerpt: string;
+    tags: string[] | null;
+    mainImage: SanityImageSource | null;
+    body: unknown[];
+  } | null>(postBySlugQuery, { slug });
+
+  if (!post) throw new Error(`Post not found: ${slug}`);
 
   return {
     meta: {
-      slug,
-      title: data.title,
-      date: data.date,
-      excerpt: data.excerpt,
-      tags: data.tags || [],
-      readingTime,
-      image: data.image || '',
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      excerpt: post.excerpt ?? '',
+      tags: post.tags ?? [],
+      readingTime: estimateReadingTime(post.body ?? []),
+      image: resolveImage(post.mainImage),
     },
-    content,
+    body: post.body ?? [],
   };
+}
+
+export async function getAllPostSlugs(): Promise<string[]> {
+  return client.fetch<string[]>(allPostSlugsQuery);
 }

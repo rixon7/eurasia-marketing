@@ -6,9 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "migrate:blogs": "node scripts/migrate-blogs.mjs",
+    "migrate:services": "node scripts/migrate-services.mjs",
+    "migrate:areas": "node scripts/migrate-areas.mjs",
+    "migrate:homepage": "node scripts/migrate-homepage.mjs",
+    "migrate:all": "node scripts/migrate-blogs.mjs && node scripts/migrate-services.mjs && node scripts/migrate-areas.mjs && node scripts/migrate-homepage.mjs"
   },
   "dependencies": {
+    "@portabletext/react": "^6.0.2",
+    "@sanity/image-url": "^2.0.3",
+    "@sanity/vision": "^5.11.0",
     "@tailwindcss/typography": "^0.5.19",
     "canvas": "^3.2.1",
     "exceljs": "^4.4.0",
@@ -16,12 +24,14 @@
     "gray-matter": "^4.0.3",
     "next": "16.1.6",
     "next-mdx-remote": "^6.0.0",
+    "next-sanity": "^12.1.0",
     "next-themes": "^0.4.6",
     "pdf-lib": "^1.17.1",
     "pdfkit": "^0.17.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "resend": "^6.9.2",
+    "sanity": "^5.11.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {

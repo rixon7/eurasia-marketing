@@ -1,17 +1,21 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getAllPosts, getPostBySlug } from '@/lib/blog';
+import { PortableText } from '@portabletext/react';
+import { getAllPostSlugs, getPostBySlug } from '@/lib/blog';
 import AnimateIn from '@/components/AnimateIn';
+import type { PortableTextComponents } from '@portabletext/react';
 
-export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const slugs = await getAllPostSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   try {
-    const { meta } = getPostBySlug(slug);
+    const { meta } = await getPostBySlug(slug);
     return {
       title: meta.title,
       description: meta.excerpt,
@@ -34,16 +38,34 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
+const portableTextComponents: PortableTextComponents = {
+  marks: {
+    link: ({ children, value }) => {
+      const href: string = value?.href ?? '#';
+      const isExternal = href.startsWith('http');
+      return (
+        <a
+          href={href}
+          {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          className="text-accent-blue hover:underline"
+        >
+          {children}
+        </a>
+      );
+    },
+  },
+};
+
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   let post;
   try {
-    post = getPostBySlug(slug);
+    post = await getPostBySlug(slug);
   } catch {
     notFound();
   }
 
-  const { meta, content } = post;
+  const { meta, body } = post;
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -100,7 +122,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         <AnimateIn delay={0.1}>
           <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-primary dark:prose-headings:text-dark-text prose-p:text-muted dark:prose-p:text-dark-muted prose-a:text-accent-blue prose-strong:text-primary dark:prose-strong:text-dark-text">
-            <MDXRemote source={content} />
+            <PortableText value={body as Parameters<typeof PortableText>[0]['value']} components={portableTextComponents} />
           </div>
         </AnimateIn>
       </div>

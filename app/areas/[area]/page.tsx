@@ -6,73 +6,16 @@ import SectionHeader from '@/components/SectionHeader';
 import Card from '@/components/Card';
 import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
+import { client, areaBySlugQuery, allAreaSlugsQuery } from '@/lib/sanity';
 
-const areas: Record<string, {
+export const revalidate = 60;
+
+type AreaData = {
   name: string;
+  slug: string;
   description: string;
   intro: string;
   nearby: string[];
-}> = {
-  hounslow: {
-    name: 'Hounslow',
-    description: 'Leading digital marketing agency in Hounslow offering website design, SEO, social media management, and digital advertising to local businesses.',
-    intro: 'As Hounslow\'s trusted digital marketing agency, we help local businesses grow their online presence. From high street shops to professional services, we\'ve helped hundreds of Hounslow businesses reach more customers online.',
-    nearby: ['Feltham', 'Isleworth', 'Heston', 'Brentford'],
-  },
-  feltham: {
-    name: 'Feltham',
-    description: 'Expert digital marketing services in Feltham. Website design, SEO, and social media management helping Feltham businesses grow online.',
-    intro: 'We help Feltham businesses compete online with tailored digital marketing strategies. Whether you\'re a new start-up or an established business in Feltham, our team delivers results-driven marketing that grows your customer base.',
-    nearby: ['Hounslow', 'Sunbury', 'Hampton', 'Heston'],
-  },
-  sunbury: {
-    name: 'Sunbury',
-    description: 'Digital marketing agency serving Sunbury-on-Thames. SEO, website design, and social media services for Sunbury businesses.',
-    intro: 'Our digital marketing team works with businesses across Sunbury-on-Thames to build powerful online strategies. We understand the local market and create campaigns that connect you with customers in Sunbury and the surrounding areas.',
-    nearby: ['Hampton', 'Feltham', 'Hounslow', 'Hayes'],
-  },
-  hampton: {
-    name: 'Hampton',
-    description: 'Professional digital marketing in Hampton. Helping Hampton businesses with SEO, website design, social media, and digital advertising.',
-    intro: 'From Hampton Hill to Hampton Wick, we support businesses across the Hampton area with comprehensive digital marketing services. Our strategies are tailored to the local community and designed to drive real, measurable results.',
-    nearby: ['Sunbury', 'Feltham', 'Hounslow', 'Isleworth'],
-  },
-  isleworth: {
-    name: 'Isleworth',
-    description: 'Digital marketing services in Isleworth. Website design, SEO, and social media management for Isleworth businesses.',
-    intro: 'Eurasia Marketing supports Isleworth businesses with expert digital marketing strategies. We help local businesses stand out online, attract more customers, and grow their revenue through proven digital marketing techniques.',
-    nearby: ['Hounslow', 'Brentford', 'Heston', 'Hampton'],
-  },
-  heston: {
-    name: 'Heston',
-    description: 'Digital marketing agency in Heston offering SEO, website design, social media management, and Google advertising for local businesses.',
-    intro: 'We work with businesses throughout Heston to deliver impactful digital marketing campaigns. Our local expertise means we know the Heston market and can create strategies that resonate with your target customers.',
-    nearby: ['Hounslow', 'Feltham', 'Isleworth', 'Hayes'],
-  },
-  brentford: {
-    name: 'Brentford',
-    description: 'Expert digital marketing in Brentford. SEO, website design, social media, and paid advertising for Brentford businesses.',
-    intro: 'Brentford is a fast-growing business hub and we help local businesses keep pace online. From SEO to social media management, our team creates digital marketing strategies that put Brentford businesses in front of more customers.',
-    nearby: ['Isleworth', 'Hounslow', 'Heston', 'Hayes'],
-  },
-  hayes: {
-    name: 'Hayes',
-    description: 'Digital marketing services in Hayes, Middlesex. Website design, SEO, social media management, and digital advertising for Hayes businesses.',
-    intro: 'Our digital marketing team helps Hayes businesses build a strong online presence. Whether you need a new website, better Google rankings, or a stronger social media presence, we provide the full range of digital marketing services tailored to the Hayes market.',
-    nearby: ['Heston', 'Feltham', 'Brentford', 'Hounslow'],
-  },
-  staines: {
-    name: 'Staines',
-    description: 'Digital marketing agency in Staines-upon-Thames. Expert website design, SEO, social media management, and digital advertising for Staines businesses.',
-    intro: 'We help Staines-upon-Thames businesses grow their online presence with tailored digital marketing strategies. From the town centre to the surrounding business parks, our team delivers results-driven campaigns that connect you with more local customers.',
-    nearby: ['Hounslow', 'Feltham', 'Sunbury', 'Hampton'],
-  },
-  london: {
-    name: 'London',
-    description: 'Digital marketing agency serving London businesses. Expert SEO, website design, social media management, and digital advertising to help London businesses grow online.',
-    intro: 'Eurasia Marketing works with businesses across London to deliver powerful digital marketing strategies. Whether you\'re a small independent business or a growing company in the capital, our team builds data-driven campaigns that increase your visibility, attract more customers, and grow your revenue.',
-    nearby: ['Hounslow', 'Brentford', 'Isleworth', 'Hayes'],
-  },
 };
 
 const services = [
@@ -85,12 +28,13 @@ const services = [
 ];
 
 export async function generateStaticParams() {
-  return Object.keys(areas).map((area) => ({ area }));
+  const slugs = await client.fetch<string[]>(allAreaSlugsQuery);
+  return slugs.map((area) => ({ area }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ area: string }> }): Promise<Metadata> {
   const { area } = await params;
-  const data = areas[area];
+  const data = await client.fetch<AreaData | null>(areaBySlugQuery, { slug: area });
   if (!data) return { title: 'Not Found' };
   return {
     title: `Digital Marketing Agency in ${data.name} | Eurasia Marketing`,
@@ -104,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
 
 export default async function AreaPage({ params }: { params: Promise<{ area: string }> }) {
   const { area } = await params;
-  const data = areas[area];
+  const data = await client.fetch<AreaData | null>(areaBySlugQuery, { slug: area });
   if (!data) notFound();
 
   return (
