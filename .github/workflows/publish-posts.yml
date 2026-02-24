@@ -1,0 +1,52 @@
+name: Publish Scheduled Blog Posts
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # runs daily at 08:00 UTC
+  workflow_dispatch:        # allows manual trigger from GitHub
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Check for posts due today
+        id: check
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          PUBLISHED=0
+
+          for file in content/drafts/*.mdx; do
+            [ -f "$file" ] || continue
+            DATE=$(grep "^date:" "$file" | head -1 | awk '{print $2}')
+            if [ "$DATE" = "$TODAY" ]; then
+              mv "$file" "content/blog/$(basename $file)"
+              echo "Published: $(basename $file)"
+              PUBLISHED=1
+            fi
+          done
+
+          echo "published=$PUBLISHED" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.check.outputs.published == '1'
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add content/
+          git commit -m "chore: publish scheduled posts for $(date +%Y-%m-%d)"
+          git push
+
+      - name: Deploy to Vercel
+        if: steps.check.outputs.published == '1'
+        run: |
+          npm install -g vercel --silent
+          DEPLOY_URL=$(vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }} 2>&1 | grep "Production:" | grep -oE 'https://[^ ]+' | head -1)
+          vercel alias set "$DEPLOY_URL" eurasiamarketing.com --token ${{ secrets.VERCEL_TOKEN }}
+          vercel alias set "$DEPLOY_URL" www.eurasiamarketing.com --token ${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: team_4qzzxbA76tg1XoqiL81VFBGi
+          VERCEL_PROJECT_ID: prj_wSJ0xpGkmP4NJ7RFXI0OqVbNhOY0
