@@ -11,9 +11,9 @@ import FAQ from '@/components/FAQ';
 import { getAllPosts } from '@/lib/blog';
 
 const services = [
-  { icon: '🎯', title: 'Brand Strategy', description: 'Define your brand identity, voice, and positioning to stand out in a crowded marketplace.' },
-  { icon: '📈', title: 'Digital Advertising', description: 'Targeted ad campaigns across search, social, and display channels that maximize your ROI.' },
-  { icon: '✍️', title: 'Content Marketing', description: 'Compelling content that engages your audience and establishes authority in your industry.' },
+  { icon: '🎯', title: 'Brand Strategy',      href: '/services/brand-strategy',     description: 'Define your brand identity, voice, and positioning to stand out in a crowded marketplace.' },
+  { icon: '📈', title: 'Digital Advertising',  href: '/services/digital-advertising', description: 'Targeted ad campaigns across search, social, and display channels that maximize your ROI.' },
+  { icon: '✍️', title: 'Content Marketing',    href: '/services/content-marketing',   description: 'Compelling content that engages your audience and establishes authority in your industry.' },
 ];
 
 const features = [
