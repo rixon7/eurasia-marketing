@@ -49,6 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     ...posts,
+    ...['brand-strategy', 'digital-advertising', 'content-marketing', 'social-media', 'seo-sem', 'email-marketing'].map((slug) => ({
+      url: `${baseUrl}/services/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    })),
     {
       url: `${baseUrl}/areas`,
       lastModified: new Date(),

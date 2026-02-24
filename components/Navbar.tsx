@@ -7,11 +7,19 @@ import ThemeToggle from './ThemeToggle';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
+];
+
+const serviceLinks = [
+  { href: '/services/brand-strategy',     label: '🎯 Brand Strategy' },
+  { href: '/services/digital-advertising', label: '📈 Digital Advertising' },
+  { href: '/services/content-marketing',   label: '✍️ Content Marketing' },
+  { href: '/services/social-media',        label: '📱 Social Media' },
+  { href: '/services/seo-sem',             label: '🔍 SEO & SEM' },
+  { href: '/services/email-marketing',     label: '📨 Email Marketing' },
 ];
 
 const areas = [
@@ -31,14 +39,20 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileAreasOpen, setMobileAreasOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
+  const servicesDropdownRef = useRef<HTMLLIElement>(null);
 
-  // Close dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setAreasOpen(false);
+      }
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClick);
@@ -46,6 +60,7 @@ export default function Navbar() {
   }, []);
 
   const isAreasActive = pathname.startsWith('/areas');
+  const isServicesActive = pathname.startsWith('/services');
 
   return (
     <div className="sticky top-0 z-50 bg-cream/80 dark:bg-dark-bg/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
@@ -71,6 +86,35 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+
+          {/* Services dropdown */}
+          <li className="relative" ref={servicesDropdownRef}>
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className={`flex items-center gap-1 px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
+                isServicesActive
+                  ? 'bg-primary text-white dark:bg-accent-blue'
+                  : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
+              }`}
+            >
+              Services
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            {servicesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-52 bg-white dark:bg-dark-card rounded-[var(--radius-md)] shadow-lg border border-border-light dark:border-border-dark overflow-hidden z-50">
+                <Link href="/services" onClick={() => setServicesOpen(false)} className="block px-4 py-2.5 text-xs font-semibold text-muted dark:text-dark-muted uppercase tracking-wider border-b border-border-light dark:border-border-dark hover:bg-sky dark:hover:bg-dark-surface transition-colors">
+                  All Services
+                </Link>
+                {serviceLinks.map((s) => (
+                  <Link key={s.href} href={s.href} onClick={() => setServicesOpen(false)} className={`block px-4 py-2.5 text-sm transition-colors ${pathname === s.href ? 'bg-sky dark:bg-dark-surface text-accent-blue font-medium' : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-surface'}`}>
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </li>
 
           {/* Areas dropdown */}
           <li className="relative" ref={dropdownRef}>
@@ -170,6 +214,39 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+
+            {/* Mobile Services */}
+            <li>
+              <button
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
+                  isServicesActive
+                    ? 'bg-primary text-white dark:bg-accent-blue'
+                    : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
+                }`}
+              >
+                Services
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`}>
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              {mobileServicesOpen && (
+                <ul className="mt-1 ml-4 flex flex-col gap-1">
+                  <li>
+                    <Link href="/services" onClick={() => { setOpen(false); setMobileServicesOpen(false); }} className="block px-4 py-2 rounded-[var(--radius-sm)] text-sm text-muted dark:text-dark-muted hover:bg-sky dark:hover:bg-dark-card transition-colors">
+                      All Services
+                    </Link>
+                  </li>
+                  {serviceLinks.map((s) => (
+                    <li key={s.href}>
+                      <Link href={s.href} onClick={() => { setOpen(false); setMobileServicesOpen(false); }} className={`block px-4 py-2 rounded-[var(--radius-sm)] text-sm transition-colors ${pathname === s.href ? 'text-accent-blue font-medium' : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'}`}>
+                        {s.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
 
             {/* Mobile Areas */}
             <li>

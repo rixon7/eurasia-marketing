@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { id: 'brand-strategy', icon: '🎯', title: 'Brand Strategy', description: 'We craft a clear brand identity, voice, and positioning that sets you apart from the competition and resonates with your target audience.' },
-  { id: 'digital-advertising', icon: '📈', title: 'Digital Advertising', description: 'Targeted campaigns across Google, Meta, LinkedIn, and display networks optimized for conversions and maximum return on ad spend.' },
-  { id: 'content-marketing', icon: '✍️', title: 'Content Marketing', description: 'Blog posts, whitepapers, case studies, and video content that build authority, drive organic traffic, and nurture leads.' },
-  { id: 'social-media', icon: '📱', title: 'Social Media Management', description: 'Strategic planning, content creation, community management, and analytics across all major social platforms.' },
-  { id: 'seo-sem', icon: '🔍', title: 'SEO & SEM', description: 'Technical audits, keyword strategy, on-page optimization, and link building to boost your search visibility and rankings.' },
-  { id: 'email-marketing', icon: '📨', title: 'Email Marketing', description: 'Automated drip campaigns, newsletters, and segmented outreach that keep your audience engaged and drive repeat business.' },
+  { id: 'brand-strategy',     href: '/services/brand-strategy',     icon: '🎯', title: 'Brand Strategy',          description: 'We craft a clear brand identity, voice, and positioning that sets you apart from the competition and resonates with your target audience.' },
+  { id: 'digital-advertising', href: '/services/digital-advertising', icon: '📈', title: 'Digital Advertising',       description: 'Targeted campaigns across Google, Meta, LinkedIn, and display networks optimized for conversions and maximum return on ad spend.' },
+  { id: 'content-marketing',   href: '/services/content-marketing',   icon: '✍️', title: 'Content Marketing',         description: 'Blog posts, whitepapers, case studies, and video content that build authority, drive organic traffic, and nurture leads.' },
+  { id: 'social-media',        href: '/services/social-media',        icon: '📱', title: 'Social Media Management',   description: 'Strategic planning, content creation, community management, and analytics across all major social platforms.' },
+  { id: 'seo-sem',             href: '/services/seo-sem',             icon: '🔍', title: 'SEO & SEM',                 description: 'Technical audits, keyword strategy, on-page optimization, and link building to boost your search visibility and rankings.' },
+  { id: 'email-marketing',     href: '/services/email-marketing',     icon: '📨', title: 'Email Marketing',           description: 'Automated drip campaigns, newsletters, and segmented outreach that keep your audience engaged and drive repeat business.' },
 ];
 
 const process = [
@@ -44,7 +44,7 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
             {services.map((s, i) => (
               <div key={s.title} id={s.id}>
-                <Card {...s} delay={i * 0.1} />
+                <Card {...s} delay={i * 0.1} href={s.href} />
               </div>
             ))}
           </div>
