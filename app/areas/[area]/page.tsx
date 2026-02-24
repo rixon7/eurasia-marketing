@@ -67,6 +67,12 @@ const areas: Record<string, {
     intro: 'We help Staines-upon-Thames businesses grow their online presence with tailored digital marketing strategies. From the town centre to the surrounding business parks, our team delivers results-driven campaigns that connect you with more local customers.',
     nearby: ['Hounslow', 'Feltham', 'Sunbury', 'Hampton'],
   },
+  london: {
+    name: 'London',
+    description: 'Digital marketing agency serving London businesses. Expert SEO, website design, social media management, and digital advertising to help London businesses grow online.',
+    intro: 'Eurasia Marketing works with businesses across London to deliver powerful digital marketing strategies. Whether you\'re a small independent business or a growing company in the capital, our team builds data-driven campaigns that increase your visibility, attract more customers, and grow your revenue.',
+    nearby: ['Hounslow', 'Brentford', 'Isleworth', 'Hayes'],
+  },
 };
 
 const services = [

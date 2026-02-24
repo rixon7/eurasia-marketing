@@ -55,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
-    ...['hounslow', 'feltham', 'sunbury', 'hampton', 'isleworth', 'heston', 'brentford', 'hayes', 'staines'].map((area) => ({
+    ...['hounslow', 'feltham', 'sunbury', 'hampton', 'isleworth', 'heston', 'brentford', 'hayes', 'staines', 'london'].map((area) => ({
       url: `${baseUrl}/areas/${area}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
