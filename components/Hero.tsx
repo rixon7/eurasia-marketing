@@ -8,10 +8,11 @@ interface HeroProps {
   title: string;
   highlight: string;
   subtitle: string;
-  buttons?: { label: string; href: string; variant: 'primary' | 'outline' }[];
+  buttons?: { label: string; href: string; variant: 'primary' | 'outline' | 'blue'; external?: boolean }[];
+  displayFont?: boolean;
 }
 
-export default function Hero({ tag, title, highlight, subtitle, buttons }: HeroProps) {
+export default function Hero({ tag, title, highlight, subtitle, buttons, displayFont }: HeroProps) {
   return (
     <section className={`${tag ? 'pt-12 md:pt-16' : 'pt-8 md:pt-12'} pb-10 md:pb-12 px-6`}>
       <div className="max-w-[1280px] mx-auto text-center">
@@ -31,7 +32,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons }: HeroP
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-primary dark:text-dark-text mb-6"
+          className={`text-4xl md:text-6xl lg:text-7xl font-bold text-primary dark:text-dark-text mb-6 ${displayFont ? 'font-[family-name:var(--font-cormorant)] tracking-normal' : 'tracking-tight'}`}
         >
           {title} <span className="text-accent-blue">{highlight}</span>
         </motion.h1>
@@ -52,19 +53,24 @@ export default function Hero({ tag, title, highlight, subtitle, buttons }: HeroP
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            {buttons.map((btn) => (
-              <Link
-                key={btn.label}
-                href={btn.href}
-                className={`px-8 py-3.5 rounded-[var(--radius-md)] text-sm font-semibold transition-all ${
-                  btn.variant === 'primary'
-                    ? 'bg-primary text-white hover:bg-primary/90 dark:bg-accent-blue dark:hover:bg-accent-blue/90'
-                    : 'border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-dark-muted dark:text-dark-text dark:hover:bg-dark-card'
-                }`}
-              >
-                {btn.label}
-              </Link>
-            ))}
+            {buttons.map((btn) => {
+              const className = `px-8 py-3.5 rounded-[var(--radius-md)] text-sm font-semibold transition-all ${
+                btn.variant === 'primary'
+                  ? 'bg-primary text-white hover:bg-primary/90 dark:bg-accent-blue dark:hover:bg-accent-blue/90'
+                  : btn.variant === 'blue'
+                  ? 'bg-accent-blue text-white hover:bg-accent-blue/90'
+                  : 'border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-dark-muted dark:text-dark-text dark:hover:bg-dark-card'
+              }`;
+              return btn.external ? (
+                <a key={btn.label} href={btn.href} target="_blank" rel="noopener noreferrer" className={className}>
+                  {btn.label}
+                </a>
+              ) : (
+                <Link key={btn.label} href={btn.href} className={className}>
+                  {btn.label}
+                </Link>
+              );
+            })}
           </motion.div>
         )}
       </div>

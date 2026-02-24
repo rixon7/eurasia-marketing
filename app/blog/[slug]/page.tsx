@@ -12,7 +12,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   try {
     const { meta } = getPostBySlug(slug);
-    return { title: meta.title, description: meta.excerpt };
+    return {
+      title: meta.title,
+      description: meta.excerpt,
+      openGraph: {
+        title: meta.title,
+        description: meta.excerpt,
+        type: 'article',
+        publishedTime: meta.date,
+        images: meta.image ? [{ url: meta.image, width: 1200, alt: meta.title }] : [],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: meta.title,
+        description: meta.excerpt,
+        images: meta.image ? [meta.image] : [],
+      },
+    };
   } catch {
     return { title: 'Post Not Found' };
   }
@@ -29,8 +45,20 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   const { meta, content } = post;
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: meta.title,
+    description: meta.excerpt,
+    datePublished: meta.date,
+    image: meta.image || '',
+    author: { '@type': 'Organization', name: 'Eurasia Marketing', url: 'https://eurasiamarketing.com' },
+    publisher: { '@type': 'Organization', name: 'Eurasia Marketing', url: 'https://eurasiamarketing.com' },
+  };
+
   return (
     <article className="py-24 px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="max-w-3xl mx-auto">
         <AnimateIn>
           <Link

@@ -28,17 +28,33 @@ const testimonials = [
   { quote: 'Professional, creative, and always on top of the latest trends. They feel like an extension of our team.', initials: 'DM', name: 'David Morris', role: 'Founder, GreenLeaf Co.' },
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What services does Eurasia Marketing offer?', acceptedAnswer: { '@type': 'Answer', text: 'We provide a full range of digital marketing services including social media management, SEO & SEM, website design and development, Google Business Profile management, content marketing, email marketing, brand strategy, and digital advertising.' } },
+    { '@type': 'Question', name: 'How much do your services cost?', acceptedAnswer: { '@type': 'Answer', text: 'Our pricing starts from just £100/month for website building and email marketing, £200/month for social media management, and £300/month for SEO management. We also offer custom bundles with discounts when you combine multiple services.' } },
+    { '@type': 'Question', name: 'Do you require long-term contracts?', acceptedAnswer: { '@type': 'Answer', text: "No. All our plans are rolling monthly contracts with no long-term lock-in. We believe in earning your business every month through results, not contracts. We just ask for 30 days' notice if you wish to cancel." } },
+    { '@type': 'Question', name: 'How quickly will I see results?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on the service. Social media and paid advertising can show results within weeks. SEO is a longer-term strategy — most clients start seeing meaningful improvements within 3-6 months.' } },
+    { '@type': 'Question', name: 'Do you work with small businesses?', acceptedAnswer: { '@type': 'Answer', text: "Absolutely! We were founded on the belief that every business deserves great marketing. Whether you're a startup, a local shop, or a growing company, we tailor our services to fit your budget and goals." } },
+    { '@type': 'Question', name: 'What areas do you serve?', acceptedAnswer: { '@type': 'Answer', text: "While we're based in Hounslow, London, we work with clients across the UK and internationally. Most of our work is done remotely, but we're always happy to meet in person for local clients." } },
+    { '@type': 'Question', name: 'How do I get started?', acceptedAnswer: { '@type': 'Answer', text: 'Simply get in touch via our contact page, email us at info@eurasiamarketing.com, or call us on 020 3886 3311. We\'ll schedule a free consultation to understand your goals and recommend the best approach.' } },
+  ],
+};
+
 export default function Home() {
   const posts = getAllPosts();
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Hero
         title="Grow Your Brand"
         highlight="With Confidence"
         subtitle="We help businesses build powerful marketing strategies that drive real results and lasting growth."
         buttons={[
           { label: 'Get Started →', href: '/contact', variant: 'primary' },
+          { label: '📅 Book a Free Call', href: 'https://calendly.com/rixon7/30min', variant: 'blue', external: true },
           { label: 'Our Services', href: '/services', variant: 'outline' },
         ]}
       />

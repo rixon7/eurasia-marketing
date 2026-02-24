@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'How Eurasia Marketing collects, uses, and protects your personal data.',
+  title: 'Privacy Policy | Eurasia Marketing Hounslow',
+  description: 'How Eurasia Marketing collects, uses, and protects your personal data. Read our privacy policy for our digital marketing services in Hounslow.',
 };
 
 export default function PrivacyPage() {
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
               <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us:</p>
               <div className="mt-3 space-y-1">
                 <p><strong className="text-primary dark:text-dark-text">Email:</strong> <a href="mailto:info@eurasiamarketing.com" className="text-accent-blue hover:underline">info@eurasiamarketing.com</a></p>
-                <p><strong className="text-primary dark:text-dark-text">Phone:</strong> <a href="tel:07949774856" className="text-accent-blue hover:underline">07949 774856</a></p>
+                <p><strong className="text-primary dark:text-dark-text">Phone:</strong> <a href="tel:02038863311" className="text-accent-blue hover:underline">020 3886 3311</a></p>
                 <p><strong className="text-primary dark:text-dark-text">Address:</strong> 65-73 Staines Road, Hounslow TW3 3HW</p>
               </div>
             </section>

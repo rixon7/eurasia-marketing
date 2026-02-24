@@ -3,14 +3,30 @@
 import { useState } from 'react';
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus('loading');
+
+    const form = e.currentTarget;
+    const data = {
+      name:    (form.elements.namedItem('name')    as HTMLInputElement).value,
+      email:   (form.elements.namedItem('email')   as HTMLInputElement).value,
+      subject: (form.elements.namedItem('subject') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    };
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    setStatus(res.ok ? 'success' : 'error');
   }
 
-  if (submitted) {
+  if (status === 'success') {
     return (
       <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-8 text-center">
         <div className="text-4xl mb-4">&#10003;</div>
@@ -65,11 +81,15 @@ export default function ContactForm() {
           className="w-full px-4 py-3 rounded-[var(--radius-sm)] border border-border-light dark:border-border-dark bg-sky dark:bg-dark-surface text-primary dark:text-dark-text placeholder:text-muted/50 dark:placeholder:text-dark-muted/50 text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue/30 resize-none"
         />
       </div>
+      {status === 'error' && (
+        <p className="text-sm text-red-500">Something went wrong. Please try again or email us directly at info@eurasiamarketing.com</p>
+      )}
       <button
         type="submit"
-        className="w-full px-8 py-3.5 bg-primary dark:bg-accent-blue text-white rounded-[var(--radius-md)] text-sm font-semibold hover:opacity-90 transition-opacity"
+        disabled={status === 'loading'}
+        className="w-full px-8 py-3.5 bg-primary dark:bg-accent-blue text-white rounded-[var(--radius-md)] text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-60"
       >
-        Send Message &rarr;
+        {status === 'loading' ? 'Sending…' : 'Send Message →'}
       </button>
     </form>
   );

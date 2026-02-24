@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { DM_Sans, DM_Mono } from 'next/font/google';
+import { DM_Sans, DM_Mono, Cormorant_Garamond } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -16,6 +16,13 @@ const dmMono = DM_Mono({
   variable: '--font-dm-mono',
   subsets: ['latin'],
   weight: ['400', '500'],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: '--font-cormorant',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -77,7 +84,7 @@ const jsonLd = {
   name: 'Eurasia Marketing',
   description: 'Best digital marketing agency in Hounslow offering website design, SEO, social media management, and digital advertising services.',
   url: 'https://eurasiamarketing.com',
-  telephone: '+4407949774856',
+  telephone: '+442038863311',
   email: 'info@eurasiamarketing.com',
   address: {
     '@type': 'PostalAddress',
@@ -142,7 +149,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${dmSans.variable} ${dmMono.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
+      <body className={`${dmSans.variable} ${dmMono.variable} ${cormorant.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
         <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Navbar />

@@ -30,10 +30,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-sm">Services</h4>
             <ul className="space-y-2 text-sm text-dark-muted">
-              <li><Link href="/services" className="hover:text-white transition-colors">Brand Strategy</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Digital Advertising</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Content Marketing</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">SEO & SEM</Link></li>
+              <li><Link href="/services#brand-strategy" className="hover:text-white transition-colors">Brand Strategy</Link></li>
+              <li><Link href="/services#digital-advertising" className="hover:text-white transition-colors">Digital Advertising</Link></li>
+              <li><Link href="/services#content-marketing" className="hover:text-white transition-colors">Content Marketing</Link></li>
+              <li><Link href="/services#seo-sem" className="hover:text-white transition-colors">SEO & SEM</Link></li>
             </ul>
           </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-sm">Contact</h4>
             <ul className="space-y-2 text-sm text-dark-muted">
               <li><a href="mailto:info@eurasiamarketing.com" className="hover:text-white transition-colors">info@eurasiamarketing.com</a></li>
-              <li><a href="tel:07949774856" className="hover:text-white transition-colors">07949 774856</a></li>
+              <li><a href="tel:02038863311" className="hover:text-white transition-colors">020 3886 3311</a></li>
               <li>65-73 Staines Road</li>
               <li>Hounslow TW3 3HW</li>
             </ul>

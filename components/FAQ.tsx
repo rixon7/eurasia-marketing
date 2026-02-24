@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: 'How do I get started?',
-    a: 'Simply get in touch via our contact page, email us at info@eurasiamarketing.com, or call us on 07949 774856. We\'ll schedule a free consultation to understand your goals and recommend the best approach.',
+    a: 'Simply get in touch via our contact page, email us at info@eurasiamarketing.com, or call us on 020 3886 3311. We\'ll schedule a free consultation to understand your goals and recommend the best approach.',
   },
 ];
 

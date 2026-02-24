@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const details = [
   { label: 'Email', value: 'info@eurasiamarketing.com' },
-  { label: 'Phone', value: '07949 774856' },
+  { label: 'Phone', value: '020 3886 3311' },
   { label: 'Office', value: '65-73 Staines Road\nHounslow TW3 3HW' },
   { label: 'Hours', value: 'Mon - Fri: 10:00 am - 6:30 pm\nSat: 10:00 am - 3:00 pm\nSun: Closed' },
 ];
