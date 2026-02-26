@@ -32,10 +32,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = await client.fetch<ServiceData | null>(serviceBySlugQuery, { slug });
   if (!service) return { title: 'Not Found' };
   return {
-    title: `${service.name} | Eurasia Marketing Hounslow`,
+    title: service.name,
     description: service.description,
+    alternates: { canonical: `/services/${slug}` },
     openGraph: {
-      title: `${service.name} | Eurasia Marketing Hounslow`,
+      title: `${service.name} | Eurasia Marketing`,
       description: service.description,
     },
   };

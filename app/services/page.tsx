@@ -6,8 +6,9 @@ import ProcessStep from '@/components/ProcessStep';
 import CTA from '@/components/CTA';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services in Hounslow | Website Design, SEO & Social Media',
+  title: 'Digital Marketing Services in Hounslow',
   description: 'Expert website designer, SEO specialist, and social media manager in Hounslow. Full-service digital marketing including web design, search engine optimisation, content marketing, and paid advertising.',
+  alternates: { canonical: '/services' },
 };
 
 const services = [

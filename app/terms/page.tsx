@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | Eurasia Marketing Hounslow',
+  title: 'Terms & Conditions',
   description: 'Terms and conditions for using Eurasia Marketing digital marketing services in Hounslow, including website design, SEO, and social media management.',
+  alternates: { canonical: '/terms' },
 };
 
 export default function TermsPage() {

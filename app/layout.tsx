@@ -61,8 +61,9 @@ export const metadata: Metadata = {
     title: 'Eurasia Marketing | Best Digital Marketing in Hounslow',
     description: 'Expert website designer, SEO specialist, and social media manager in Hounslow. Grow your business with proven marketing strategies.',
   },
+  metadataBase: new URL('https://eurasiamarketing.com'),
   alternates: {
-    canonical: 'https://eurasiamarketing.com',
+    canonical: '/',
   },
   robots: {
     index: true,

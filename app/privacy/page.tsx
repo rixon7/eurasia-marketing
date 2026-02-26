@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Eurasia Marketing Hounslow',
+  title: 'Privacy Policy',
   description: 'How Eurasia Marketing collects, uses, and protects your personal data. Read our privacy policy for our digital marketing services in Hounslow.',
+  alternates: { canonical: '/privacy' },
 };
 
 export default function PrivacyPage() {

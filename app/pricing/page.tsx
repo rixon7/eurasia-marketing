@@ -4,8 +4,9 @@ import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Affordable Digital Marketing Pricing | Website Design & SEO in Hounslow',
+  title: 'Pricing | Digital Marketing Services Hounslow',
   description: 'Transparent pricing for digital marketing services in Hounslow. Website design from £100/month, social media management from £200/month, SEO from £300/month. No long-term contracts.',
+  alternates: { canonical: '/pricing' },
 };
 
 const plans = [

@@ -5,8 +5,9 @@ import AnimateIn from '@/components/AnimateIn';
 import { getAllPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Blog | SEO, Social Media & Web Design Tips',
+  title: 'Blog | Digital Marketing Tips & Insights',
   description: 'Expert digital marketing insights from Hounslow\'s leading marketing agency. Tips on SEO, social media strategy, website design, and brand building for local businesses.',
+  alternates: { canonical: '/blog' },
 };
 
 export default async function BlogPage() {

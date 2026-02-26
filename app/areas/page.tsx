@@ -4,8 +4,9 @@ import Hero from '@/components/Hero';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Areas We Serve | Eurasia Marketing Hounslow',
+  title: 'Areas We Serve | West London Digital Marketing',
   description: 'Eurasia Marketing provides digital marketing services across Hounslow, Feltham, Sunbury, Hampton, Isleworth, Heston, Brentford, and Hayes.',
+  alternates: { canonical: '/areas' },
 };
 
 const areas = [

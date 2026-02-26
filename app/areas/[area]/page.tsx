@@ -37,8 +37,9 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   const data = await client.fetch<AreaData | null>(areaBySlugQuery, { slug: area });
   if (!data) return { title: 'Not Found' };
   return {
-    title: `Digital Marketing Agency in ${data.name} | Eurasia Marketing`,
+    title: `Digital Marketing Agency in ${data.name}`,
     description: data.description,
+    alternates: { canonical: `/areas/${area}` },
     openGraph: {
       title: `Digital Marketing Agency in ${data.name} | Eurasia Marketing`,
       description: data.description,
