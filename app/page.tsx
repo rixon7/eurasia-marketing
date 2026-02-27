@@ -75,7 +75,12 @@ export default async function Home() {
         buttons={[
           { label: 'Get Started →', href: '/contact', variant: 'primary' },
           { label: '📅 Book a Free Call', href: 'https://calendly.com/rixon7/30min', variant: 'blue', external: true },
-          { label: 'Our Services', href: '/services', variant: 'outline' },
+        ]}
+        stats={[
+          { value: '150+', label: 'Businesses grown across West London' },
+          { value: '3×', label: 'Average ROI on marketing spend' },
+          { value: '95%', label: 'Client retention rate' },
+          { value: '500+', label: 'Campaigns successfully launched' },
         ]}
       />
 
@@ -103,13 +108,15 @@ export default async function Home() {
             title="Why Hounslow Businesses Choose Eurasia"
             subtitle="Results-driven digital marketing backed by data and local expertise"
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[10px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {features.map((f, i) => (
               <AnimateIn key={f.title} delay={i * 0.1}>
-                <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-6 text-center shadow-sm">
-                  <div className="text-3xl mb-3">{f.icon}</div>
+                <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-6 border border-border-light dark:border-border-dark shadow-sm h-full">
+                  <div className="w-10 h-10 rounded-xl bg-accent-blue/10 dark:bg-accent-blue/15 flex items-center justify-center text-xl mb-4">
+                    {f.icon}
+                  </div>
                   <h4 className="font-semibold text-primary dark:text-dark-text mb-2">{f.title}</h4>
-                  <p className="text-sm text-muted dark:text-dark-muted">{f.description}</p>
+                  <p className="text-sm text-muted dark:text-dark-muted leading-relaxed">{f.description}</p>
                 </div>
               </AnimateIn>
             ))}
@@ -199,6 +206,8 @@ export default async function Home() {
         subtitle="Let's build a marketing strategy that drives real, measurable results for your business."
         buttonText="Start a Project"
         buttonHref="/contact"
+        secondaryText="View Pricing"
+        secondaryHref="/pricing"
       />
     </>
   );

@@ -112,3 +112,71 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Hero background mesh */
+.bg-hero-mesh {
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 60% -10%, rgba(33, 150, 243, 0.12), transparent),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(56, 189, 248, 0.08), transparent);
+}
+
+.dark .bg-hero-mesh {
+  background-color: var(--color-dark-bg);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 60% -10%, rgba(33, 150, 243, 0.15), transparent),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(56, 189, 248, 0.08), transparent);
+}
+
+/* Subtle dot grid overlay */
+.bg-grid-dots {
+  background-image: radial-gradient(circle, rgba(12,45,74,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.dark .bg-grid-dots {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+}
+
+/* Stat card glassmorphism */
+.stat-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 221, 240, 0.8);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.dark .stat-card {
+  background: rgba(15, 39, 64, 0.8);
+  border-color: rgba(30, 58, 84, 0.8);
+}
+
+/* Gradient CTA background */
+.cta-gradient {
+  background: linear-gradient(135deg, #0c2d4a 0%, #0d3a62 40%, #0a2d52 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-gradient::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(33, 150, 243, 0.25), transparent 65%);
+  pointer-events: none;
+}
+
+.cta-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(56, 189, 248, 0.15), transparent 65%);
+  pointer-events: none;
+}
