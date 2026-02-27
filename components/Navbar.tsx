@@ -20,6 +20,7 @@ const serviceLinks = [
   { href: '/services/social-media',        label: '📱 Social Media' },
   { href: '/services/seo-sem',             label: '🔍 SEO & SEM' },
   { href: '/services/email-marketing',     label: '📨 Email Marketing' },
+  { href: '/services/ai-automation',       label: '🤖 AI Automation' },
 ];
 
 const areas = [

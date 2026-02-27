@@ -18,6 +18,7 @@ const services = [
   { id: 'social-media',        href: '/services/social-media',        icon: '📱', title: 'Social Media Management',   description: 'Strategic planning, content creation, community management, and analytics across all major social platforms.' },
   { id: 'seo-sem',             href: '/services/seo-sem',             icon: '🔍', title: 'SEO & SEM',                 description: 'Technical audits, keyword strategy, on-page optimization, and link building to boost your search visibility and rankings.' },
   { id: 'email-marketing',     href: '/services/email-marketing',     icon: '📨', title: 'Email Marketing',           description: 'Automated drip campaigns, newsletters, and segmented outreach that keep your audience engaged and drive repeat business.' },
+  { id: 'ai-automation',       href: '/services/ai-automation',       icon: '🤖', title: 'AI Automation & Workflows',  description: 'Custom AI workflows that automate lead follow-ups, content generation, reporting, and repetitive tasks — saving you hours every week.' },
 ];
 
 const process = [
