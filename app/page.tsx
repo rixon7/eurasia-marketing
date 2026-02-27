@@ -12,7 +12,7 @@ import { getAllPosts } from '@/lib/blog';
 import { client, homepageSettingsQuery } from '@/lib/sanity';
 
 const defaultServices = [
-  { icon: '🎯', title: 'Brand Strategy',      href: '/services/brand-strategy',     description: 'Define your brand identity, voice, and positioning to stand out in a crowded marketplace.' },
+  { icon: '🌐', title: 'Website Building',    href: '/services/website-building',   description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-ready, and beautifully designed.' },
   { icon: '📈', title: 'Digital Advertising',  href: '/services/digital-advertising', description: 'Targeted ad campaigns across search, social, and display channels that maximize your ROI.' },
   { icon: '✍️', title: 'Content Marketing',    href: '/services/content-marketing',   description: 'Compelling content that engages your audience and establishes authority in your industry.' },
 ];
