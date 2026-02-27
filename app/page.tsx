@@ -8,6 +8,7 @@ import Testimonial from '@/components/Testimonial';
 import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
 import FAQ from '@/components/FAQ';
+import WhatWeDoBest from '@/components/WhatWeDoBest';
 import { getAllPosts } from '@/lib/blog';
 import { client, homepageSettingsQuery } from '@/lib/sanity';
 
@@ -87,6 +88,8 @@ export default async function Home() {
       <ImageSlider />
 
       <LogoSlider />
+
+      <WhatWeDoBest />
 
       <section className="py-24 px-6">
         <div className="max-w-[1280px] mx-auto">
