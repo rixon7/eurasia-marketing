@@ -57,6 +57,22 @@ const slides = [
     href: '/services/seo-sem',
   },
   {
+    title: 'AI Automation & Workflows',
+    subtitle: 'Work smarter — automate the repetitive, focus on growth',
+    description: 'Custom AI workflows that handle lead follow-ups, content creation, reporting, and customer service automatically — saving your business hours every week.',
+    gradient: 'from-slate-900 via-violet-900 to-purple-900',
+    accent: '#8b5cf6',
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="11" width="18" height="10" rx="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        <circle cx="12" cy="16" r="1" fill="white" />
+      </svg>
+    ),
+    image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=90&auto=format&fit=crop',
+    href: '/services/ai-automation',
+  },
+  {
     title: 'Digital Advertising',
     subtitle: 'Reach the right people at the right moment',
     description: 'Targeted campaigns across Google, Meta, LinkedIn, and display networks — built for maximum ROI and real business growth.',

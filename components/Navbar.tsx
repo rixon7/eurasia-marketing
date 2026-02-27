@@ -15,6 +15,7 @@ const links = [
 
 const serviceLinks = [
   { href: '/services/website-building',   label: '🌐 Website Building' },
+  { href: '/services/web-design',         label: '🎨 Web Design' },
   { href: '/services/digital-advertising', label: '📈 Digital Advertising' },
   { href: '/services/content-marketing',   label: '✍️ Content Marketing' },
   { href: '/services/social-media',        label: '📱 Social Media' },

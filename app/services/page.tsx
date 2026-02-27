@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 const services = [
   { id: 'website-building',   href: '/services/website-building',   icon: '🌐', title: 'Website Building',          description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-optimised, and beautifully designed to represent your brand.' },
+  { id: 'web-design',         href: '/services/web-design',         icon: '🎨', title: 'Web Design',                description: 'Custom visual designs that reflect your brand, engage visitors, and guide them naturally towards taking action — designed for every screen.' },
   { id: 'digital-advertising', href: '/services/digital-advertising', icon: '📈', title: 'Digital Advertising',       description: 'Targeted campaigns across Google, Meta, LinkedIn, and display networks optimized for conversions and maximum return on ad spend.' },
   { id: 'content-marketing',   href: '/services/content-marketing',   icon: '✍️', title: 'Content Marketing',         description: 'Blog posts, whitepapers, case studies, and video content that build authority, drive organic traffic, and nurture leads.' },
   { id: 'social-media',        href: '/services/social-media',        icon: '📱', title: 'Social Media Management',   description: 'Strategic planning, content creation, community management, and analytics across all major social platforms.' },

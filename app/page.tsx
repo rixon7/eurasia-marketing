@@ -13,8 +13,9 @@ import { client, homepageSettingsQuery } from '@/lib/sanity';
 
 const defaultServices = [
   { icon: '🌐', title: 'Website Building',    href: '/services/website-building',   description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-ready, and beautifully designed.' },
+  { icon: '🎨', title: 'Web Design',           href: '/services/web-design',          description: 'Stunning custom designs that reflect your brand, engage visitors, and guide them to take action.' },
+  { icon: '🤖', title: 'AI Automation',        href: '/services/ai-automation',       description: 'Save hours every week with custom AI workflows that automate lead follow-ups, reporting, and more.' },
   { icon: '📈', title: 'Digital Advertising',  href: '/services/digital-advertising', description: 'Targeted ad campaigns across search, social, and display channels that maximize your ROI.' },
-  { icon: '✍️', title: 'Content Marketing',    href: '/services/content-marketing',   description: 'Compelling content that engages your audience and establishes authority in your industry.' },
 ];
 
 const defaultFeatures = [
@@ -94,7 +95,7 @@ export default async function Home() {
             title="Digital Marketing Services in Hounslow"
             subtitle="From website design to SEO and social media — tailored solutions for your business"
           />
-          <div className="grid md:grid-cols-3 gap-[10px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {services.map((s, i) => (
               <Card key={s.title} {...s} delay={i * 0.1} />
             ))}
