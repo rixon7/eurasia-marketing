@@ -90,13 +90,13 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
             </motion.div>
           )}
 
-          {/* Stats — shown inline on mobile below buttons, hidden on lg (shown in right column) */}
+          {/* Stats — desktop right column fallback (md only, hidden on mobile and lg) */}
           {hasStats && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="grid grid-cols-2 gap-3 mt-6 lg:hidden"
+              className="hidden md:grid grid-cols-2 gap-3 mt-6 lg:hidden"
             >
               {stats.map((s) => (
                 <div key={s.label} className="stat-card">

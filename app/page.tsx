@@ -88,6 +88,21 @@ export default async function Home() {
 
       <ImageSlider />
 
+      {/* Mobile stat tiles — shown below slider on mobile only */}
+      <div className="md:hidden px-3 pb-6 grid grid-cols-2 gap-3">
+        {[
+          { value: '150+', label: 'Businesses grown across West London' },
+          { value: '3×',   label: 'Average ROI on marketing spend' },
+          { value: '95%',  label: 'Client retention rate' },
+          { value: '500+', label: 'Campaigns successfully launched' },
+        ].map((s) => (
+          <div key={s.label} className="stat-card">
+            <p className="text-2xl font-bold text-primary dark:text-dark-text tracking-tight">{s.value}</p>
+            <p className="text-xs text-muted dark:text-dark-muted mt-0.5">{s.label}</p>
+          </div>
+        ))}
+      </div>
+
       <LogoSlider />
 
       <WhatWeDoBest />
