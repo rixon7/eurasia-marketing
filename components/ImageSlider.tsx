@@ -129,6 +129,9 @@ export default function ImageSlider() {
               to { transform: translateX(-50%); }
             }
             .promo-track { animation: promo-scroll 30s linear infinite; }
+            @media (max-width: 768px) {
+              .promo-track { animation-duration: 12s; }
+            }
           `}</style>
           <div className="flex-shrink-0 flex items-center h-full px-4 bg-white/15 border-r border-white/20">
             <span className="text-xs font-bold text-white tracking-wider uppercase">Offers</span>
