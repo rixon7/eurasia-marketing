@@ -7,7 +7,7 @@ import CTA from '@/components/CTA';
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Services in Hounslow',
-  description: 'Expert website designer, SEO specialist, and social media manager in Hounslow. Full-service digital marketing including web design, search engine optimisation, content marketing, and paid advertising.',
+  description: 'Full-service digital marketing in Hounslow — web design, SEO, social media & paid ads. Tailored strategies that drive real results for local businesses.',
   alternates: { canonical: '/services' },
 };
 
@@ -31,9 +31,9 @@ export default function ServicesPage() {
   return (
     <>
       <Hero
-        title="Our"
-        highlight="Services"
-        subtitle="Full-service digital marketing in Hounslow — website design, SEO, social media management, and more."
+        title="Digital Marketing"
+        highlight="Services in Hounslow"
+        subtitle="Website design, SEO, social media management, paid advertising and more — tailored for local businesses."
       />
 
       <section className="py-12 md:py-16 px-4 sm:px-6">

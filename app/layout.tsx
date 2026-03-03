@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     default: 'Eurasia Marketing | Best Digital Marketing Agency in Hounslow',
     template: '%s | Eurasia Marketing Hounslow',
   },
-  description: 'Eurasia Marketing is the best digital marketing agency in Hounslow. Expert website designer, SEO specialist, and social media manager in Hounslow. Grow your business with our proven strategies.',
+  description: 'Expert digital marketing agency in Hounslow. Website design, SEO, social media & paid ads — helping local businesses grow online with proven strategies.',
   keywords: [
     'best digital marketing in Hounslow',
     'website designer in Hounslow',
