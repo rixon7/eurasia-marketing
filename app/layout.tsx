@@ -149,6 +149,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Force dark mode on mobile — runs before paint to avoid flash */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            if (window.innerWidth < 768) {
+              document.documentElement.classList.add('dark');
+              try { localStorage.setItem('theme', 'dark'); } catch(e) {}
+            }
+          })();
+        `}} />
       </head>
       <body className={`${dmSans.variable} ${dmMono.variable} ${cormorant.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
         <GoogleAnalytics />
