@@ -37,6 +37,36 @@ const plans = [
     highlight: false,
   },
   {
+    name: 'AI Automation',
+    price: '150',
+    period: '/month',
+    description: 'Custom AI workflows that save hours every week — automating lead follow-ups, reports, and more.',
+    badge: 'New Service',
+    badgeColor: 'bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400',
+    features: [
+      'Custom AI workflow design',
+      'Lead follow-up automation',
+      'Automated reporting & insights',
+      'CRM & tool integrations',
+      'AI chatbot setup',
+      'Email & SMS automation',
+      'Ongoing optimisation',
+      'Monthly performance review',
+    ],
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-violet-600 dark:text-violet-400">
+        <rect x="3" y="11" width="18" height="10" rx="2" />
+        <path d="M12 11V7" />
+        <path d="M8 7h8" />
+        <circle cx="12" cy="5" r="2" />
+        <path d="M8 15h.01" />
+        <path d="M12 15h.01" />
+        <path d="M16 15h.01" />
+      </svg>
+    ),
+    highlight: false,
+  },
+  {
     name: 'Social Media Management',
     price: '200',
     period: '/month',
@@ -133,18 +163,18 @@ export default function PricingPage() {
       />
 
       {/* Pricing Cards */}
-      <section className="px-6 pb-24">
+      <section className="px-4 sm:px-6 pb-14 md:pb-24">
         <div className="max-w-[1280px] mx-auto">
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {plans.map((plan, i) => (
               <AnimateIn key={plan.name} delay={i * 0.1}>
-                <div className={`relative flex flex-col h-full rounded-[var(--radius-xl)] p-8 transition-shadow hover:shadow-xl ${
+                <div className={`relative flex flex-col h-full rounded-[var(--radius-xl)] p-5 sm:p-8 transition-shadow hover:shadow-xl ${
                   plan.highlight
                     ? 'bg-primary dark:bg-accent-blue text-white shadow-lg ring-2 ring-accent-blue/50 dark:ring-accent-blue'
                     : 'bg-white dark:bg-dark-card shadow-sm'
                 }`}>
                   {/* Badge */}
-                  <span className={`inline-block self-start px-3 py-1 rounded-full text-xs font-semibold mb-6 ${
+                  <span className={`inline-block self-start px-3 py-1 rounded-full text-xs font-semibold mb-4 sm:mb-6 ${
                     plan.highlight ? 'bg-accent-blue text-white' : plan.badgeColor
                   }`}>
                     {plan.badge}
@@ -155,12 +185,12 @@ export default function PricingPage() {
                   <h3 className={`text-xl font-bold mb-2 ${plan.highlight ? 'text-white' : 'text-primary dark:text-dark-text'}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm mb-6 leading-relaxed ${plan.highlight ? 'text-white/70' : 'text-muted dark:text-dark-muted'}`}>
+                  <p className={`text-sm mb-4 sm:mb-6 leading-relaxed ${plan.highlight ? 'text-white/70' : 'text-muted dark:text-dark-muted'}`}>
                     {plan.description}
                   </p>
 
                   {/* Price */}
-                  <div className="mb-8">
+                  <div className="mb-5 sm:mb-8">
                     <span className={`text-sm ${plan.highlight ? 'text-white/60' : 'text-muted dark:text-dark-muted'}`}>Starting from</span>
                     <div className="flex items-baseline gap-1 mt-1">
                       <span className={`text-4xl font-extrabold ${plan.highlight ? 'text-white' : 'text-primary dark:text-dark-text'}`}>
@@ -173,7 +203,7 @@ export default function PricingPage() {
                   </div>
 
                   {/* Features */}
-                  <ul className="space-y-3 mb-8 flex-1">
+                  <ul className="space-y-2.5 mb-5 sm:mb-8 flex-1">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="flex-shrink-0 mt-0.5">
@@ -205,16 +235,16 @@ export default function PricingPage() {
 
           {/* Custom bundle banner */}
           <AnimateIn delay={0.3}>
-            <div className="mt-12 bg-gradient-to-r from-accent-blue/5 via-[#38bdf8]/5 to-accent-blue/5 dark:from-accent-blue/10 dark:via-[#38bdf8]/10 dark:to-accent-blue/10 rounded-[var(--radius-xl)] p-8 md:p-12 text-center border border-accent-blue/10 dark:border-accent-blue/20">
-              <h3 className="text-2xl font-bold text-primary dark:text-dark-text mb-3">
+            <div className="mt-8 sm:mt-12 bg-gradient-to-r from-accent-blue/5 via-[#38bdf8]/5 to-accent-blue/5 dark:from-accent-blue/10 dark:via-[#38bdf8]/10 dark:to-accent-blue/10 rounded-[var(--radius-xl)] p-6 sm:p-8 md:p-12 text-center border border-accent-blue/10 dark:border-accent-blue/20">
+              <h3 className="text-xl sm:text-2xl font-bold text-primary dark:text-dark-text mb-3">
                 Need a custom package?
               </h3>
-              <p className="text-muted dark:text-dark-muted max-w-xl mx-auto mb-6">
+              <p className="text-sm sm:text-base text-muted dark:text-dark-muted max-w-xl mx-auto mb-5 sm:mb-6">
                 Combine multiple services and save. We&apos;ll create a tailored plan that fits your exact needs and budget.
               </p>
               <a
                 href="/contact"
-                className="inline-block px-8 py-3.5 bg-primary dark:bg-accent-blue text-white rounded-[var(--radius-md)] text-sm font-semibold hover:opacity-90 transition-opacity"
+                className="inline-block w-full sm:w-auto px-8 py-3.5 bg-primary dark:bg-accent-blue text-white rounded-[var(--radius-md)] text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 Request a Custom Quote &rarr;
               </a>
@@ -224,12 +254,12 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-12 md:py-24 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-3xl mx-auto">
           <AnimateIn>
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 sm:mb-12">
               <span className="font-mono text-xs text-accent-blue tracking-wider">// FAQ</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-dark-text mt-3 mb-4">Common Questions</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent-blue mt-3 mb-4">Common Questions</h2>
               <p className="text-muted dark:text-dark-muted">Everything you need to know about our pricing</p>
             </div>
           </AnimateIn>

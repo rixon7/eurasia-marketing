@@ -29,36 +29,36 @@ export default function AboutPage() {
         subtitle="A passionate team of marketers helping brands reach their full potential."
       />
 
-      <section className="py-16 px-6">
+      <section className="py-12 md:py-16 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <AnimateIn>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-dark-text mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent-blue mb-4 sm:mb-6">
                 Built on a belief that every business deserves great marketing
               </h2>
-              <p className="text-muted dark:text-dark-muted mb-4 leading-relaxed">
+              <p className="text-sm sm:text-base text-muted dark:text-dark-muted mb-4 leading-relaxed">
                 Eurasia Marketing was founded with a simple belief: every business deserves access to world-class marketing. What started as a small consultancy has grown into a full-service agency serving clients across multiple industries.
               </p>
-              <p className="text-muted dark:text-dark-muted mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base text-muted dark:text-dark-muted mb-6 sm:mb-8 leading-relaxed">
                 We combine creative thinking with data-driven strategies to deliver campaigns that move the needle. Our team brings together expertise in branding, digital advertising, content, SEO, and social media to provide holistic marketing solutions.
               </p>
               <Link
                 href="/contact"
-                className="inline-block px-8 py-3.5 bg-primary dark:bg-accent-blue text-white rounded-[var(--radius-md)] text-sm font-semibold hover:opacity-90 transition-opacity"
+                className="inline-block w-full sm:w-auto text-center px-8 py-3.5 bg-primary dark:bg-accent-blue text-white rounded-[var(--radius-md)] text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 Work With Us &rarr;
               </Link>
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <div className="bg-gradient-to-br from-accent-blue/20 to-[#38bdf8]/20 dark:from-accent-blue/10 dark:to-[#38bdf8]/10 rounded-[var(--radius-xl)] aspect-[4/3] flex items-center justify-center">
-                <span className="text-2xl font-bold text-primary/40 dark:text-dark-text/40">Your Vision, Our Strategy</span>
+                <span className="text-lg sm:text-2xl font-bold text-primary/40 dark:text-dark-text/40 text-center px-6">Your Vision, Our Strategy</span>
               </div>
             </AnimateIn>
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-12 md:py-16 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title="By the Numbers"

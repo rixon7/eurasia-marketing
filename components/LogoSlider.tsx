@@ -17,19 +17,19 @@ function LogoItem({ name, color, path }: { name: string; color: string; path: st
       <svg viewBox="0 0 24 24" width="32" height="32">
         <path fill={color} d={path} />
       </svg>
-      <span className="text-xs font-mono text-muted dark:text-dark-muted">{name}</span>
+      <span className="text-xs font-mono text-white/60">{name}</span>
     </div>
   );
 }
 
 export default function LogoSlider() {
   return (
-    <section className="py-16 bg-[#d4e8fc] dark:bg-dark-surface overflow-hidden">
+    <section className="py-16 bg-primary dark:bg-dark-surface overflow-hidden">
       <AnimateIn>
         <div className="max-w-[1280px] mx-auto px-6 mb-10">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-dark-text mb-4">Platforms We Work With</h2>
-            <p className="text-muted dark:text-dark-muted">We manage your brand across all major platforms</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Platforms We Work With</h2>
+            <p className="text-white/60">We manage your brand across all major platforms</p>
           </div>
         </div>
       </AnimateIn>

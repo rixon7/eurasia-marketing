@@ -22,11 +22,11 @@ export default async function BlogPage() {
         subtitle="Insights, tips, and strategies from the Eurasia Marketing team."
       />
 
-      <section className="py-24 px-6">
+      <section className="py-12 md:py-24 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[10px]">
             {posts.map((post, i) => (
-              <AnimateIn key={post.slug} delay={i * 0.1}>
+              <AnimateIn key={post.slug} delay={i * 0.05}>
                 <Link href={`/blog/${post.slug}`} className="block group">
                   <article className="gradient-border bg-white dark:bg-dark-card rounded-[var(--radius-lg)] shadow-sm hover:shadow-md transition-shadow h-full flex flex-col overflow-hidden">
                     {post.image && (
@@ -39,18 +39,18 @@ export default async function BlogPage() {
                         />
                       </div>
                     )}
-                    <div className="p-8 flex flex-col flex-1">
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="p-5 sm:p-8 flex flex-col flex-1">
+                    <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                       {post.tags.map((tag) => (
-                        <span key={tag} className="px-3 py-1 rounded-full bg-soft-green dark:bg-dark-surface text-xs font-mono text-mint-text dark:text-mint-badge">
+                        <span key={tag} className="px-2.5 py-1 rounded-full bg-soft-green dark:bg-dark-surface text-xs font-mono text-mint-text dark:text-mint-badge">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <h2 className="text-xl font-semibold text-primary dark:text-dark-text mb-3 group-hover:text-accent-blue transition-colors">
+                    <h2 className="text-base sm:text-xl font-semibold text-primary dark:text-dark-text mb-2 sm:mb-3 group-hover:text-accent-blue transition-colors">
                       {post.title}
                     </h2>
-                    <p className="text-sm text-muted dark:text-dark-muted leading-relaxed mb-4 flex-1">
+                    <p className="text-sm text-muted dark:text-dark-muted leading-relaxed mb-3 sm:mb-4 flex-1">
                       {post.excerpt}
                     </p>
                     <div className="flex items-center gap-3 text-xs text-muted dark:text-dark-muted font-mono">

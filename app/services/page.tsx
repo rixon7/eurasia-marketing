@@ -36,13 +36,13 @@ export default function ServicesPage() {
         subtitle="Full-service digital marketing in Hounslow — website design, SEO, social media management, and more."
       />
 
-      <section className="py-16 px-6">
+      <section className="py-12 md:py-16 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title="End-to-End Marketing"
             subtitle="Tailored solutions for every stage of your growth"
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-[10px]">
             {services.map((s, i) => (
               <div key={s.title} id={s.id}>
                 <Card {...s} delay={i * 0.1} href={s.href} />
@@ -52,13 +52,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-12 md:py-16 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title="Our Process"
             subtitle="A proven approach to delivering results"
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[10px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-[10px]">
             {process.map((p, i) => (
               <ProcessStep key={p.number} {...p} delay={i * 0.1} />
             ))}

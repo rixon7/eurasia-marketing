@@ -65,25 +65,25 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       />
 
       {/* Intro */}
-      <section className="py-16 px-6">
+      <section className="py-10 md:py-16 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center">
           <AnimateIn>
-            <p className="text-lg text-muted dark:text-dark-muted leading-relaxed">{service.intro}</p>
+            <p className="text-base sm:text-lg text-muted dark:text-dark-muted leading-relaxed">{service.intro}</p>
           </AnimateIn>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-16 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-10 md:py-16 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title={`What's Included in Our ${service.name} Service`}
             subtitle="Everything you need to succeed"
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-[10px]">
             {service.features.map((f, i) => (
               <AnimateIn key={f.title} delay={i * 0.1}>
-                <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-6 shadow-sm h-full">
+                <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-5 sm:p-6 shadow-sm h-full">
                   <h3 className="font-semibold text-primary dark:text-dark-text mb-2">{f.title}</h3>
                   <p className="text-sm text-muted dark:text-dark-muted leading-relaxed">{f.description}</p>
                 </div>
@@ -94,17 +94,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* FAQs */}
-      <section className="py-16 px-6">
+      <section className="py-10 md:py-16 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <SectionHeader
             title="Frequently Asked Questions"
             subtitle={`Common questions about our ${service.name} service`}
           />
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {service.faqs.map((faq, i) => (
               <AnimateIn key={i} delay={i * 0.1}>
-                <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-6 shadow-sm">
-                  <h3 className="font-semibold text-primary dark:text-dark-text mb-2">{faq.q}</h3>
+                <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-5 sm:p-6 shadow-sm">
+                  <h3 className="font-semibold text-primary dark:text-dark-text mb-2 text-sm sm:text-base">{faq.q}</h3>
                   <p className="text-sm text-muted dark:text-dark-muted leading-relaxed">{faq.a}</p>
                 </div>
               </AnimateIn>
@@ -114,7 +114,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Other services */}
-      <section className="py-12 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-10 md:py-12 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto text-center">
           <AnimateIn>
             <p className="text-sm text-muted dark:text-dark-muted mb-4">Explore our other services:</p>

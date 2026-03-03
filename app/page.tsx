@@ -73,6 +73,7 @@ export default async function Home() {
         title={heroTitle}
         highlight={heroHighlight}
         subtitle={heroSubtitle}
+        displayFont
         buttons={[
           { label: 'Get Started →', href: '/contact', variant: 'primary' },
           { label: '📅 Book a Free Call', href: 'https://calendly.com/rixon7/30min', variant: 'blue', external: true },
@@ -91,7 +92,7 @@ export default async function Home() {
 
       <WhatWeDoBest />
 
-      <section className="py-24 px-6">
+      <section className="py-14 md:py-24 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title="Digital Marketing Services in Hounslow"
@@ -105,7 +106,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-14 md:py-24 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title="Why Hounslow Businesses Choose Eurasia"
@@ -127,7 +128,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 px-6">
+      <section className="py-14 md:py-24 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title="What Our Clients Say"
@@ -142,7 +143,7 @@ export default async function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="py-24 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-14 md:py-24 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title="Latest Insights"
@@ -163,7 +164,7 @@ export default async function Home() {
                         />
                       </div>
                     )}
-                    <div className="p-8 flex flex-col flex-1">
+                    <div className="p-5 sm:p-8 flex flex-col flex-1">
                     <div className="flex flex-wrap gap-2 mb-4">
                       {post.tags.map((tag) => (
                         <span key={tag} className="px-3 py-1 rounded-full bg-soft-green dark:bg-dark-surface text-xs font-mono text-mint-text dark:text-mint-badge">

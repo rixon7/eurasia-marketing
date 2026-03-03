@@ -37,7 +37,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-8 shadow-sm space-y-5">
+    <form onSubmit={handleSubmit} className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-5 sm:p-8 shadow-sm space-y-4 sm:space-y-5">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-primary dark:text-dark-text mb-1.5">Name</label>
         <input

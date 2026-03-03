@@ -39,24 +39,24 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-12 md:py-24 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
         <AnimateIn>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-dark-text mb-4">Frequently Asked Questions</h2>
-            <p className="text-muted dark:text-dark-muted">Got questions? We&apos;ve got answers.</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent-blue mb-3 sm:mb-4">Frequently Asked Questions</h2>
+            <p className="text-sm sm:text-base text-muted dark:text-dark-muted">Got questions? We&apos;ve got answers.</p>
           </div>
         </AnimateIn>
 
-        <div className="space-y-3">
+        <div className="space-y-2.5 sm:space-y-3">
           {faqs.map((faq, i) => (
             <AnimateIn key={faq.q} delay={i * 0.05}>
               <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] shadow-sm overflow-hidden">
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left gap-4"
+                  className="w-full flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left gap-3"
                 >
-                  <span className="font-semibold text-sm text-primary dark:text-dark-text">{faq.q}</span>
+                  <span className="font-semibold text-sm text-primary dark:text-dark-text leading-snug">{faq.q}</span>
                   <motion.svg
                     animate={{ rotate: openIndex === i ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
@@ -81,7 +81,7 @@ export default function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: 'easeInOut' }}
                     >
-                      <div className="px-6 pb-5 text-sm text-muted dark:text-dark-muted leading-relaxed border-t border-border-light dark:border-border-dark pt-4">
+                      <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-sm text-muted dark:text-dark-muted leading-relaxed border-t border-border-light dark:border-border-dark pt-3 sm:pt-4">
                         {faq.a}
                       </div>
                     </motion.div>

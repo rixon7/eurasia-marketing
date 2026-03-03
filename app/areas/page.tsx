@@ -29,20 +29,20 @@ export default function AreasPage() {
         subtitle="Based in Hounslow, we provide expert digital marketing services across West London and the surrounding areas."
       />
 
-      <section className="py-24 px-6">
+      <section className="py-12 md:py-24 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[10px]">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-[10px]">
             {areas.map((area, i) => (
               <AnimateIn key={area.slug} delay={i * 0.07}>
                 <Link href={`/areas/${area.slug}`} className="group block h-full">
-                  <div className="gradient-border bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-6 shadow-sm hover:shadow-md transition-all h-full">
-                    <div className="flex items-center justify-between mb-3">
-                      <h2 className="text-lg font-bold text-primary dark:text-dark-text group-hover:text-accent-blue transition-colors">
+                  <div className="gradient-border bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-4 sm:p-6 shadow-sm hover:shadow-md transition-all h-full">
+                    <div className="flex items-center justify-between mb-2 sm:mb-3">
+                      <h2 className="text-base sm:text-lg font-bold text-accent-blue group-hover:text-accent-blue/80 transition-colors">
                         {area.name}
                       </h2>
                       <span className="text-accent-blue text-lg">→</span>
                     </div>
-                    <p className="text-sm text-muted dark:text-dark-muted leading-relaxed">{area.description}</p>
+                    <p className="text-xs sm:text-sm text-muted dark:text-dark-muted leading-relaxed">{area.description}</p>
                   </div>
                 </Link>
               </AnimateIn>

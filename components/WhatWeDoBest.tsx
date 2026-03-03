@@ -222,11 +222,11 @@ const services = [
 
 export default function WhatWeDoBest() {
   return (
-    <section className="py-24 px-6 bg-[#eef1f6] dark:bg-dark-surface">
+    <section className="py-14 md:py-24 px-4 sm:px-6 bg-[#eef1f6] dark:bg-dark-surface">
       <div className="max-w-[1280px] mx-auto">
         {/* Heading */}
-        <AnimateIn className="text-center mb-14">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary dark:text-dark-text tracking-tight">
+        <AnimateIn className="text-center mb-8 md:mb-14">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary dark:text-dark-text tracking-tight">
             What we do best
           </h2>
         </AnimateIn>
@@ -236,9 +236,9 @@ export default function WhatWeDoBest() {
           {services.map((service, i) => (
             <AnimateIn key={service.title} delay={i * 0.08}>
               <Link href={service.href} className="group block">
-                <div className="bg-white dark:bg-dark-card rounded-2xl p-8 h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+                <div className="bg-white dark:bg-dark-card rounded-2xl p-6 sm:p-8 h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                   {/* Illustration */}
-                  <div className="h-44 mb-6 flex items-center justify-center">
+                  <div className="h-36 sm:h-44 mb-4 sm:mb-6 flex items-center justify-center">
                     {service.illustration}
                   </div>
                   {/* Text */}

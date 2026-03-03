@@ -177,7 +177,7 @@ export default function Navbar() {
           {/* Hamburger */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center"
+            className="md:hidden flex flex-col gap-1.5 w-11 h-11 items-center justify-center"
             aria-label="Toggle menu"
           >
             <span className={`block w-5 h-0.5 bg-primary dark:bg-dark-text transition-transform ${open ? 'rotate-45 translate-y-2' : ''}`} />
@@ -189,7 +189,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-border-light dark:border-border-dark bg-cream dark:bg-dark-bg px-6 py-4">
+        <div className="md:hidden border-t border-border-light dark:border-border-dark bg-cream dark:bg-dark-bg px-4 py-4 overflow-y-auto max-h-[80vh]">
           <a
             href="https://calendly.com/rixon7/30min"
             target="_blank"
@@ -231,7 +231,7 @@ export default function Navbar() {
                 </svg>
               </button>
               {mobileServicesOpen && (
-                <ul className="mt-1 ml-4 flex flex-col gap-1">
+                <ul className="mt-1 ml-2 flex flex-col gap-1">
                   <li>
                     <Link href="/services" onClick={() => { setOpen(false); setMobileServicesOpen(false); }} className="block px-4 py-2 rounded-[var(--radius-sm)] text-sm text-muted dark:text-dark-muted hover:bg-sky dark:hover:bg-dark-card transition-colors">
                       All Services
@@ -268,7 +268,7 @@ export default function Navbar() {
                 </svg>
               </button>
               {mobileAreasOpen && (
-                <ul className="mt-1 ml-4 flex flex-col gap-1">
+                <ul className="mt-1 ml-2 flex flex-col gap-1">
                   <li>
                     <Link
                       href="/areas"

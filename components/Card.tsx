@@ -11,7 +11,7 @@ interface CardProps {
 
 export default function Card({ icon, title, description, delay = 0, href }: CardProps) {
   const inner = (
-    <div className={`bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-8 border border-border-light dark:border-border-dark shadow-sm h-full flex flex-col transition-all duration-300 ${href ? 'group hover:shadow-lg hover:-translate-y-1 hover:border-accent-blue/30 dark:hover:border-accent-blue/30' : ''}`}>
+    <div className={`bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-5 sm:p-8 border border-border-light dark:border-border-dark shadow-sm h-full flex flex-col transition-all duration-300 ${href ? 'group hover:shadow-lg hover:-translate-y-1 hover:border-accent-blue/30 dark:hover:border-accent-blue/30' : ''}`}>
       {/* Icon container */}
       <div className="w-12 h-12 rounded-2xl bg-accent-blue/10 dark:bg-accent-blue/15 flex items-center justify-center text-2xl mb-5 flex-shrink-0">
         {icon}

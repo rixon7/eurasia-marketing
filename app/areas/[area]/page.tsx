@@ -65,22 +65,22 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
       />
 
       {/* Intro */}
-      <section className="py-16 px-6">
+      <section className="py-10 md:py-16 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center">
           <AnimateIn>
-            <p className="text-lg text-muted dark:text-dark-muted leading-relaxed">{data.intro}</p>
+            <p className="text-base sm:text-lg text-muted dark:text-dark-muted leading-relaxed">{data.intro}</p>
           </AnimateIn>
         </div>
       </section>
 
       {/* Services */}
-      <section className="py-16 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-10 md:py-16 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title={`Our Services in ${data.name}`}
             subtitle={`Everything your ${data.name} business needs to grow online`}
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-[10px]">
             {services.map((s, i) => (
               <Card key={s.title} {...s} delay={i * 0.1} />
             ))}
@@ -89,22 +89,22 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
       </section>
 
       {/* Why choose us */}
-      <section className="py-16 px-6">
+      <section className="py-10 md:py-16 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             title={`Why ${data.name} Businesses Choose Eurasia Marketing`}
             subtitle="Local expertise, proven results"
           />
-          <div className="grid md:grid-cols-3 gap-[10px]">
+          <div className="grid sm:grid-cols-3 gap-3 md:gap-[10px]">
             {[
               { icon: '📍', title: 'Local Knowledge', description: `We understand the ${data.name} market and create strategies that resonate with your local audience.` },
               { icon: '📊', title: 'Proven Results', description: 'Our clients see real growth — more website traffic, higher rankings, and more enquiries.' },
               { icon: '🤝', title: 'Dedicated Support', description: 'A dedicated account manager who knows your business and is always on hand to help.' },
             ].map((item, i) => (
               <AnimateIn key={item.title} delay={i * 0.1}>
-                <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-6 shadow-sm text-center">
-                  <div className="text-3xl mb-3">{item.icon}</div>
-                  <h3 className="font-semibold text-primary dark:text-dark-text mb-2">{item.title}</h3>
+                <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-5 sm:p-6 shadow-sm text-center">
+                  <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{item.icon}</div>
+                  <h3 className="font-semibold text-accent-blue mb-2 text-sm sm:text-base">{item.title}</h3>
                   <p className="text-sm text-muted dark:text-dark-muted">{item.description}</p>
                 </div>
               </AnimateIn>
@@ -114,7 +114,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
       </section>
 
       {/* Nearby areas */}
-      <section className="py-12 px-6 bg-warm dark:bg-dark-surface">
+      <section className="py-10 md:py-12 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto text-center">
           <AnimateIn>
             <p className="text-sm text-muted dark:text-dark-muted mb-4">We also serve nearby areas:</p>
