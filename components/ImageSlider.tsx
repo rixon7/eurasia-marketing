@@ -125,10 +125,15 @@ export default function ImageSlider() {
         <div className="mb-3 rounded-[var(--radius-lg)] bg-red-600 overflow-hidden h-10 flex items-center">
           <style>{`
             @keyframes promo-scroll {
-              from { transform: translateX(0); }
-              to { transform: translateX(-50%); }
+              0%   { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
             }
-            .promo-track { animation: promo-scroll 30s linear infinite; }
+            .promo-track {
+              display: flex;
+              width: max-content;
+              animation: promo-scroll 30s linear infinite;
+              will-change: transform;
+            }
             @media (max-width: 768px) {
               .promo-track { animation-duration: 12s; }
             }
@@ -137,9 +142,9 @@ export default function ImageSlider() {
             <span className="text-xs font-bold text-white tracking-wider uppercase">Offers</span>
           </div>
           <div className="flex-1 overflow-hidden">
-            <div className="promo-track flex items-center whitespace-nowrap">
-              {Array.from({ length: 2 }).map((_, i) => (
-                <span key={i} className="flex items-center">
+            <div className="promo-track">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <span key={i} className="flex items-center whitespace-nowrap">
                   <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
                     🎁 Free website when you buy an SEO plan for minimum 6 months
                   </span>
