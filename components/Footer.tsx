@@ -30,10 +30,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-sm">Services</h4>
             <ul className="space-y-2 text-sm text-dark-muted">
-              <li><Link href="/services#brand-strategy" className="hover:text-white transition-colors">Brand Strategy</Link></li>
-              <li><Link href="/services#digital-advertising" className="hover:text-white transition-colors">Digital Advertising</Link></li>
-              <li><Link href="/services#content-marketing" className="hover:text-white transition-colors">Content Marketing</Link></li>
-              <li><Link href="/services#seo-sem" className="hover:text-white transition-colors">SEO & SEM</Link></li>
+              <li><Link href="/services/website-building" className="hover:text-white transition-colors">Website Building</Link></li>
+              <li><Link href="/services/digital-advertising" className="hover:text-white transition-colors">Digital Advertising</Link></li>
+              <li><Link href="/services/social-media" className="hover:text-white transition-colors">Social Media</Link></li>
+              <li><Link href="/services/seo-sem" className="hover:text-white transition-colors">SEO & SEM</Link></li>
+              <li><Link href="/services/email-marketing" className="hover:text-white transition-colors">Email Marketing</Link></li>
+              <li><Link href="/services/ai-automation" className="hover:text-white transition-colors">AI Automation</Link></li>
             </ul>
           </div>
 
