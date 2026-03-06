@@ -4,8 +4,8 @@ import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Pricing | Digital Marketing Services Hounslow',
-  description: 'Transparent pricing for digital marketing services in Hounslow. Website design from £100/month, social media management from £200/month, SEO from £300/month. No long-term contracts.',
+  title: 'Digital Marketing Pricing Hounslow',
+  description: 'Transparent monthly pricing for digital marketing in Hounslow. Websites from £100/mo, social media from £200/mo, SEO from £300/mo. No long-term contracts.',
   alternates: { canonical: '/pricing' },
 };
 
@@ -13,6 +13,7 @@ const plans = [
   {
     name: 'Website Building',
     price: '100',
+    originalPrice: '200',
     period: '/month',
     description: 'Stunning, responsive websites built to convert visitors into customers.',
     badge: 'Most Affordable',
@@ -39,6 +40,7 @@ const plans = [
   {
     name: 'AI Automation',
     price: '150',
+    originalPrice: '300',
     period: '/month',
     description: 'Custom AI workflows that save hours every week — automating lead follow-ups, reports, and more.',
     badge: 'New Service',
@@ -69,6 +71,7 @@ const plans = [
   {
     name: 'Social Media Management',
     price: '200',
+    originalPrice: '400',
     period: '/month',
     description: 'Full-service social media that builds your brand and engages your audience.',
     badge: 'Most Popular',
@@ -94,6 +97,7 @@ const plans = [
   {
     name: 'SEO Management',
     price: '300',
+    originalPrice: '600',
     period: '/month',
     description: 'Dominate search results and drive high-quality organic traffic to your site.',
     badge: 'Best ROI',
@@ -121,6 +125,7 @@ const plans = [
   {
     name: 'Email Marketing',
     price: '100',
+    originalPrice: '200',
     period: '/month',
     description: 'Automated campaigns that nurture leads and drive repeat business.',
     badge: 'Great Value',
@@ -165,6 +170,17 @@ export default function PricingPage() {
       {/* Pricing Cards */}
       <section className="px-4 sm:px-6 pb-14 md:pb-24">
         <div className="max-w-[1280px] mx-auto">
+
+          {/* Limited offer banner */}
+          <AnimateIn>
+            <div className="mb-8 flex items-center justify-center gap-3 px-5 py-3.5 rounded-[var(--radius-lg)] bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/50">
+              <span className="flex-shrink-0 text-lg">⏰</span>
+              <p className="text-sm font-semibold text-red-700 dark:text-red-400 text-center">
+                <span className="font-extrabold">50% OFF — Limited Time Only.</span> These prices won&apos;t last. Lock in your rate before the offer ends.
+              </p>
+            </div>
+          </AnimateIn>
+
           <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {plans.map((plan, i) => (
               <AnimateIn key={plan.name} delay={i * 0.1}>
@@ -191,13 +207,21 @@ export default function PricingPage() {
 
                   {/* Price */}
                   <div className="mb-5 sm:mb-8">
-                    <span className={`text-sm ${plan.highlight ? 'text-white/60' : 'text-muted dark:text-dark-muted'}`}>Starting from</span>
-                    <div className="flex items-baseline gap-1 mt-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`text-sm ${plan.highlight ? 'text-white/60' : 'text-muted dark:text-dark-muted'}`}>Starting from</span>
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${plan.highlight ? 'bg-white/20 text-white' : 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400'}`}>
+                        50% OFF
+                      </span>
+                    </div>
+                    <div className="flex items-baseline gap-2 flex-wrap">
                       <span className={`text-4xl font-extrabold ${plan.highlight ? 'text-white' : 'text-primary dark:text-dark-text'}`}>
                         &pound;{plan.price}
                       </span>
                       <span className={`text-sm font-medium ${plan.highlight ? 'text-white/60' : 'text-muted dark:text-dark-muted'}`}>
                         {plan.period}
+                      </span>
+                      <span className={`text-base font-medium line-through ${plan.highlight ? 'text-white/40' : 'text-muted/60 dark:text-dark-muted/60'}`}>
+                        &pound;{plan.originalPrice}
                       </span>
                     </div>
                   </div>

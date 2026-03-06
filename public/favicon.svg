@@ -5,6 +5,7 @@
       <stop offset="100%" style="stop-color:#38bdf8"/>
     </linearGradient>
   </defs>
+  <circle cx="25" cy="25" r="25" fill="#0c2d4a"/>
   <circle cx="25" cy="25" r="20" fill="none" stroke="url(#grad)" stroke-width="2.5"/>
   <ellipse cx="25" cy="25" rx="20" ry="8" fill="none" stroke="url(#grad)" stroke-width="1.5"/>
   <ellipse cx="25" cy="25" rx="8" ry="20" fill="none" stroke="url(#grad)" stroke-width="1.5"/>

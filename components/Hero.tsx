@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import CountUp from './CountUp';
 
 interface HeroProps {
   tag?: string;
@@ -20,6 +21,23 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
     <section className={`relative overflow-hidden bg-hero-mesh ${tag ? 'pt-8 md:pt-14' : 'pt-8 md:pt-16'} pb-8 md:pb-16 px-4 sm:px-6`}>
       {/* Dot grid overlay */}
       <div className="bg-grid-dots absolute inset-0 pointer-events-none" />
+
+      {/* Floating gradient orbs */}
+      <motion.div
+        className="absolute -top-32 right-[-5%] w-[600px] h-[600px] rounded-full bg-accent-blue/[0.08] dark:bg-accent-blue/[0.12] blur-[120px] pointer-events-none"
+        animate={{ y: [0, -40, 0], scale: [1, 1.07, 1] }}
+        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute top-[25%] -left-24 w-[420px] h-[420px] rounded-full bg-sky-400/[0.07] dark:bg-sky-400/[0.09] blur-[100px] pointer-events-none"
+        animate={{ y: [0, 35, 0], scale: [1, 0.93, 1] }}
+        transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+      />
+      <motion.div
+        className="absolute -bottom-16 right-[15%] w-[360px] h-[360px] rounded-full bg-accent-blue/[0.06] dark:bg-accent-blue/[0.08] blur-[90px] pointer-events-none"
+        animate={{ y: [0, -25, 0], x: [0, 18, 0], scale: [1, 1.06, 1] }}
+        transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+      />
 
       <div className={`relative max-w-[1280px] mx-auto ${hasStats ? 'grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-16 items-center' : 'text-center'}`}>
         {/* Left / Main content */}
@@ -100,7 +118,9 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
             >
               {stats.map((s) => (
                 <div key={s.label} className="stat-card">
-                  <p className="text-2xl font-bold text-primary dark:text-dark-text tracking-tight">{s.value}</p>
+                  <p className="text-2xl font-bold text-primary dark:text-dark-text tracking-tight">
+                    <CountUp value={s.value} />
+                  </p>
                   <p className="text-xs text-muted dark:text-dark-muted mt-0.5">{s.label}</p>
                 </div>
               ))}
@@ -121,7 +141,9 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
                 key={s.label}
                 className={`stat-card ${i === 0 ? 'col-span-2' : ''}`}
               >
-                <p className="text-3xl font-bold text-primary dark:text-dark-text tracking-tight">{s.value}</p>
+                <p className="text-3xl font-bold text-primary dark:text-dark-text tracking-tight">
+                  <CountUp value={s.value} />
+                </p>
                 <p className="text-sm text-muted dark:text-dark-muted mt-0.5">{s.label}</p>
               </div>
             ))}

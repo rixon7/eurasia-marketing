@@ -5,7 +5,7 @@ import AnimateIn from '@/components/AnimateIn';
 import { getAllPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Marketing Blog | SEO, Social Media & Web Design Tips',
+  title: 'Digital Marketing Tips & Insights',
   description: 'Digital marketing tips from Hounslow\'s top agency. Practical SEO, social media, and web design advice to help local businesses grow online.',
   alternates: { canonical: '/blog' },
 };
@@ -19,7 +19,7 @@ export default async function BlogPage() {
         tag="📝 Insights & Tips"
         title="Marketing Tips"
         highlight="& Insights"
-        subtitle="SEO, social media, and web design advice from Hounslow's leading digital marketing agency."
+        subtitle="Practical SEO, social media, and web design advice to help your business grow online."
       />
 
       <section className="py-12 md:py-24 px-4 sm:px-6">

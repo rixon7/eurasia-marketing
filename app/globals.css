@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-cream: #f0f7ff;
@@ -21,6 +22,7 @@
   --color-border-dark: #1e3a54;
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-dm-mono);
+  --font-heading: var(--font-outfit);
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -36,6 +38,10 @@
 body {
   font-family: var(--font-sans), system-ui, sans-serif;
   transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
 }
 
 .dark body,

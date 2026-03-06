@@ -1,5 +1,6 @@
 import AnimateIn from './AnimateIn';
 import Link from 'next/link';
+import GlowCard from './GlowCard';
 
 const services = [
   {
@@ -235,10 +236,10 @@ export default function WhatWeDoBest() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((service, i) => (
             <AnimateIn key={service.title} delay={i * 0.08}>
-              <Link href={service.href} className="group block">
-                <div className="bg-white dark:bg-dark-card rounded-2xl p-6 sm:p-8 h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+              <Link href={service.href} className="group block h-full">
+                <GlowCard className="bg-white dark:bg-dark-card rounded-2xl p-6 sm:p-8 h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                   {/* Illustration */}
-                  <div className="h-36 sm:h-44 mb-4 sm:mb-6 flex items-center justify-center">
+                  <div className="h-36 sm:h-44 mb-4 sm:mb-6 flex items-center justify-center rounded-2xl bg-cream overflow-hidden">
                     {service.illustration}
                   </div>
                   {/* Text */}
@@ -248,7 +249,7 @@ export default function WhatWeDoBest() {
                   <p className="text-sm text-muted dark:text-dark-muted leading-relaxed">
                     {service.description}
                   </p>
-                </div>
+                </GlowCard>
               </Link>
             </AnimateIn>
           ))}

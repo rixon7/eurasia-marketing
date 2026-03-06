@@ -7,8 +7,8 @@ import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'About | Hounslow Digital Marketing Experts',
-  description: 'Learn about Eurasia Marketing — Hounslow\'s trusted digital marketing agency. Our team of website designers, SEO specialists, and social media managers deliver results for local businesses.',
+  title: 'About Eurasia Marketing Hounslow',
+  description: 'Eurasia Marketing is Hounslow\'s trusted digital marketing agency. Website design, SEO, social media & paid ads — helping local businesses grow online.',
   alternates: { canonical: '/about' },
 };
 
@@ -37,10 +37,10 @@ export default function AboutPage() {
                 Built on a belief that every business deserves great marketing
               </h2>
               <p className="text-sm sm:text-base text-muted dark:text-dark-muted mb-4 leading-relaxed">
-                Eurasia Marketing was founded with a simple belief: every business deserves access to world-class marketing. What started as a small consultancy has grown into a full-service agency serving clients across multiple industries.
+                Eurasia Marketing is a trading name for Eurasia Supply and Services Limited — a company established in 2013 that has been successfully delivering IT and digital services for over a decade.
               </p>
               <p className="text-sm sm:text-base text-muted dark:text-dark-muted mb-6 sm:mb-8 leading-relaxed">
-                We combine creative thinking with data-driven strategies to deliver campaigns that move the needle. Our team brings together expertise in branding, digital advertising, content, SEO, and social media to provide holistic marketing solutions.
+                Built on years of technical expertise and a genuine passion for helping businesses grow, we combine creative thinking with data-driven strategies to deliver marketing that moves the needle. Our team brings together expertise in web design, digital advertising, SEO, social media, and AI automation to provide holistic solutions for local businesses.
               </p>
               <Link
                 href="/contact"

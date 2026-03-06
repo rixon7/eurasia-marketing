@@ -10,14 +10,14 @@ export default function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo.svg" alt="Eurasia Marketing" className="h-10 brightness-0 invert" />
             </Link>
-            <p className="text-sm text-dark-muted leading-relaxed">
+            <p className="text-sm text-white/60 leading-relaxed">
               Helping businesses build powerful marketing strategies that drive real results and lasting growth.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4 text-sm">Pages</h4>
-            <ul className="space-y-2 text-sm text-dark-muted">
+            <ul className="space-y-2 text-sm text-white/60">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
@@ -29,7 +29,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-semibold mb-4 text-sm">Services</h4>
-            <ul className="space-y-2 text-sm text-dark-muted">
+            <ul className="space-y-2 text-sm text-white/60">
               <li><Link href="/services/website-building" className="hover:text-white transition-colors">Website Building</Link></li>
               <li><Link href="/services/digital-advertising" className="hover:text-white transition-colors">Digital Advertising</Link></li>
               <li><Link href="/services/social-media" className="hover:text-white transition-colors">Social Media</Link></li>
@@ -41,7 +41,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-semibold mb-4 text-sm">Contact</h4>
-            <ul className="space-y-2 text-sm text-dark-muted">
+            <ul className="space-y-2 text-sm text-white/60">
               <li><a href="mailto:info@eurasiamarketing.com" className="hover:text-white transition-colors">info@eurasiamarketing.com</a></li>
               <li><a href="tel:02038863311" className="hover:text-white transition-colors">020 3886 3311</a></li>
               <li>65-73 Staines Road</li>
@@ -53,7 +53,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4 text-sm text-dark-muted">
+          <div className="flex items-center gap-4 text-sm text-white/60">
             <p>&copy; 2026 Eurasia Marketing. All rights reserved.</p>
             <span className="hidden sm:inline">|</span>
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

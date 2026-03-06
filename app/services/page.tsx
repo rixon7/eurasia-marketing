@@ -6,18 +6,18 @@ import ProcessStep from '@/components/ProcessStep';
 import CTA from '@/components/CTA';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services in Hounslow',
+  title: 'Digital Marketing Services Hounslow',
   description: 'Full-service digital marketing in Hounslow — web design, SEO, social media & paid ads. Tailored strategies that drive real results for local businesses.',
   alternates: { canonical: '/services' },
 };
 
 const services = [
-  { id: 'website-building',   href: '/services/website-building',   icon: '🌐', title: 'Website Building',          description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-optimised, and beautifully designed to represent your brand.' },
-  { id: 'digital-advertising', href: '/services/digital-advertising', icon: '📈', title: 'Digital Advertising',       description: 'Targeted campaigns across Google, Meta, LinkedIn, and display networks optimized for conversions and maximum return on ad spend.' },
-  { id: 'social-media',        href: '/services/social-media',        icon: '📱', title: 'Social Media Management',   description: 'Strategic planning, content creation, community management, and analytics across all major social platforms.' },
-  { id: 'seo-sem',             href: '/services/seo-sem',             icon: '🔍', title: 'SEO & SEM',                 description: 'Technical audits, keyword strategy, on-page optimization, and link building to boost your search visibility and rankings.' },
-  { id: 'email-marketing',     href: '/services/email-marketing',     icon: '📨', title: 'Email Marketing',           description: 'Automated drip campaigns, newsletters, and segmented outreach that keep your audience engaged and drive repeat business.' },
-  { id: 'ai-automation',       href: '/services/ai-automation',       icon: '🤖', title: 'AI Automation & Workflows',  description: 'Custom AI workflows that automate lead follow-ups, content generation, reporting, and repetitive tasks — saving you hours every week.' },
+  { id: 'website-building',    href: '/services/website-building',   icon: '🌐', title: 'Website Building',          description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-optimised, and beautifully designed to represent your brand.',          image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop' },
+  { id: 'ai-automation',       href: '/services/ai-automation',       icon: '🤖', title: 'AI Automation & Workflows', description: 'Custom AI workflows that automate lead follow-ups, content generation, reporting, and repetitive tasks — saving you hours every week.',                 image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80&auto=format&fit=crop' },
+  { id: 'digital-advertising', href: '/services/digital-advertising', icon: '📈', title: 'Digital Advertising',       description: 'Targeted campaigns across Google, Meta, LinkedIn, and display networks optimised for conversions and maximum return on ad spend.',                    image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80&auto=format&fit=crop' },
+  { id: 'social-media',        href: '/services/social-media',        icon: '📱', title: 'Social Media Management',   description: 'Strategic planning, content creation, community management, and analytics across all major social platforms.',                                        image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80&auto=format&fit=crop' },
+  { id: 'seo-sem',             href: '/services/seo-sem',             icon: '🔍', title: 'SEO & SEM',                 description: 'Technical audits, keyword strategy, on-page optimisation, and link building to boost your search visibility and rankings.',                         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop' },
+  { id: 'email-marketing',     href: '/services/email-marketing',     icon: '📨', title: 'Email Marketing',           description: 'Automated drip campaigns, newsletters, and segmented outreach that keep your audience engaged and drive repeat business.',                            image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80&auto=format&fit=crop' },
 ];
 
 const process = [
