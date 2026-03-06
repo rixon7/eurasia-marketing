@@ -18,7 +18,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
   const hasStats = stats && stats.length > 0;
 
   return (
-    <section className={`relative overflow-hidden bg-hero-mesh ${tag ? 'pt-8 md:pt-14' : 'pt-8 md:pt-16'} pb-4 md:pb-8 px-4 sm:px-6`}>
+    <section className={`relative overflow-hidden bg-hero-mesh ${tag ? 'pt-4 md:pt-8' : 'pt-4 md:pt-10'} pb-4 md:pb-6 px-4 sm:px-6`}>
       {/* Dot grid overlay */}
       <div className="bg-grid-dots absolute inset-0 pointer-events-none" />
 
@@ -39,7 +39,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
         transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
       />
 
-      <div className={`relative max-w-[1280px] mx-auto ${hasStats ? 'grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-16 items-center' : 'text-center'}`}>
+      <div className={`relative max-w-[1280px] mx-auto ${hasStats ? 'grid lg:grid-cols-[1fr_380px] gap-6 lg:gap-10 items-center' : 'text-center'}`}>
         {/* Left / Main content */}
         <div className={hasStats ? '' : 'max-w-3xl mx-auto'}>
           {tag && (
@@ -48,7 +48,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-dark-card border border-border-light dark:border-border-dark text-xs font-mono font-medium text-accent-blue shadow-sm mb-4 md:mb-6">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-dark-card border border-border-light dark:border-border-dark text-xs font-mono font-medium text-accent-blue shadow-sm mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-blue inline-block" />
                 {tag}
               </span>
@@ -61,8 +61,8 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
             transition={{ duration: 0.5, delay: 0.1 }}
             className={
               displayFont
-                ? 'font-[family-name:var(--font-cormorant)] text-[clamp(2.2rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.01em] text-primary dark:text-dark-text mb-3 md:mb-4'
-                : 'text-3xl sm:text-4xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] md:leading-[1.06] tracking-[-0.02em] text-primary dark:text-dark-text mb-4 md:mb-6'
+                ? 'font-[family-name:var(--font-cormorant)] text-[clamp(2.2rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.01em] text-primary dark:text-dark-text mb-2 md:mb-3'
+                : 'text-3xl sm:text-4xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] md:leading-[1.06] tracking-[-0.02em] text-primary dark:text-dark-text mb-3 md:mb-4'
             }
           >
             {displayFont ? (
@@ -77,7 +77,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className={`text-sm sm:text-base md:text-xl text-muted dark:text-dark-muted leading-relaxed mb-5 md:mb-8 ${hasStats ? 'max-w-lg' : 'max-w-2xl mx-auto'}`}
+            className={`text-sm sm:text-base md:text-lg text-muted dark:text-dark-muted leading-relaxed mb-4 md:mb-6 ${hasStats ? 'max-w-lg' : 'max-w-2xl mx-auto'}`}
           >
             {subtitle}
           </motion.p>

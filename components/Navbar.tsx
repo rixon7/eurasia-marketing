@@ -60,7 +60,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
   const allLinks = [...linksStart, ...linksMid, ...linksEnd];
 
   return (
-    <div className="md:hidden border-t border-border-light dark:border-border-dark bg-cream dark:bg-dark-bg px-4 py-4 overflow-y-auto max-h-[80vh]">
+    <div className="md:hidden mt-2 rounded-2xl border border-border-light/60 dark:border-white/[0.06] bg-white/95 dark:bg-[#08172a]/95 backdrop-blur-xl px-4 py-4 overflow-y-auto max-h-[80vh] shadow-lg">
       <a
         href="https://calendly.com/rixon7/30min"
         target="_blank"
@@ -267,11 +267,11 @@ export default function Navbar() {
   const isServicesActive = pathname.startsWith('/services');
 
   return (
-    <div className="sticky top-0 z-50 bg-cream/80 dark:bg-dark-bg/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
-      <nav className="max-w-[1280px] mx-auto flex items-center justify-between px-6 py-4">
+    <div className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-5">
+      <nav className="font-[family-name:var(--font-jakarta)] max-w-[1280px] mx-auto flex items-center justify-between px-4 sm:px-5 py-2.5 bg-white/90 dark:bg-[#08172a]/90 backdrop-blur-xl rounded-2xl border border-border-light/60 dark:border-white/[0.06] shadow-lg shadow-black/[0.06]">
         <Link href="/" className="flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="Eurasia Marketing" className="h-10 dark:brightness-0 dark:invert" />
+          <img src="/logo.svg" alt="Eurasia Marketing" className="h-8 dark:brightness-0 dark:invert" />
         </Link>
 
         {/* Desktop links */}

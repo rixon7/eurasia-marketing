@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { DM_Sans, DM_Mono, Cormorant_Garamond } from 'next/font/google';
+import { DM_Sans, DM_Mono, Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -16,6 +16,12 @@ const dmMono = DM_Mono({
   variable: '--font-dm-mono',
   subsets: ['latin'],
   weight: ['400', '500'],
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  variable: '--font-jakarta',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 const cormorant = Cormorant_Garamond({
@@ -159,11 +165,11 @@ export default function RootLayout({
           })();
         `}} />
       </head>
-      <body className={`${dmSans.variable} ${dmMono.variable} ${cormorant.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
+      <body className={`${dmSans.variable} ${dmMono.variable} ${cormorant.variable} ${jakarta.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
         <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Navbar />
-          <main>{children}</main>
+          <main className="pt-20">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
