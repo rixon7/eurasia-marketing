@@ -18,7 +18,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
   const hasStats = stats && stats.length > 0;
 
   return (
-    <section className={`relative overflow-hidden bg-hero-mesh ${tag ? 'pt-8 md:pt-14' : 'pt-8 md:pt-16'} pb-8 md:pb-16 px-4 sm:px-6`}>
+    <section className={`relative overflow-hidden bg-hero-mesh ${tag ? 'pt-8 md:pt-14' : 'pt-8 md:pt-16'} pb-4 md:pb-8 px-4 sm:px-6`}>
       {/* Dot grid overlay */}
       <div className="bg-grid-dots absolute inset-0 pointer-events-none" />
 
@@ -65,9 +65,11 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
                 : 'text-3xl sm:text-4xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] md:leading-[1.06] tracking-[-0.02em] text-primary dark:text-dark-text mb-4 md:mb-6'
             }
           >
-            {title}{' '}
+            {displayFont ? (
+              <span className="text-[clamp(1.4rem,4vw,3rem)]">{title}</span>
+            ) : title}{' '}
             <span className="block">
-              <span className="text-accent-blue italic">{highlight}</span>
+              <span className={`text-accent-blue italic ${displayFont ? 'text-[clamp(2rem,5.5vw,4.2rem)]' : ''}`}>{highlight}</span>
             </span>
           </motion.h1>
 
@@ -134,17 +136,17 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="hidden lg:grid grid-cols-2 gap-3"
+            className="hidden lg:grid grid-cols-2 gap-2"
           >
             {stats.map((s, i) => (
               <div
                 key={s.label}
-                className={`stat-card ${i === 0 ? 'col-span-2' : ''}`}
+                className={`stat-card py-3 px-4 ${i === 0 ? 'col-span-2' : ''}`}
               >
-                <p className="text-3xl font-bold text-primary dark:text-dark-text tracking-tight">
+                <p className="text-xl font-bold text-primary dark:text-dark-text tracking-tight">
                   <CountUp value={s.value} />
                 </p>
-                <p className="text-sm text-muted dark:text-dark-muted mt-0.5">{s.label}</p>
+                <p className="text-xs text-muted dark:text-dark-muted mt-0.5">{s.label}</p>
               </div>
             ))}
           </motion.div>
