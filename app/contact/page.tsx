@@ -25,6 +25,9 @@ export default function ContactPage() {
         title="Get in"
         highlight="Touch"
         subtitle="Ready to take your marketing to the next level? Let's talk about your goals."
+        buttons={[
+          { label: '📅 Book a Free Call', href: 'https://calendly.com/rixon7/30min', variant: 'blue', external: true },
+        ]}
       />
 
       <section className="py-12 md:py-24 px-4 sm:px-6">
@@ -46,14 +49,6 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <a
-                href="https://calendly.com/rixon7/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-8 px-6 py-3.5 bg-accent-blue text-white rounded-[var(--radius-md)] text-sm font-semibold hover:bg-accent-blue/90 transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md"
-              >
-                📅 Book a Free Call
-              </a>
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <ContactForm />
