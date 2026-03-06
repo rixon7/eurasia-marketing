@@ -45,6 +45,15 @@ export default function ContactPage() {
                   </div>
                 ))}
               </div>
+
+              <a
+                href="https://calendly.com/rixon7/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-8 px-6 py-3.5 bg-accent-blue text-white rounded-[var(--radius-md)] text-sm font-semibold hover:bg-accent-blue/90 transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md"
+              >
+                📅 Book a Free Call
+              </a>
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <ContactForm />
