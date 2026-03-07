@@ -9,7 +9,7 @@ interface HeroProps {
   title: string;
   highlight: string;
   subtitle: string;
-  buttons?: { label: string; href: string; variant: 'primary' | 'outline' | 'blue'; external?: boolean }[];
+  buttons?: { label: string; href: string; variant: 'primary' | 'outline' | 'blue'; external?: boolean; hideOnMobile?: boolean }[];
   displayFont?: boolean;
   stats?: { value: string; label: string }[];
 }
@@ -90,7 +90,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
               className={`flex flex-col sm:flex-row gap-3 ${hasStats ? '' : 'justify-center'}`}
             >
               {buttons.map((btn) => {
-                const className = `w-full sm:w-auto text-center px-6 py-3.5 rounded-[var(--radius-md)] text-sm font-semibold transition-all duration-200 ${
+                const className = `${btn.hideOnMobile ? 'hidden sm:block' : ''} w-full sm:w-auto text-center px-6 py-3.5 rounded-[var(--radius-md)] text-sm font-semibold transition-all duration-200 ${
                   btn.variant === 'primary'
                     ? 'bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md hover:-translate-y-0.5 dark:bg-black sm:dark:bg-accent-blue sm:dark:hover:bg-accent-blue/90'
                     : btn.variant === 'blue'

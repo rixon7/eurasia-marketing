@@ -76,7 +76,7 @@ export default async function Home() {
         subtitle={heroSubtitle}
         displayFont
         buttons={[
-          { label: 'Get Started →', href: '/contact', variant: 'primary' },
+          { label: 'Get Started →', href: '/contact', variant: 'primary', hideOnMobile: true },
           { label: '📅 Book a Free Call', href: 'https://calendly.com/rixon7/30min', variant: 'blue', external: true },
         ]}
         stats={[
