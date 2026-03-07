@@ -1,8 +1,0 @@
-# This workflow has been retired.
-#
-# Blog posts are now managed in Sanity CMS. Each post has a `publishedAt` date.
-# The GROQ query `*[_type == "blogPost" && publishedAt <= now()]` automatically
-# filters out future-dated posts — no file moves or deployments needed.
-#
-# To schedule a post: create it in Sanity Studio at eurasiamarketing.com/studio
-# and set the "Published At" date to the desired future date.
