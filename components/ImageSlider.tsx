@@ -146,6 +146,10 @@ export default function ImageSlider() {
               {Array.from({ length: 4 }).map((_, i) => (
                 <span key={i} className="flex items-center whitespace-nowrap">
                   <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
+                    🔥 50% OFF Marketing Plans – Limited Time Only!
+                  </span>
+                  <span className="text-white/30 mx-2">✦</span>
+                  <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
                     🎁 Free website when you buy an SEO plan for minimum 6 months
                   </span>
                   <span className="text-white/30 mx-2">✦</span>
