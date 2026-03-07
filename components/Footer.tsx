@@ -89,7 +89,7 @@ export default function Footer() {
                 ),
               },
               {
-                href: 'https://x.com/eurasiamarketing',
+                href: 'https://x.com/eurasiamar80291',
                 label: 'X',
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
