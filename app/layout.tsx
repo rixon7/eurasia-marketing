@@ -122,7 +122,7 @@ const jsonLd = {
   ],
   sameAs: [
     'https://facebook.com/eurasiamarketing',
-    'https://instagram.com/eurasiamarketing',
+    'https://www.instagram.com/eurasiamarketinguk/',
     'https://linkedin.com/company/eurasiamarketing',
   ],
   priceRange: '££',
