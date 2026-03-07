@@ -62,7 +62,7 @@ export default function Footer() {
           <div className="flex flex-wrap gap-3 justify-center sm:justify-end">
             {[
               {
-                href: 'https://linkedin.com/company/eurasiamarketing',
+                href: 'https://linkedin.com/company/eurasia-marketing',
                 label: 'LINKEDIN',
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
