@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import Hero from '@/components/Hero';
 import ImageSlider from '@/components/ImageSlider';
@@ -13,21 +12,6 @@ import FAQ from '@/components/FAQ';
 import WhatWeDoBest from '@/components/WhatWeDoBest';
 import { getAllPosts } from '@/lib/blog';
 import { client, homepageSettingsQuery } from '@/lib/sanity';
-
-export const metadata: Metadata = {
-  title: 'Digital Marketing Agency in Hounslow | Eurasia Marketing',
-  description: "Hounslow's #1 digital marketing agency. Expert website design, SEO, social media management & paid ads. 150+ businesses grown. Get a free consultation today.",
-  alternates: { canonical: '/' },
-  openGraph: {
-    title: 'Digital Marketing Agency in Hounslow | Eurasia Marketing',
-    description: "Hounslow's #1 digital marketing agency. Expert website design, SEO, social media management & paid ads. 150+ businesses grown. Get a free consultation today.",
-    url: 'https://eurasiamarketing.com',
-  },
-  twitter: {
-    title: 'Digital Marketing Agency in Hounslow | Eurasia Marketing',
-    description: "Hounslow's #1 digital marketing agency. Expert website design, SEO, social media management & paid ads. Get a free consultation today.",
-  },
-};
 
 const defaultServices = [
   { icon: '🌐', title: 'Website Building',    href: '/services/website-building',   description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-ready, and beautifully designed.', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop' },
@@ -78,7 +62,7 @@ export default async function Home() {
 
   const heroTitle = settings?.heroTitle ?? 'Grow Your Brand';
   const heroHighlight = settings?.heroHighlight ?? 'With Confidence';
-  const heroSubtitle = settings?.heroSubtitle ?? "Hounslow's trusted digital marketing agency. We help local businesses build powerful marketing strategies that drive real results and lasting growth.";
+  const heroSubtitle = settings?.heroSubtitle ?? 'We help businesses build powerful marketing strategies that drive real results and lasting growth.';
   const services = settings?.featuredServices ?? defaultServices;
   const features = settings?.features ?? defaultFeatures;
   const testimonials = settings?.testimonials ?? defaultTestimonials;
@@ -165,8 +149,8 @@ export default async function Home() {
       <section className="py-14 md:py-24 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
-            title="What Our Hounslow Clients Say"
-            subtitle="Real results from real businesses we've helped grow"
+            title="What Our Clients Say"
+            subtitle="Don't take our word for it"
           />
           <div className="grid md:grid-cols-2 gap-[10px]">
             {testimonials.map((t, i) => (
@@ -180,8 +164,8 @@ export default async function Home() {
       <section className="py-14 md:py-24 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
-            title="Our Work in Hounslow & London"
-            subtitle="Real websites and campaigns built for real businesses"
+            title="Our Work"
+            subtitle="Real websites built for real businesses"
           />
 
           {/* Featured project */}
