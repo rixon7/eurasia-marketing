@@ -135,7 +135,7 @@ export default function ImageSlider() {
               will-change: transform;
             }
             @media (max-width: 768px) {
-              .promo-track { animation-duration: 22s; }
+              .promo-track { animation-duration: 45s; }
             }
           `}</style>
           <div className="flex-shrink-0 flex items-center h-full px-4 bg-white/15 border-r border-white/20">
