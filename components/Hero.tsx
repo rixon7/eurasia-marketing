@@ -92,7 +92,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
               {buttons.map((btn) => {
                 const className = `w-full sm:w-auto text-center px-6 py-3.5 rounded-[var(--radius-md)] text-sm font-semibold transition-all duration-200 ${
                   btn.variant === 'primary'
-                    ? 'bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md hover:-translate-y-0.5 sm:dark:bg-accent-blue sm:dark:hover:bg-accent-blue/90'
+                    ? 'bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md hover:-translate-y-0.5 dark:bg-black sm:dark:bg-accent-blue sm:dark:hover:bg-accent-blue/90'
                     : btn.variant === 'blue'
                     ? 'bg-accent-blue text-white hover:bg-accent-blue/90 shadow-sm hover:shadow-md hover:-translate-y-0.5'
                     : 'bg-white dark:bg-dark-card border border-border-light dark:border-border-dark text-primary dark:text-dark-text hover:border-accent-blue hover:text-accent-blue dark:hover:border-accent-blue dark:hover:text-accent-blue shadow-sm'
