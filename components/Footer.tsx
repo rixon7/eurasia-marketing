@@ -58,6 +58,8 @@ export default function Footer() {
             <span className="hidden sm:inline">|</span>
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <span className="hidden sm:inline">|</span>
+            <a href="https://www.marketingcompany-info.co.uk/eurasia-marketing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors hidden sm:inline">Listed on Marketing Directory</a>
           </div>
           <div className="flex flex-wrap gap-3 justify-center sm:justify-end">
             {[

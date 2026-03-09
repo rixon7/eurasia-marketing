@@ -124,6 +124,7 @@ const jsonLd = {
     'https://facebook.com/eurasiamarketing',
     'https://www.instagram.com/eurasiamarketinguk/',
     'https://linkedin.com/company/eurasia-marketing',
+    'https://www.marketingcompany-info.co.uk/eurasia-marketing',
   ],
   priceRange: '££',
   areaServed: {
