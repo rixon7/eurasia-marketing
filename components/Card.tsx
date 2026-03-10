@@ -9,9 +9,10 @@ interface CardProps {
   delay?: number;
   href?: string;
   image?: string;
+  imageAlt?: string;
 }
 
-export default function Card({ icon, title, description, delay = 0, href, image }: CardProps) {
+export default function Card({ icon, title, description, delay = 0, href, image, imageAlt }: CardProps) {
   const inner = (
     <GlowCard className={`bg-white dark:bg-dark-card rounded-[var(--radius-lg)] border border-border-light dark:border-border-dark shadow-sm h-full flex flex-col transition-all duration-300 ${href ? 'group hover:shadow-lg hover:-translate-y-1 hover:border-accent-blue/30 dark:hover:border-accent-blue/30' : ''}`}>
       {image && (
@@ -19,7 +20,7 @@ export default function Card({ icon, title, description, delay = 0, href, image 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={image}
-            alt={title}
+            alt={imageAlt ?? title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </div>
