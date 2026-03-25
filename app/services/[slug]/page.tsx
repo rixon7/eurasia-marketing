@@ -47,6 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: `${service.name} | Eurasia Marketing`,
       description: service.description,
+      url: `https://eurasiamarketing.com/services/${slug}`,
     },
   };
 }
@@ -99,6 +100,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 src={serviceImages[slug]}
                 alt={service.name}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -109,6 +111,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="py-10 md:py-16 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
+            tag="// What's Included"
             title={`What's Included in Our ${service.name} Service`}
             subtitle="Everything you need to succeed"
           />
@@ -130,6 +133,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="py-10 md:py-16 px-4 sm:px-6">
           <div className="max-w-[1280px] mx-auto">
             <SectionHeader
+              tag="// Our Process"
               title="How We Build Your Website"
               subtitle="A clear, structured process from first call to launch — and beyond"
             />
@@ -197,6 +201,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <section className="py-10 md:py-16 px-4 sm:px-6">
           <div className="max-w-[1280px] mx-auto">
             <SectionHeader
+              tag="// Our Process"
               title="How We Build Your AI Workflows"
               subtitle="From discovery to deployment — a structured process that saves you hours every week"
             />
@@ -266,6 +271,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="py-10 md:py-16 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <SectionHeader
+            tag="// FAQs"
             title="Frequently Asked Questions"
             subtitle={`Common questions about our ${service.name} service`}
           />

@@ -8,7 +8,13 @@ import CTA from '@/components/CTA';
 export const metadata: Metadata = {
   title: 'Digital Marketing Services Hounslow',
   description: 'Full-service digital marketing in Hounslow — web design, SEO, social media & paid ads. Tailored strategies that drive real results for local businesses.',
+  keywords: ['digital marketing services Hounslow', 'web design Hounslow', 'SEO services Hounslow', 'social media management Hounslow', 'Google Ads Hounslow', 'email marketing Hounslow', 'AI automation Hounslow'],
   alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Digital Marketing Services in Hounslow | Eurasia Marketing',
+    description: 'Full-service digital marketing in Hounslow — web design, SEO, social media & paid ads. Tailored strategies that drive real results for local businesses.',
+    url: 'https://eurasiamarketing.com/services',
+  },
 };
 
 const services = [
@@ -39,6 +45,7 @@ export default function ServicesPage() {
       <section className="py-12 md:py-16 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
+            tag="// What We Offer"
             title="End-to-End Marketing"
             subtitle="Tailored solutions for every stage of your growth"
           />
@@ -55,6 +62,7 @@ export default function ServicesPage() {
       <section className="py-12 md:py-16 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
+            tag="// How We Work"
             title="Our Process"
             subtitle="A proven approach to delivering results"
           />

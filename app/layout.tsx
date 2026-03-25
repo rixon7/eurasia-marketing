@@ -84,15 +84,20 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://eurasiamarketing.com',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  '@id': 'https://eurasiamarketing.com/#business',
   name: 'Eurasia Marketing',
-  description: 'Best digital marketing agency in Hounslow offering website design, SEO, social media management, and digital advertising services.',
+  description: 'Best digital marketing agency in Hounslow offering website design, SEO, social media management, digital advertising, email marketing, and AI automation services.',
   url: 'https://eurasiamarketing.com',
   telephone: '+442038863311',
   email: 'info@eurasiamarketing.com',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://eurasiamarketing.com/logo.svg',
+  },
+  image: 'https://eurasiamarketing.com/logo.svg',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '65-73 Staines Road',
@@ -124,13 +129,28 @@ const jsonLd = {
     'https://facebook.com/eurasiamarketing',
     'https://www.instagram.com/eurasiamarketinguk/',
     'https://linkedin.com/company/eurasia-marketing',
+    'https://x.com/eurasiamar80291',
     'https://www.marketingcompany-info.co.uk/eurasia-marketing',
   ],
   priceRange: '££',
-  areaServed: {
-    '@type': 'City',
-    name: 'Hounslow',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '12',
+    bestRating: '5',
+    worstRating: '1',
   },
+  areaServed: [
+    { '@type': 'City', name: 'Hounslow' },
+    { '@type': 'City', name: 'Brentford' },
+    { '@type': 'City', name: 'Feltham' },
+    { '@type': 'City', name: 'Heston' },
+    { '@type': 'City', name: 'Isleworth' },
+    { '@type': 'City', name: 'Hayes' },
+    { '@type': 'City', name: 'Staines' },
+    { '@type': 'City', name: 'Hampton' },
+    { '@type': 'City', name: 'Sunbury' },
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Digital Marketing Services',
@@ -140,7 +160,22 @@ const jsonLd = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Social Media Management in Hounslow' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Digital Advertising in Hounslow' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Email Marketing in Hounslow' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Automation & Workflows in Hounslow' } },
     ],
+  },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://eurasiamarketing.com/#website',
+  url: 'https://eurasiamarketing.com',
+  name: 'Eurasia Marketing',
+  publisher: { '@id': 'https://eurasiamarketing.com/#business' },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://eurasiamarketing.com/blog?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
   },
 };
 
@@ -152,10 +187,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         {/* Force dark mode on mobile — runs before paint to avoid flash */}
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {

@@ -70,23 +70,6 @@ export default async function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Hero
-        title={heroTitle}
-        highlight={heroHighlight}
-        subtitle={heroSubtitle}
-        displayFont
-        buttons={[
-          { label: 'Get Started →', href: '/contact', variant: 'primary', hideOnMobile: true },
-          { label: '📅 Book a Free Call', href: 'https://calendly.com/rixon7/30min', variant: 'blue', external: true },
-        ]}
-        stats={[
-          { value: '150+', label: 'Businesses grown across West London' },
-          { value: '3×', label: 'Average ROI on marketing spend' },
-          { value: '95%', label: 'Client retention rate' },
-          { value: '500+', label: 'Campaigns successfully launched' },
-        ]}
-      />
-
       <ImageSlider />
 
       {/* Mobile stat tiles — shown below slider on mobile only */}
@@ -106,6 +89,23 @@ export default async function Home() {
         ))}
       </div>
 
+      <Hero
+        title={heroTitle}
+        highlight={heroHighlight}
+        subtitle={heroSubtitle}
+        displayFont
+        buttons={[
+          { label: 'Get Started →', href: '/contact', variant: 'primary', hideOnMobile: true },
+          { label: 'Get a Free Quote →', href: '/contact', variant: 'outline' },
+        ]}
+        stats={[
+          { value: '150+', label: 'Businesses grown across West London' },
+          { value: '3×', label: 'Average ROI on marketing spend' },
+          { value: '95%', label: 'Client retention rate' },
+          { value: '500+', label: 'Campaigns successfully launched' },
+        ]}
+      />
+
       <LogoSlider />
 
       <WhatWeDoBest />
@@ -113,6 +113,7 @@ export default async function Home() {
       <section className="py-14 md:py-24 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
+            tag="// Our Services"
             title="Digital Marketing Services in Hounslow"
             subtitle="From website design to SEO and social media — tailored solutions for your business"
           />
@@ -127,6 +128,7 @@ export default async function Home() {
       <section className="py-14 md:py-24 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
+            tag="// Why Choose Us"
             title="Why Hounslow Businesses Choose Eurasia"
             subtitle="Results-driven digital marketing backed by data and local expertise"
           />
@@ -137,7 +139,7 @@ export default async function Home() {
                   <div className="w-10 h-10 rounded-xl bg-accent-blue/10 dark:bg-accent-blue/15 flex items-center justify-center text-xl mb-4">
                     {f.icon}
                   </div>
-                  <h4 className="font-semibold text-primary dark:text-dark-text mb-2">{f.title}</h4>
+                  <h3 className="font-semibold text-primary dark:text-dark-text mb-2">{f.title}</h3>
                   <p className="text-sm text-muted dark:text-dark-muted leading-relaxed">{f.description}</p>
                 </div>
               </AnimateIn>
@@ -149,6 +151,7 @@ export default async function Home() {
       <section className="py-14 md:py-24 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
+            tag="// Client Reviews"
             title="What Our Clients Say"
             subtitle="Don't take our word for it"
           />
@@ -164,6 +167,7 @@ export default async function Home() {
       <section className="py-14 md:py-24 px-4 sm:px-6 bg-warm dark:bg-dark-surface">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
+            tag="// Portfolio"
             title="Our Work"
             subtitle="Real websites built for real businesses"
           />
@@ -189,6 +193,7 @@ export default async function Home() {
                     src="https://image.thum.io/get/width/1200/crop/750/https://skinhealth-wine.vercel.app/"
                     alt="Skin Health Practice website"
                     className="w-full h-full object-cover object-top"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -274,6 +279,7 @@ export default async function Home() {
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-5 sm:p-6 flex flex-col flex-1">
@@ -303,6 +309,7 @@ export default async function Home() {
       <section className="py-14 md:py-24 px-4 sm:px-6">
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
+            tag="// Blog"
             title="Latest Insights"
             subtitle="Tips, strategies, and ideas from our marketing experts"
           />
@@ -318,6 +325,7 @@ export default async function Home() {
                           src={post.image}
                           alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
                         />
                       </div>
                     )}

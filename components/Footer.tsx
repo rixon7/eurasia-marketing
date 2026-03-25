@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-white">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-10 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
           <div>
             <Link href="/" className="inline-block mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -31,11 +31,23 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-sm">Services</h4>
             <ul className="space-y-2 text-sm text-white/60">
               <li><Link href="/services/website-building" className="hover:text-white transition-colors">Website Building</Link></li>
+              <li><Link href="/services/ai-automation" className="hover:text-white transition-colors">AI Automation</Link></li>
               <li><Link href="/services/digital-advertising" className="hover:text-white transition-colors">Digital Advertising</Link></li>
               <li><Link href="/services/social-media" className="hover:text-white transition-colors">Social Media</Link></li>
               <li><Link href="/services/seo-sem" className="hover:text-white transition-colors">SEO & SEM</Link></li>
               <li><Link href="/services/email-marketing" className="hover:text-white transition-colors">Email Marketing</Link></li>
-              <li><Link href="/services/ai-automation" className="hover:text-white transition-colors">AI Automation</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4 text-sm">Areas We Serve</h4>
+            <ul className="space-y-2 text-sm text-white/60">
+              <li><Link href="/areas/hounslow" className="hover:text-white transition-colors">Hounslow</Link></li>
+              <li><Link href="/areas/brentford" className="hover:text-white transition-colors">Brentford</Link></li>
+              <li><Link href="/areas/feltham" className="hover:text-white transition-colors">Feltham</Link></li>
+              <li><Link href="/areas/heston" className="hover:text-white transition-colors">Heston</Link></li>
+              <li><Link href="/areas/isleworth" className="hover:text-white transition-colors">Isleworth</Link></li>
+              <li><Link href="/areas/hayes" className="hover:text-white transition-colors">Hayes</Link></li>
             </ul>
           </div>
 
@@ -54,7 +66,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4 text-sm text-white/60">
-            <p>&copy; 2026 Eurasia Marketing. All rights reserved.</p>
+            <p>&copy; 2026 Eurasia Marketing. All rights reserved. · Eurasia Supply and Services Ltd · Registered in England & Wales</p>
             <span className="hidden sm:inline">|</span>
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>

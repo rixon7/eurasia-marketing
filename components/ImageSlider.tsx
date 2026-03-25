@@ -121,50 +121,8 @@ export default function ImageSlider() {
     <section className="px-3 sm:px-6 pb-8 md:pb-12">
       <div className="max-w-[1280px] mx-auto">
 
-        {/* Promotional Ticker */}
-        <div className="mb-3 rounded-[var(--radius-lg)] bg-red-600 overflow-hidden h-10 flex items-center">
-          <style>{`
-            @keyframes promo-scroll {
-              0%   { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-            .promo-track {
-              display: flex;
-              width: max-content;
-              animation: promo-scroll 30s linear infinite;
-              will-change: transform;
-            }
-            @media (max-width: 768px) {
-              .promo-track { animation-duration: 45s; }
-            }
-          `}</style>
-          <div className="flex-shrink-0 flex items-center h-full px-4 bg-white/15 border-r border-white/20">
-            <span className="text-xs font-bold text-white tracking-wider uppercase">Offers</span>
-          </div>
-          <div className="flex-1 overflow-hidden">
-            <div className="promo-track">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <span key={i} className="flex items-center whitespace-nowrap">
-                  <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
-                    🔥 50% OFF Marketing Plans – Limited Time Only!
-                  </span>
-                  <span className="text-white/30 mx-2">✦</span>
-                  <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
-                    🎁 Free website when you buy an SEO plan for minimum 6 months
-                  </span>
-                  <span className="text-white/30 mx-2">✦</span>
-                  <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
-                    🌐 Free website hosting for your first year
-                  </span>
-                  <span className="text-white/30 mx-2">✦</span>
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
         <div
-          className="relative rounded-[var(--radius-xl)] overflow-hidden aspect-[16/10] sm:aspect-[16/9] md:aspect-[16/8] lg:aspect-[16/7]"
+          className="relative rounded-[var(--radius-xl)] overflow-hidden aspect-[16/7] sm:aspect-[16/6] md:aspect-[16/5] lg:aspect-[16/5]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
@@ -240,15 +198,17 @@ export default function ImageSlider() {
                   transition={{ delay: 0.6, duration: 0.5 }}
                   className="flex gap-2 sm:gap-3"
                 >
-                  <Link
-                    href="/contact"
-                    className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white text-primary rounded-[var(--radius-md)] text-xs sm:text-sm font-semibold hover:bg-white/90 transition-all hover:-translate-y-0.5 whitespace-nowrap"
+                  <a
+                    href="https://calendly.com/rixon7/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 sm:px-6 py-2.5 sm:py-3 bg-accent-blue text-white rounded-[var(--radius-md)] text-xs sm:text-sm font-semibold hover:bg-accent-blue/90 transition-all hover:-translate-y-0.5 whitespace-nowrap"
                   >
-                    Get a Free Quote →
-                  </Link>
+                    📅 Book a Free Call
+                  </a>
                   <Link
-                    href={slides[current].href}
-                    className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white/15 backdrop-blur-sm border border-white/30 text-white rounded-[var(--radius-md)] text-xs sm:text-sm font-semibold hover:bg-white/25 transition-all whitespace-nowrap"
+                    href="/services"
+                    className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white text-primary rounded-[var(--radius-md)] text-xs sm:text-sm font-semibold hover:bg-white/90 transition-all hover:-translate-y-0.5 whitespace-nowrap"
                   >
                     Learn More
                   </Link>
@@ -308,6 +268,48 @@ export default function ImageSlider() {
               animate={{ width: isPaused ? undefined : '100%' }}
               transition={{ duration: 5, ease: 'linear' }}
             />
+          </div>
+        </div>
+
+        {/* Promotional Ticker */}
+        <div className="mt-3 rounded-[var(--radius-lg)] bg-red-600 overflow-hidden h-10 flex items-center">
+          <style>{`
+            @keyframes promo-scroll {
+              0%   { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .promo-track {
+              display: flex;
+              width: max-content;
+              animation: promo-scroll 30s linear infinite;
+              will-change: transform;
+            }
+            @media (max-width: 768px) {
+              .promo-track { animation-duration: 45s; }
+            }
+          `}</style>
+          <div className="flex-shrink-0 flex items-center h-full px-4 bg-white/15 border-r border-white/20">
+            <span className="text-xs font-bold text-white tracking-wider uppercase">Offers</span>
+          </div>
+          <div className="flex-1 overflow-hidden">
+            <div className="promo-track">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <span key={i} className="flex items-center whitespace-nowrap">
+                  <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
+                    🔥 50% OFF Marketing Plans – Limited Time Only!
+                  </span>
+                  <span className="text-white/30 mx-2">✦</span>
+                  <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
+                    🎁 Free website when you buy an SEO plan for minimum 6 months
+                  </span>
+                  <span className="text-white/30 mx-2">✦</span>
+                  <span className="inline-flex items-center gap-2 px-8 text-sm font-medium text-white">
+                    🌐 Free website hosting for your first year
+                  </span>
+                  <span className="text-white/30 mx-2">✦</span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

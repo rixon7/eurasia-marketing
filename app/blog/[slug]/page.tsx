@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: meta.title,
         description: meta.excerpt,
         type: 'article',
+        url: `https://eurasiamarketing.com/blog/${slug}`,
         publishedTime: meta.date,
         images: meta.image ? [{ url: meta.image, width: 1200, alt: meta.title }] : [],
       },
@@ -70,13 +71,26 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: meta.title,
     description: meta.excerpt,
     datePublished: meta.date,
+    dateModified: meta.date,
     image: meta.image || '',
-    author: { '@type': 'Organization', name: 'Eurasia Marketing', url: 'https://eurasiamarketing.com' },
-    publisher: { '@type': 'Organization', name: 'Eurasia Marketing', url: 'https://eurasiamarketing.com' },
+    url: `https://eurasiamarketing.com/blog/${slug}`,
+    author: {
+      '@type': 'Person',
+      name: meta.author,
+      jobTitle: meta.authorTitle,
+      worksFor: { '@type': 'Organization', name: 'Eurasia Marketing', url: 'https://eurasiamarketing.com' },
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Eurasia Marketing',
+      url: 'https://eurasiamarketing.com',
+      logo: { '@type': 'ImageObject', url: 'https://eurasiamarketing.com/logo.svg' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://eurasiamarketing.com/blog/${slug}` },
   };
 
   return (
@@ -103,10 +117,20 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {meta.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-muted dark:text-dark-muted font-mono mb-6 sm:mb-8">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-muted dark:text-dark-muted font-mono mb-4">
             <span>{new Date(meta.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
             <span>&middot;</span>
             <span>{meta.readingTime}</span>
+          </div>
+
+          <div className="flex items-center gap-3 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-border-light dark:border-border-dark">
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-accent-blue to-sky-400 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+              {meta.author.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-primary dark:text-dark-text">{meta.author}</p>
+              <p className="text-xs text-muted dark:text-dark-muted">{meta.authorTitle} · Eurasia Marketing</p>
+            </div>
           </div>
 
           {meta.image && (
@@ -116,6 +140,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 src={meta.image}
                 alt={meta.title}
                 className="w-full aspect-[16/9] object-cover"
+                loading="lazy"
               />
             </div>
           )}

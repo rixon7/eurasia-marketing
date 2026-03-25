@@ -9,6 +9,8 @@ export interface PostMeta {
   tags: string[];
   readingTime: string;
   image: string;
+  author: string;
+  authorTitle: string;
 }
 
 function estimateReadingTime(body: unknown[]): string {
@@ -52,6 +54,8 @@ export async function getAllPosts(): Promise<PostMeta[]> {
       tags: string[] | null;
       mainImage: SanityImageSource | null;
       body?: unknown[];
+      author?: string | null;
+      authorTitle?: string | null;
     }[]
   >(allPostsQuery);
 
@@ -63,6 +67,8 @@ export async function getAllPosts(): Promise<PostMeta[]> {
     tags: post.tags ?? [],
     readingTime: estimateReadingTime(post.body ?? []),
     image: resolveImage(post.mainImage),
+    author: post.author ?? 'Eurasia Marketing',
+    authorTitle: post.authorTitle ?? 'Digital Marketing Expert',
   }));
 }
 
@@ -78,6 +84,8 @@ export async function getPostBySlug(slug: string): Promise<{
     tags: string[] | null;
     mainImage: SanityImageSource | null;
     body: unknown[];
+    author?: string | null;
+    authorTitle?: string | null;
   } | null>(postBySlugQuery, { slug });
 
   if (!post) throw new Error(`Post not found: ${slug}`);
@@ -91,6 +99,8 @@ export async function getPostBySlug(slug: string): Promise<{
       tags: post.tags ?? [],
       readingTime: estimateReadingTime(post.body ?? []),
       image: resolveImage(post.mainImage),
+      author: post.author ?? 'Eurasia Marketing',
+      authorTitle: post.authorTitle ?? 'Digital Marketing Expert',
     },
     body: post.body ?? [],
   };

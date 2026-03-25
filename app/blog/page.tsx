@@ -7,7 +7,13 @@ import { getAllPosts } from '@/lib/blog';
 export const metadata: Metadata = {
   title: 'Digital Marketing Tips & Insights',
   description: 'Digital marketing tips from Hounslow\'s top agency. Practical SEO, social media, and web design advice to help local businesses grow online.',
+  keywords: ['digital marketing blog', 'SEO tips Hounslow', 'social media marketing tips', 'marketing insights', 'web design advice', 'local business marketing blog'],
   alternates: { canonical: '/blog' },
+  openGraph: {
+    title: 'Digital Marketing Tips & Insights | Eurasia Marketing Blog',
+    description: 'Digital marketing tips from Hounslow\'s top agency. Practical SEO, social media, and web design advice to help local businesses grow online.',
+    url: 'https://eurasiamarketing.com/blog',
+  },
 };
 
 export default async function BlogPage() {
@@ -36,6 +42,7 @@ export default async function BlogPage() {
                           src={post.image}
                           alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
                         />
                       </div>
                     )}
@@ -53,10 +60,15 @@ export default async function BlogPage() {
                     <p className="text-sm text-muted dark:text-dark-muted leading-relaxed mb-3 sm:mb-4 flex-1">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center gap-3 text-xs text-muted dark:text-dark-muted font-mono">
-                      <span>{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
-                      <span>&middot;</span>
-                      <span>{post.readingTime}</span>
+                    <div className="flex items-center gap-2 pt-3 border-t border-border-light dark:border-border-dark mt-1">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-accent-blue to-sky-400 flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">
+                        {post.author.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
+                      </div>
+                      <span className="text-xs font-medium text-primary dark:text-dark-text">{post.author}</span>
+                      <span className="text-xs text-muted dark:text-dark-muted font-mono">&middot;</span>
+                      <span className="text-xs text-muted dark:text-dark-muted font-mono">{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                      <span className="text-xs text-muted dark:text-dark-muted font-mono">&middot;</span>
+                      <span className="text-xs text-muted dark:text-dark-muted font-mono">{post.readingTime}</span>
                     </div>
                     </div>
                   </article>

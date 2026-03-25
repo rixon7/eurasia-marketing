@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import AnimateIn from './AnimateIn';
 
 interface TestimonialProps {
@@ -11,7 +14,11 @@ interface TestimonialProps {
 export default function Testimonial({ quote, initials, name, role, delay = 0 }: TestimonialProps) {
   return (
     <AnimateIn delay={delay}>
-      <div className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-8 border border-border-light dark:border-border-dark shadow-sm h-full flex flex-col">
+      <motion.div
+        whileHover={{ y: -5, scale: 1.01 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+        className="bg-white dark:bg-dark-card rounded-[var(--radius-lg)] p-8 border border-border-light dark:border-border-dark shadow-sm h-full flex flex-col"
+      >
         {/* Stars */}
         <div className="flex gap-0.5 mb-5">
           {Array.from({ length: 5 }).map((_, i) => (
@@ -36,7 +43,7 @@ export default function Testimonial({ quote, initials, name, role, delay = 0 }: 
             <p className="text-xs text-muted dark:text-dark-muted">{role}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </AnimateIn>
   );
 }

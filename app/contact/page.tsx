@@ -7,7 +7,13 @@ import AnimateIn from '@/components/AnimateIn';
 export const metadata: Metadata = {
   title: 'Contact Us - Free Consultation Hounslow',
   description: 'Get a free consultation with Eurasia Marketing — Hounslow\'s leading digital marketing agency. Visit us at 65-73 Staines Road, Hounslow TW3 3HW.',
+  keywords: ['contact Eurasia Marketing', 'free marketing consultation Hounslow', 'digital marketing agency contact', 'marketing agency Hounslow phone', 'book consultation Hounslow'],
   alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contact Eurasia Marketing | Free Consultation Hounslow',
+    description: 'Get a free consultation with Eurasia Marketing — Hounslow\'s leading digital marketing agency. Visit us at 65-73 Staines Road, Hounslow TW3 3HW.',
+    url: 'https://eurasiamarketing.com/contact',
+  },
 };
 
 const details = [
@@ -70,7 +76,7 @@ export default function ContactPage() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.0!2d-0.3614!3d51.4685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760d9e8d3e9b1f%3A0x0!2s65-73+Staines+Road%2C+Hounslow+TW3+3HW!5e0!3m2!1sen!2suk!4v1700000000000"
                 width="100%"
                 height="300"
-                className="sm:!h-[450px]"
+                className="h-[300px] sm:h-[450px]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"

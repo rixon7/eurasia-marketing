@@ -18,7 +18,7 @@ export default function Hero({ tag, title, highlight, subtitle, buttons, display
   const hasStats = stats && stats.length > 0;
 
   return (
-    <section className={`relative overflow-hidden bg-hero-mesh ${tag ? 'pt-4 md:pt-8' : 'pt-4 md:pt-10'} pb-4 md:pb-6 px-4 sm:px-6`}>
+    <section className={`relative overflow-hidden bg-hero-mesh ${tag ? 'pt-0 md:pt-1' : 'pt-0 md:pt-1'} pb-4 md:pb-6 px-4 sm:px-6`}>
       {/* Dot grid overlay */}
       <div className="bg-grid-dots absolute inset-0 pointer-events-none" />
 

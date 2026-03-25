@@ -232,7 +232,7 @@ export default function PricingPage() {
                       <li key={feature} className="flex items-start gap-3">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="flex-shrink-0 mt-0.5">
                           <circle cx="12" cy="12" r="10" className={plan.highlight ? 'fill-white/20' : 'fill-soft-green dark:fill-dark-surface'} />
-                          <path d="M8 12l3 3 5-5" stroke={plan.highlight ? '#fff' : '#0088e9'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M8 12l3 3 5-5" stroke={plan.highlight ? '#fff' : 'currentColor'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={plan.highlight ? '' : 'text-accent-blue'} />
                         </svg>
                         <span className={`text-sm ${plan.highlight ? 'text-white/80' : 'text-muted dark:text-dark-muted'}`}>
                           {feature}

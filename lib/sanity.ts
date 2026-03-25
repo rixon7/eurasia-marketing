@@ -30,6 +30,8 @@ export const allPostsQuery = `
     excerpt,
     tags,
     mainImage,
+    "author": author->name,
+    "authorTitle": author->title,
   }
 `;
 
@@ -43,6 +45,8 @@ export const postBySlugQuery = `
     tags,
     mainImage,
     body,
+    "author": author->name,
+    "authorTitle": author->title,
   }
 `;
 
