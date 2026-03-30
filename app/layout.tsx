@@ -189,15 +189,6 @@ export default function RootLayout({
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-        {/* Force dark mode on mobile — runs before paint to avoid flash */}
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            if (window.innerWidth < 768) {
-              document.documentElement.classList.add('dark');
-              try { localStorage.setItem('theme', 'dark'); } catch(e) {}
-            }
-          })();
-        `}} />
       </head>
       <body className={`${dmSans.variable} ${dmMono.variable} ${cormorant.variable} ${jakarta.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
         <GoogleAnalytics />
