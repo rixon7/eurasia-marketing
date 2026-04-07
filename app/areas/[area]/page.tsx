@@ -374,6 +374,50 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
         </div>
       </section>
 
+      {/* Google Maps + Review */}
+      <section className="py-10 md:py-16 px-4 sm:px-6">
+        <div className="max-w-[1280px] mx-auto">
+          <SectionHeader
+            tag="// Find Us"
+            title="Visit Eurasia Marketing"
+            subtitle="65-73 Staines Road, Hounslow TW3 3HW"
+          />
+          <AnimateIn>
+            <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-sm mb-4">
+              <iframe
+                src="https://www.google.com/maps?q=Eurasia+Marketing,+65-73+Staines+Road,+Hounslow,+TW3+3HW,+UK&output=embed"
+                width="100%"
+                height="300"
+                className="h-[280px] sm:h-[380px]"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Eurasia Marketing — Digital Marketing Agency Hounslow"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://www.google.com/search?q=Eurasia+Marketing+Hounslow+digital+marketing+agency"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[var(--radius-md)] bg-accent-blue text-white text-sm font-semibold hover:bg-accent-blue/90 transition-colors"
+              >
+                ⭐ Leave us a Google Review
+              </a>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Eurasia+Marketing,+65-73+Staines+Road,+Hounslow,+TW3+3HW"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[var(--radius-md)] border border-border-light dark:border-border-dark text-primary dark:text-dark-text text-sm font-semibold hover:border-accent-blue hover:text-accent-blue transition-colors"
+              >
+                📍 Get Directions
+              </a>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
       <CTA
         title={`Ready to grow your ${data.name} business online?`}
         subtitle="Get a free consultation and find out how we can help you rank higher on Google and reach more local customers."

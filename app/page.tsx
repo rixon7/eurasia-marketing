@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Hero from '@/components/Hero';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  other: {
+    'geo.region': 'GB-ENG',
+    'geo.placename': 'Hounslow',
+    'geo.position': '51.4685;-0.3614',
+    'ICBM': '51.4685, -0.3614',
+  },
+};
 import ImageSlider from '@/components/ImageSlider';
 import LogoSlider from '@/components/LogoSlider';
 import SectionHeader from '@/components/SectionHeader';

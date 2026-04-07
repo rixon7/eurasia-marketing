@@ -73,7 +73,7 @@ export default function ContactPage() {
           <AnimateIn>
             <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-sm">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.0!2d-0.3614!3d51.4685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760d9e8d3e9b1f%3A0x0!2s65-73+Staines+Road%2C+Hounslow+TW3+3HW!5e0!3m2!1sen!2suk!4v1700000000000"
+                src="https://www.google.com/maps?q=Eurasia+Marketing,+65-73+Staines+Road,+Hounslow,+TW3+3HW,+UK&output=embed"
                 width="100%"
                 height="300"
                 className="h-[300px] sm:h-[450px]"
@@ -81,8 +81,26 @@ export default function ContactPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Eurasia Marketing office location"
+                title="Eurasia Marketing — Digital Marketing Agency Hounslow"
               />
+            </div>
+            <div className="mt-4 flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://www.google.com/search?q=Eurasia+Marketing+Hounslow+digital+marketing+agency"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[var(--radius-md)] bg-accent-blue text-white text-sm font-semibold hover:bg-accent-blue/90 transition-colors"
+              >
+                ⭐ Leave us a Google Review
+              </a>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Eurasia+Marketing,+65-73+Staines+Road,+Hounslow,+TW3+3HW"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[var(--radius-md)] border border-border-light dark:border-border-dark text-primary dark:text-dark-text text-sm font-semibold hover:border-accent-blue hover:text-accent-blue transition-colors"
+              >
+                📍 Get Directions
+              </a>
             </div>
           </AnimateIn>
         </div>
