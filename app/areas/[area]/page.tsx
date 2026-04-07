@@ -398,7 +398,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://www.google.com/search?q=Eurasia+Marketing+Hounslow+digital+marketing+agency"
+                href="https://www.google.com/search?q=Eurasia+Marketing&kgmid=/g/11yzv1bhxr#lrd=,1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[var(--radius-md)] bg-accent-blue text-white text-sm font-semibold hover:bg-accent-blue/90 transition-colors"

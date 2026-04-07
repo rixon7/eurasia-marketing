@@ -126,7 +126,7 @@ const localBusinessSchema = {
     },
   ],
   sameAs: [
-    'https://www.google.com/maps/place/Eurasia+Marketing/@51.4685,-0.3614',
+    'https://www.google.com/search?kgmid=/g/11yzv1bhxr',
     'https://facebook.com/eurasiamarketing',
     'https://www.instagram.com/eurasiamarketinguk/',
     'https://linkedin.com/company/eurasia-marketing',
