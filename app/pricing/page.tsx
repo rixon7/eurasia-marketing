@@ -16,7 +16,7 @@ const plans = [
     originalPrice: '200',
     period: '/month',
     description: 'Stunning, responsive websites built to convert visitors into customers.',
-    badge: 'Most Affordable',
+    badge: 'Most Popular',
     badgeColor: 'bg-accent-blue/10 text-accent-blue dark:bg-accent-blue/20',
     features: [
       'Custom responsive design',
@@ -35,7 +35,7 @@ const plans = [
         <path d="M12 17v4" />
       </svg>
     ),
-    highlight: false,
+    highlight: true,
   },
   {
     name: 'AI Automation',
@@ -70,11 +70,11 @@ const plans = [
   },
   {
     name: 'Social Media Management',
-    price: '200',
-    originalPrice: '400',
+    price: '100',
+    originalPrice: '200',
     period: '/month',
     description: 'Full-service social media that builds your brand and engages your audience.',
-    badge: 'Most Popular',
+    badge: 'Also Popular',
     badgeColor: 'bg-accent-blue/10 text-accent-blue dark:bg-accent-blue/20',
     features: [
       'Up to 3 platforms managed',
@@ -92,7 +92,7 @@ const plans = [
         <path d="M13.73 21a2 2 0 0 1-3.46 0" />
       </svg>
     ),
-    highlight: true,
+    highlight: false,
   },
   {
     name: 'SEO Management',
