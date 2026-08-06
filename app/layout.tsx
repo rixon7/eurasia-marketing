@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { DM_Sans, DM_Mono, Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import SiteChrome from '@/components/SiteChrome';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import './globals.css';
 
@@ -194,9 +193,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable} ${dmMono.variable} ${cormorant.variable} ${jakarta.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
         <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <Navbar />
-          <main className="pt-20">{children}</main>
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
       </body>
     </html>
