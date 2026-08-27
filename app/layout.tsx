@@ -1,26 +1,28 @@
 import type { Metadata } from 'next';
-import { DM_Sans, DM_Mono, Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
-import { ThemeProvider } from 'next-themes';
+import { Instrument_Sans, Manrope, JetBrains_Mono, Cormorant_Garamond } from 'next/font/google';
 import SiteChrome from '@/components/SiteChrome';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import './globals.css';
 
-const dmSans = DM_Sans({
-  variable: '--font-dm-sans',
+const instrument = Instrument_Sans({
+  variable: '--font-instrument',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['600', '700'],
+  display: 'swap',
 });
 
-const dmMono = DM_Mono({
-  variable: '--font-dm-mono',
+const manrope = Manrope({
+  variable: '--font-manrope',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: '--font-jetbrains',
   subsets: ['latin'],
   weight: ['400', '500'],
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: '--font-jakarta',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
 });
 
 const cormorant = Cormorant_Garamond({
@@ -185,16 +187,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>
-      <body className={`${dmSans.variable} ${dmMono.variable} ${cormorant.variable} ${jakarta.variable} antialiased bg-cream dark:bg-dark-bg text-primary dark:text-dark-text`}>
+      <body className={`${instrument.variable} ${manrope.variable} ${jetbrains.variable} ${cormorant.variable} antialiased bg-background text-foreground`}>
+        {/* Site-wide grain texture. Deliberately rendered here, outside
+            SiteChrome/{children} and therefore outside app/template.tsx —
+            that file wraps every route in a `motion.div`, which establishes
+            a containing block for `position: fixed` descendants. A fixed
+            grain layer placed inside the page tree would be silently
+            scoped to that div instead of the viewport. */}
+        <div className="grain-overlay" aria-hidden="true" />
         <GoogleAnalytics />
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <SiteChrome>{children}</SiteChrome>
-        </ThemeProvider>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

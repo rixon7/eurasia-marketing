@@ -1,61 +1,68 @@
 import Link from 'next/link';
 
+// Rebuilt for the 2026-08-26 Bento-dark homepage rebuild. All link lists,
+// contact details, and the copyright/legal line are unchanged — only the
+// visual treatment moved from `bg-primary text-white` (a flat navy plate)
+// to the shared border/surface tokens + mono labels, matching the rest of
+// the new design system. Pure static markup, no state, so this was a
+// low-risk full rewrite rather than a retint (contrast the Navbar, kept as
+// a retint-only pass — see components/Navbar.tsx).
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-10 md:py-16">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+    <footer className="border-t border-border bg-surface-sunken text-foreground">
+      <div className="mx-auto max-w-[1280px] px-4 py-10 sm:px-6 md:py-16">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5 lg:gap-8">
           <div>
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="mb-4 inline-block">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo.svg" alt="Eurasia Marketing" className="h-10 brightness-0 invert" />
             </Link>
-            <p className="text-sm text-white/60 leading-relaxed">
+            <p className="text-sm leading-relaxed text-foreground-faint">
               Helping businesses build powerful marketing strategies that drive real results and lasting growth.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Pages</h4>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
-              <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-foreground-faint">Pages</h4>
+            <ul className="space-y-2 text-sm text-foreground-soft">
+              <li><Link href="/" className="transition-colors hover:text-foreground">Home</Link></li>
+              <li><Link href="/services" className="transition-colors hover:text-foreground">Services</Link></li>
+              <li><Link href="/pricing" className="transition-colors hover:text-foreground">Pricing</Link></li>
+              <li><Link href="/about" className="transition-colors hover:text-foreground">About</Link></li>
+              <li><Link href="/blog" className="transition-colors hover:text-foreground">Blog</Link></li>
+              <li><Link href="/contact" className="transition-colors hover:text-foreground">Contact</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Services</h4>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link href="/services/website-building" className="hover:text-white transition-colors">Website Building</Link></li>
-              <li><Link href="/services/ai-automation" className="hover:text-white transition-colors">AI Automation</Link></li>
-              <li><Link href="/services/digital-advertising" className="hover:text-white transition-colors">Digital Advertising</Link></li>
-              <li><Link href="/services/social-media" className="hover:text-white transition-colors">Social Media</Link></li>
-              <li><Link href="/services/seo-sem" className="hover:text-white transition-colors">SEO & SEM</Link></li>
-              <li><Link href="/services/email-marketing" className="hover:text-white transition-colors">Email Marketing</Link></li>
+            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-foreground-faint">Services</h4>
+            <ul className="space-y-2 text-sm text-foreground-soft">
+              <li><Link href="/services/website-building" className="transition-colors hover:text-foreground">Website Building</Link></li>
+              <li><Link href="/services/ai-automation" className="transition-colors hover:text-foreground">AI Automation</Link></li>
+              <li><Link href="/services/digital-advertising" className="transition-colors hover:text-foreground">Digital Advertising</Link></li>
+              <li><Link href="/services/social-media" className="transition-colors hover:text-foreground">Social Media</Link></li>
+              <li><Link href="/services/seo-sem" className="transition-colors hover:text-foreground">SEO & SEM</Link></li>
+              <li><Link href="/services/email-marketing" className="transition-colors hover:text-foreground">Email Marketing</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Areas We Serve</h4>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><Link href="/areas/hounslow" className="hover:text-white transition-colors">Hounslow</Link></li>
-              <li><Link href="/areas/brentford" className="hover:text-white transition-colors">Brentford</Link></li>
-              <li><Link href="/areas/feltham" className="hover:text-white transition-colors">Feltham</Link></li>
-              <li><Link href="/areas/heston" className="hover:text-white transition-colors">Heston</Link></li>
-              <li><Link href="/areas/isleworth" className="hover:text-white transition-colors">Isleworth</Link></li>
-              <li><Link href="/areas/hayes" className="hover:text-white transition-colors">Hayes</Link></li>
+            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-foreground-faint">Areas We Serve</h4>
+            <ul className="space-y-2 text-sm text-foreground-soft">
+              <li><Link href="/areas/hounslow" className="transition-colors hover:text-foreground">Hounslow</Link></li>
+              <li><Link href="/areas/brentford" className="transition-colors hover:text-foreground">Brentford</Link></li>
+              <li><Link href="/areas/feltham" className="transition-colors hover:text-foreground">Feltham</Link></li>
+              <li><Link href="/areas/heston" className="transition-colors hover:text-foreground">Heston</Link></li>
+              <li><Link href="/areas/isleworth" className="transition-colors hover:text-foreground">Isleworth</Link></li>
+              <li><Link href="/areas/hayes" className="transition-colors hover:text-foreground">Hayes</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Contact</h4>
-            <ul className="space-y-2 text-sm text-white/60">
-              <li><a href="mailto:info@eurasiamarketing.com" className="hover:text-white transition-colors">info@eurasiamarketing.com</a></li>
-              <li><a href="tel:02038863311" className="hover:text-white transition-colors">020 3886 3311</a></li>
+            <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-foreground-faint">Contact</h4>
+            <ul className="space-y-2 text-sm text-foreground-soft">
+              <li><a href="mailto:info@eurasiamarketing.com" className="transition-colors hover:text-foreground">info@eurasiamarketing.com</a></li>
+              <li><a href="tel:02038863311" className="transition-colors hover:text-foreground">020 3886 3311</a></li>
               <li>65-73 Staines Road</li>
               <li>Hounslow TW3 3HW</li>
             </ul>
@@ -63,17 +70,17 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4 text-sm text-white/60">
-            <p>&copy; 2026 Eurasia Marketing. All rights reserved. · Eurasia Supply and Services Ltd · Registered in England & Wales</p>
-            <span className="hidden sm:inline">|</span>
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
-            <span className="hidden sm:inline">|</span>
-            <a href="https://www.marketingcompany-info.co.uk/eurasia-marketing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors hidden sm:inline">Listed on Marketing Directory</a>
+      <div className="border-t border-border">
+        <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-foreground-faint">
+            <p>&copy; 2026 Eurasia Marketing. All rights reserved. · Eurasia Supply and Services Ltd · Registered in England &amp; Wales</p>
+            <span className="hidden sm:inline text-border-strong">|</span>
+            <Link href="/privacy" className="transition-colors hover:text-foreground">Privacy Policy</Link>
+            <Link href="/terms" className="transition-colors hover:text-foreground">Terms</Link>
+            <span className="hidden sm:inline text-border-strong">|</span>
+            <a href="https://www.marketingcompany-info.co.uk/eurasia-marketing" target="_blank" rel="noopener noreferrer" className="hidden transition-colors hover:text-foreground sm:inline">Listed on Marketing Directory</a>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center sm:justify-end">
+          <div className="flex flex-wrap justify-center gap-3 sm:justify-end">
             {[
               {
                 href: 'https://linkedin.com/company/eurasia-marketing',
@@ -126,10 +133,10 @@ export default function Footer() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center gap-2 w-24 py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-all"
+                className="flex w-24 flex-col items-center justify-center gap-2 rounded-xl bg-surface-glass py-4 text-foreground-faint transition-all hover:bg-surface-glass-strong hover:text-foreground"
               >
                 {icon}
-                <span className="text-[10px] font-semibold tracking-widest">{label}</span>
+                <span className="font-mono text-[10px] font-semibold tracking-widest">{label}</span>
               </a>
             ))}
           </div>

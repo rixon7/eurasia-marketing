@@ -2,52 +2,153 @@
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+  Bento design tokens — dark-first (near-black + violet/teal/amber), ported
+  from the "Bento" homepage-redesign concept (app/concepts/bento/bento.css).
+  The nine values marked EXACT are copied verbatim from that file; everything
+  else is derived (alpha-composited over Bento's own ground/glass values, or
+  a value already used elsewhere in the Bento concept) — nothing here is
+  eyeballed.
+
+  History: this site was light-first navy/blue with a light/dark toggle
+  until 2026-08-26, when the homepage was rebuilt on MoveEasyMe's component
+  architecture (~/Studio/clients/moveeasyme/site) with this palette. The
+  toggle is gone — see app/layout.tsx (forced .dark on <html>) — and the
+  legacy dark literals below (in @theme inline) were retinted to match, so
+  every un-rebuilt route adopts this palette automatically with zero
+  component edits, pending its own redesign pass.
+*/
+:root {
+  /* EXACT, from app/concepts/bento/bento.css */
+  --background: #07080b;
+  --surface-glass: rgba(255, 255, 255, 0.045);
+  --surface-glass-strong: rgba(255, 255, 255, 0.075);
+  --border: rgba(255, 255, 255, 0.09);
+  --foreground: #f3f3f6;
+  --foreground-faint: #8d8fa0;
+  --accent: #7c6cf6;
+  --accent-2: #34d1c4;
+  --accent-3: #f7b955;
+
+  /* Derived: opaque composites of the glass values over --background.
+     Note the inversion vs. the MoveEasyMe source this architecture is
+     ported from: there, --surface-sunken is *darker* than --background.
+     At #07080b there is nowhere darker to go, so here it's one step
+     *lighter*. The name is kept (every ported bg-surface-sunken class
+     works verbatim) but the meaning flips — don't "fix" this back. */
+  --surface: #121316;
+  --surface-sunken: #0e0f12;
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --foreground-soft: #c5c6cf;
+
+  /* Derived accents */
+  --accent-from: #7c6cf6;
+  --accent-hover: #8877ff;
+  --accent-soft: rgba(124, 108, 246, 0.16);
+  --accent-2-soft: rgba(52, 209, 196, 0.14);
+  --accent-foreground: #06070a; /* EXACT — .bn-btn-primary text */
+  --highlight: #f7b955;
+  --highlight-soft: rgba(247, 185, 85, 0.14);
+  --ring: #34d1c4; /* EXACT — .bn-btn:focus-visible */
+
+  /* Grid texture */
+  --grid-line: rgba(255, 255, 255, 0.045);
+  --grid-line-strong: rgba(255, 255, 255, 0.09);
+}
+
 @theme inline {
+  /* Legacy literal tokens — retinted 2026-08-26 to Bento values (see :root
+     above) so every un-rebuilt route adopts the new palette with zero
+     component edits. Light literals (cream/warm/sky/soft-green/
+     border-light/muted) are left as-is: under forced dark they never
+     paint, and leaving them means every existing `light dark:` class pair
+     across the codebase stays syntactically valid and reversible. */
   --color-cream: #f0f7ff;
   --color-warm: #e8f1fc;
   --color-sky: #deeaf8;
   --color-soft-green: #e0f0ff;
-  --color-primary: #0c2d4a;
-  --color-dark-surface: #0a1e33;
-  --color-dark-card: #0f2740;
-  --color-dark-bg: #060f1a;
-  --color-dark-text: #e4edf6;
-  --color-dark-muted: #7a9ab8;
-  --color-accent-blue: #2196f3;
-  --color-accent-orange: #38bdf8;
-  --color-mint-badge: #bae6fd;
-  --color-mint-text: #0c4a6e;
+  /* --color-primary is dual-duty: bg-primary on the Footer AND text-primary
+     on light-surface buttons (e.g. bg-white text-primary). #0e0f12 keeps
+     both readable (18:1 on white) — if this ever needs to change, check
+     both call sites first. */
+  --color-primary: #0e0f12;
+  --color-dark-surface: #0e0f12;
+  --color-dark-card: #121316;
+  --color-dark-bg: #07080b;
+  --color-dark-text: #f3f3f6;
+  --color-dark-muted: #8d8fa0;
+  --color-accent-blue: #7c6cf6;
+  --color-accent-orange: #34d1c4;
+  --color-mint-badge: #34d1c4;
+  --color-mint-text: #07080b;
   --color-muted: #3d6484;
   --color-border-light: #c8ddf0;
-  --color-border-dark: #1e3a54;
-  --font-sans: var(--font-dm-sans);
-  --font-mono: var(--font-dm-mono);
-  --font-heading: var(--font-outfit);
+  --color-border-dark: #1d1e21;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-xl: 28px;
+
+  /* Fonts — Instrument Sans / Manrope / JetBrains Mono (Bento's), loaded in
+     app/layout.tsx. --font-heading is kept as an alias to --font-display so
+     nothing referencing it breaks; it previously pointed at --font-outfit,
+     a font that was never actually loaded, so every h1–h4 site-wide had
+     silently been falling back to DM Sans until this fix. */
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-jetbrains);
+  --font-display: var(--font-instrument);
+  --font-heading: var(--font-display);
+
+  /* ---- Bento semantic tokens (see :root above for values) ---- */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-glass: var(--surface-glass);
+  --color-surface-glass-strong: var(--surface-glass-strong);
+  --color-foreground: var(--foreground);
+  --color-foreground-soft: var(--foreground-soft);
+  --color-foreground-faint: var(--foreground-faint);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-from: var(--accent-from);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-2-soft: var(--accent-2-soft);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-highlight-soft: var(--highlight-soft);
+  --color-ring: var(--ring);
 }
 
-/* Dark mode overrides */
-.dark {
-  --color-background: var(--color-dark-bg);
-  --color-foreground: var(--color-dark-text);
-}
+@layer base {
+  * {
+    border-color: var(--border);
+  }
 
-body {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  transition: background-color 0.3s, color 0.3s;
-}
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
-}
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
 
-.dark body,
-:is(.dark) body {
-  background-color: var(--color-dark-bg);
-  color: var(--color-dark-text);
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
 }
 
 /* Logo slider animation */
@@ -130,8 +231,8 @@ html {
 .dark .bg-hero-mesh {
   background-color: var(--color-dark-bg);
   background-image:
-    radial-gradient(ellipse 80% 60% at 60% -10%, rgba(33, 150, 243, 0.15), transparent),
-    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(56, 189, 248, 0.08), transparent);
+    radial-gradient(ellipse 80% 60% at 60% -10%, rgba(124, 108, 246, 0.18), transparent),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(52, 209, 196, 0.12), transparent);
 }
 
 /* Subtle dot grid overlay */
@@ -154,8 +255,8 @@ html {
 }
 
 .dark .stat-card {
-  background: rgba(15, 39, 64, 0.8);
-  border-color: rgba(30, 58, 84, 0.8);
+  background: rgba(255, 255, 255, 0.045);
+  border-color: var(--border);
 }
 
 /* Gradient CTA background */
@@ -185,4 +286,107 @@ html {
   height: 200%;
   background: radial-gradient(ellipse, rgba(56, 189, 248, 0.15), transparent 65%);
   pointer-events: none;
+}
+
+@layer utilities {
+  /* Ported from MoveEasyMe (~/Studio/clients/moveeasyme/site) */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .bg-grid-strong {
+    background-image:
+      linear-gradient(to right, var(--grid-line-strong) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line-strong) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .fade-grid-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+
+  .hero-gradient-overlay {
+    background: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--background) 85%, transparent) 0%,
+      color-mix(in srgb, var(--background) 62%, transparent) 25%,
+      color-mix(in srgb, var(--background) 45%, transparent) 45%,
+      color-mix(in srgb, var(--background) 25%, transparent) 62%,
+      transparent 85%
+    );
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Marks content that isn't real yet — e.g. the 4 unverified "Our Work"
+     projects on the homepage (see components/home/work-showcase.tsx).
+     Ported from MoveEasyMe's placeholder-content system
+     (src/lib/placeholder-content.ts), used here for the opposite reason:
+     that site had no real content yet, this one has some real content
+     mixed with some that was never verified — the marker makes the
+     distinction visible rather than silently presenting both as genuine. */
+  .placeholder-flag {
+    position: relative;
+    outline: 2px dashed var(--highlight);
+    outline-offset: 4px;
+    border-radius: 0.5rem;
+  }
+
+  .placeholder-flag::before {
+    content: 'PLACEHOLDER';
+    position: absolute;
+    top: -0.6rem;
+    left: 1rem;
+    z-index: 10;
+    padding: 0.15rem 0.5rem;
+    background: var(--highlight);
+    color: #1a1200;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 0.25rem;
+  }
+
+  /* From the Bento concept (app/concepts/bento/bento.css) */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .text-gradient {
+    background: linear-gradient(100deg, var(--accent), var(--accent-2) 60%, var(--accent-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Pulsing dot for the hero's mono eyebrow (Bento's .bn-eyebrow-dot) */
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-2) 50%, transparent); }
+  70% { box-shadow: 0 0 0 6px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.eyebrow-dot {
+  animation: pulse-dot 2.2s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

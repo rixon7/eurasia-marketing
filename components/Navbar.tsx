@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
-import ThemeToggle from './ThemeToggle';
 
 const linksStart = [
   { href: '/', label: 'Home' },
@@ -60,7 +59,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
   const allLinks = [...linksStart, ...linksMid, ...linksEnd];
 
   return (
-    <div className="md:hidden mt-2 rounded-2xl border border-border-light/60 dark:border-white/[0.06] bg-white/95 dark:bg-[#08172a]/95 backdrop-blur-xl px-4 py-4 overflow-y-auto max-h-[80vh] shadow-lg">
+    <div className="md:hidden mt-2 rounded-2xl border border-border bg-background/95 backdrop-blur-xl px-4 py-4 overflow-y-auto max-h-[80vh]">
       <a
         href="https://calendly.com/rixon7/30min"
         target="_blank"
@@ -268,7 +267,7 @@ export default function Navbar() {
 
   return (
     <div className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-5">
-      <nav className="font-[family-name:var(--font-jakarta)] max-w-[1280px] mx-auto flex items-center justify-between px-4 sm:px-5 py-2.5 bg-white/90 dark:bg-[#08172a]/90 backdrop-blur-xl rounded-2xl border border-border-light/60 dark:border-white/[0.06] shadow-lg shadow-black/[0.06]">
+      <nav className="max-w-[1280px] mx-auto flex items-center justify-between px-4 sm:px-5 py-2.5 bg-background/85 backdrop-blur-xl rounded-2xl border border-border">
         <Link href="/" className="flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.svg" alt="Eurasia Marketing" className="h-8 dark:brightness-0 dark:invert" />
@@ -418,7 +417,6 @@ export default function Navbar() {
           >
             📅 Book a Call
           </a>
-          <div className="hidden md:block"><ThemeToggle /></div>
           {/* Hamburger */}
           <button
             onClick={() => setOpen(!open)}

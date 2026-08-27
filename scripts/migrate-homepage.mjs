@@ -30,10 +30,22 @@ const homepageSettings = {
   heroTitle: 'Grow Your Brand',
   heroHighlight: 'With Confidence',
   heroSubtitle: 'We help businesses build powerful marketing strategies that drive real results and lasting growth.',
+  // Fixed 2026-08-26 (homepage rebuild): this previously listed Brand
+  // Strategy and Content Marketing, both deleted services whose URLs now
+  // 301-redirect to /services/social-media (see next.config.ts) — the
+  // homepage was advertising services that no longer exist. Now the real
+  // six, matching components/home/service-illustrations.tsx and
+  // components/home/services-bento.tsx (which currently render this list
+  // hardcoded rather than reading it from Sanity, precisely to avoid this
+  // class of drift — this document is kept in sync as the canonical
+  // record for any other future consumer).
   featuredServices: [
-    { icon: '🎯', title: 'Brand Strategy',     href: '/services/brand-strategy',     description: 'Define your brand identity, voice, and positioning to stand out in a crowded marketplace.' },
-    { icon: '📈', title: 'Digital Advertising', href: '/services/digital-advertising', description: 'Targeted ad campaigns across search, social, and display channels that maximize your ROI.' },
-    { icon: '✍️', title: 'Content Marketing',   href: '/services/content-marketing',   description: 'Compelling content that engages your audience and establishes authority in your industry.' },
+    { icon: '🌐', title: 'Website Building',    href: '/services/website-building',   description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-ready, and beautifully designed.' },
+    { icon: '🤖', title: 'AI Automation',        href: '/services/ai-automation',       description: 'Save hours every week with custom AI workflows that automate lead follow-ups, reporting, and more.' },
+    { icon: '📈', title: 'Digital Advertising',  href: '/services/digital-advertising', description: 'Targeted ad campaigns across search, social, and display channels that maximize your ROI.' },
+    { icon: '📱', title: 'Social Media Management', href: '/services/social-media',    description: 'Strategic content creation, community management, and analytics across every platform.' },
+    { icon: '🔍', title: 'SEO & SEM',            href: '/services/seo-sem',             description: 'Data-driven SEO strategies that consistently deliver page-one rankings.' },
+    { icon: '📨', title: 'Email Marketing',      href: '/services/email-marketing',     description: 'Automated campaigns and targeted sequences that drive consistent repeat revenue.' },
   ],
   features: [
     { icon: '💡', title: 'Creative Approach',  description: 'Fresh ideas and innovative campaigns that capture attention.' },
