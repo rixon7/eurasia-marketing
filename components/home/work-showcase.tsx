@@ -5,7 +5,7 @@ import { Reveal } from '@/components/ui/reveal';
 import { TiltCard } from '@/components/ui/tilt-card';
 
 /**
- * Restyled from the "Our Work" section in app/page.tsx. All three projects
+ * Restyled from the "Our Work" section in app/page.tsx. All four projects
  * below are real, verifiable clients — no invented companies, metrics, or
  * stock-photo stand-ins (the four fictional placeholder cards this section
  * used to carry, each with fabricated results, were removed 2026-09-08).
@@ -16,6 +16,11 @@ import { TiltCard } from '@/components/ui/tilt-card';
  *   the client's custom domain (moveeasyme.com) still points at their old
  *   WordPress site pending cutover, so this links to the Vercel URL until
  *   that happens. Update the URL here once the domain switch is done.
+ * - PRIME Teleservices (primetele-site.vercel.app) — real and live, but
+ *   still mid-build for the client (content/data-quality questions still
+ *   open, not yet client-approved or launched on its real domain). Added
+ *   at the user's explicit choice despite that; update the URL and
+ *   description once it's finished and cut over to primeteleservices.com.
  */
 const PROJECTS = [
   {
@@ -35,6 +40,15 @@ const PROJECTS = [
     description: 'A full website rebuild for a Dubai-based movers, relocation, and freight company — covering warehousing, transportation, freight forwarding, and project logistics services.',
     image: 'https://image.thum.io/get/width/800/crop/600/https://moveeasyme.vercel.app/',
     href: 'https://moveeasyme.vercel.app',
+  },
+  {
+    title: 'PRIME Teleservices',
+    industry: '📞 Managed Services & BPO',
+    location: '📍 6 cities, India',
+    tags: ['Website Building', 'Brand Identity'],
+    description: 'A full Next.js rebuild for a managed-services and BPO provider spanning customer experience, back-office operations, and digital transformation — including a new brand system built directly from the client\'s own logo files.',
+    image: 'https://image.thum.io/get/width/800/crop/600/https://primetele-site.vercel.app/',
+    href: 'https://primetele-site.vercel.app',
   },
 ];
 
@@ -103,7 +117,7 @@ export function WorkShowcase() {
           </div>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((project, i) => (
             <Reveal key={project.title} delay={i * 0.08}>
               <TiltCard className="flex h-full flex-col">
