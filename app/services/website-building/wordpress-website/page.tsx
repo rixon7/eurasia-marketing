@@ -114,7 +114,6 @@ export default function WordPressWebsitePage() {
         subtitle="Professionally designed WordPress websites that are easy to manage, built to rank, and ready to grow with your business."
         buttons={[
           { label: 'Get a Free Quote →', href: '/contact', variant: 'primary' },
-          { label: 'View Pricing', href: '/pricing', variant: 'outline' },
         ]}
       />
 

@@ -238,12 +238,6 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
                 >
                   📅 Book a Free Call
                 </a>
-                <Link
-                  href="/pricing"
-                  className="px-6 py-3 border border-border-light dark:border-border-dark text-primary dark:text-dark-text rounded-[var(--radius-md)] text-sm font-semibold hover:border-accent-blue hover:text-accent-blue transition-all text-center"
-                >
-                  View Pricing →
-                </Link>
               </div>
             </AnimateIn>
             <AnimateIn delay={0.15}>
@@ -423,8 +417,6 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
         subtitle="Get a free consultation and find out how we can help you rank higher on Google and reach more local customers."
         buttonText="📅 Book a Free Call"
         buttonHref="https://calendly.com/rixon7/30min"
-        secondaryText="View Pricing"
-        secondaryHref="/pricing"
       />
     </>
   );

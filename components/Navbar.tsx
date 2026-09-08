@@ -10,7 +10,6 @@ const linksStart = [
 ];
 
 const linksMid = [
-  { href: '/pricing', label: 'Pricing' },
   { href: '/blog', label: 'Blog' },
 ];
 

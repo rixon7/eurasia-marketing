@@ -77,7 +77,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         subtitle={service.intro.split('.')[0] + '.'}
         buttons={[
           { label: 'Get a Free Quote →', href: '/contact', variant: 'primary' },
-          { label: 'View Pricing', href: '/pricing', variant: 'outline' },
         ]}
       />
 

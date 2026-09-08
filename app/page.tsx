@@ -82,8 +82,6 @@ export default async function Home() {
         description="Let's build a marketing strategy that drives real, measurable results for your business."
         primaryHref="/contact"
         primaryLabel="Start a Project"
-        secondaryHref="/pricing"
-        secondaryLabel="View Pricing"
         contactLines={['info@eurasiamarketing.com', '020 3886 3311', 'From £100/month, rolling monthly']}
       />
     </>

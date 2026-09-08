@@ -105,7 +105,6 @@ export default function AIWebsitePage() {
         subtitle="An AI-powered website that engages visitors, captures leads, and follows up automatically — 24/7, without lifting a finger."
         buttons={[
           { label: 'Get a Free Quote →', href: '/contact', variant: 'primary' },
-          { label: 'View Pricing', href: '/pricing', variant: 'outline' },
         ]}
       />
 
