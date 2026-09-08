@@ -168,6 +168,15 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Standard agency developer-credit band — its own highlighted
+          strip below the copyright line, per the standing convention
+          used on every site built for this agency. */}
+      <div className="border-t border-border bg-surface py-3">
+        <p className="text-center text-xs font-bold tracking-wide text-foreground">
+          Powered by Eurasia Marketing (UK, India)
+        </p>
+      </div>
     </footer>
   );
 }
