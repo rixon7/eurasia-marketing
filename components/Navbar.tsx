@@ -229,7 +229,7 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <div className="flex flex-col items-end gap-0.5 text-xs font-semibold whitespace-nowrap">
+          <div className="hidden md:flex flex-col items-end gap-0.5 text-xs font-semibold whitespace-nowrap">
             {PHONE_NUMBERS.map((p) => (
               <a
                 key={p.tel}
