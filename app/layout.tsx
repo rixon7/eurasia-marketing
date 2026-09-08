@@ -165,6 +165,35 @@ const localBusinessSchema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Automation & Workflows in Hounslow' } },
     ],
   },
+  // The India office is a second, linked LocalBusiness entity (see
+  // indiaOfficeSchema below) rather than a field on this one — schema.org
+  // has no clean way to give a single LocalBusiness two addresses/phone
+  // numbers. `department` here + `branchOf` on the India entity is the
+  // standard bidirectional link schema.org recommends for branch locations.
+  department: [{ '@id': 'https://eurasiamarketing.com/#business-india' }],
+};
+
+// Mumbai branch office, added 2026-09-08. Deliberately minimal compared to
+// the UK entity above — no aggregateRating/openingHoursSpecification since
+// none has been provided for this location; don't fabricate those fields.
+const indiaOfficeSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  '@id': 'https://eurasiamarketing.com/#business-india',
+  name: 'Eurasia Marketing — India Office',
+  branchOf: { '@id': 'https://eurasiamarketing.com/#business' },
+  url: 'https://eurasiamarketing.com',
+  telephone: '+919769672227',
+  email: 'info@eurasiamarketing.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'DG 2 Nand Dham Society, Opp Gate 7 Sion Hospital, 270 Sulochana Shetty Marg, Sion (West)',
+    addressLocality: 'Mumbai',
+    addressRegion: 'Maharashtra',
+    postalCode: '400022',
+    addressCountry: 'IN',
+  },
+  areaServed: { '@type': 'Country', name: 'India' },
 };
 
 const websiteSchema = {
@@ -190,6 +219,7 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(indiaOfficeSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>
       <body className={`${instrument.variable} ${manrope.variable} ${jetbrains.variable} ${cormorant.variable} antialiased bg-background text-foreground`}>

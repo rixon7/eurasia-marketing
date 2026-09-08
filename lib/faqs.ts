@@ -29,10 +29,10 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'What areas do you serve?',
-    a: "While we're based in Hounslow, London, we work with clients across the UK and internationally. Most of our work is done remotely, but we're always happy to meet in person for local clients.",
+    a: "We have offices in Hounslow, London and Mumbai, India, and work with clients across the UK, India, and internationally. Most of our work is done remotely, but we're always happy to meet in person for local clients at either office.",
   },
   {
     q: 'How do I get started?',
-    a: "Simply get in touch via our contact page, email us at info@eurasiamarketing.com, or call us on 020 3886 3311. We'll schedule a free consultation to understand your goals and recommend the best approach.",
+    a: "Simply get in touch via our contact page, email us at info@eurasiamarketing.com, or call us on +44 20 3886 3311 (UK) or +91 97696 72227 (India). We'll schedule a free consultation to understand your goals and recommend the best approach.",
   },
 ];

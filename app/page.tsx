@@ -82,7 +82,7 @@ export default async function Home() {
         description="Let's build a marketing strategy that drives real, measurable results for your business."
         primaryHref="/contact"
         primaryLabel="Start a Project"
-        contactLines={['info@eurasiamarketing.com', '020 3886 3311', 'From £100/month, rolling monthly']}
+        contactLines={['info@eurasiamarketing.com', '🇬🇧 +44 20 3886 3311', '🇮🇳 +91 97696 72227', 'From £100/month, rolling monthly']}
       />
     </>
   );

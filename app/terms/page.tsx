@@ -125,7 +125,7 @@ export default function TermsPage() {
               <p>If you have any questions about these Terms, please contact us:</p>
               <div className="mt-3 space-y-1">
                 <p><strong className="text-primary dark:text-dark-text">Email:</strong> <a href="mailto:info@eurasiamarketing.com" className="text-accent-blue hover:underline">info@eurasiamarketing.com</a></p>
-                <p><strong className="text-primary dark:text-dark-text">Phone:</strong> <a href="tel:02038863311" className="text-accent-blue hover:underline">020 3886 3311</a></p>
+                <p><strong className="text-primary dark:text-dark-text">Phone:</strong> <a href="tel:+442038863311" className="text-accent-blue hover:underline">+44 20 3886 3311</a></p>
                 <p><strong className="text-primary dark:text-dark-text">Address:</strong> 65-73 Staines Road, Hounslow TW3 3HW</p>
               </div>
             </section>

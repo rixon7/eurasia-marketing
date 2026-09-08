@@ -61,9 +61,21 @@ export default function Footer() {
             <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-foreground-faint">Contact</h4>
             <ul className="space-y-2 text-sm text-foreground-soft">
               <li><a href="mailto:info@eurasiamarketing.com" className="transition-colors hover:text-foreground">info@eurasiamarketing.com</a></li>
-              <li><a href="tel:02038863311" className="transition-colors hover:text-foreground">020 3886 3311</a></li>
+            </ul>
+
+            <p className="mt-5 mb-1.5 text-xs font-semibold text-foreground-faint">🇬🇧 UK Office</p>
+            <ul className="space-y-2 text-sm text-foreground-soft">
+              <li><a href="tel:+442038863311" className="transition-colors hover:text-foreground">+44 20 3886 3311</a></li>
               <li>65-73 Staines Road</li>
               <li>Hounslow TW3 3HW</li>
+            </ul>
+
+            <p className="mt-5 mb-1.5 text-xs font-semibold text-foreground-faint">🇮🇳 India Office</p>
+            <ul className="space-y-2 text-sm text-foreground-soft">
+              <li><a href="tel:+919769672227" className="transition-colors hover:text-foreground">+91 97696 72227</a></li>
+              <li>DG 2 Nand Dham Society, Opp Gate 7 Sion Hospital</li>
+              <li>270 Sulochana Shetty Marg, Sion (West)</li>
+              <li>Mumbai 400022</li>
             </ul>
           </div>
         </div>
