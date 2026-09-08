@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ChannelNetwork } from '@/components/home/channel-network';
 import { Spotlight } from '@/components/ui/spotlight';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { HeroHeadline } from '@/components/ui/hero-headline';
@@ -40,43 +41,53 @@ export function HomeHero({
         <Spotlight
           className="relative overflow-hidden rounded-[28px] border border-border bg-[radial-gradient(480px_circle_at_var(--spot-x,30%)_var(--spot-y,20%),color-mix(in_srgb,var(--accent)_18%,transparent),transparent_60%),var(--surface-glass)] px-6 py-16 sm:px-12 sm:py-20"
         >
-          <p className="mb-6 inline-flex items-center gap-2 font-mono text-xs tracking-[0.04em] text-accent-2">
-            <span className="eyebrow-dot h-1.5 w-1.5 rounded-full bg-accent-2" />
-            HOUNSLOW · WEST LONDON
-          </p>
+          <div className="lg:flex lg:items-center lg:justify-between lg:gap-10">
+            <div className="lg:max-w-[600px]">
+              <p className="mb-6 inline-flex items-center gap-2 font-mono text-xs tracking-[0.04em] text-accent-2">
+                <span className="eyebrow-dot h-1.5 w-1.5 rounded-full bg-accent-2" />
+                HOUNSLOW · WEST LONDON
+              </p>
 
-          <HeroHeadline
-            text={headline}
-            highlight={highlightWords}
-            className="max-w-[720px] text-[clamp(38px,6vw,66px)] font-bold leading-[1.03] text-foreground"
-          />
+              <HeroHeadline
+                text={headline}
+                highlight={highlightWords}
+                className="max-w-[720px] text-[clamp(38px,6vw,66px)] font-bold leading-[1.03] text-foreground"
+              />
 
-          <p className="mt-6 max-w-[480px] text-[17px] leading-relaxed text-foreground-soft">
-            {heroSubtitle}
-          </p>
+              <p className="mt-6 max-w-[480px] text-[17px] leading-relaxed text-foreground-soft">
+                {heroSubtitle}
+              </p>
 
-          <div className="mt-9 flex flex-wrap gap-3.5">
-            <MagneticButton>
-              <a
-                href="https://calendly.com/rixon7/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-2 px-6 py-3.5 text-sm font-semibold text-accent-foreground transition hover:brightness-110"
-              >
-                Get a Free Quote →
-              </a>
-            </MagneticButton>
-            <MagneticButton>
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-glass-strong px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-accent"
-              >
-                Explore our services
-              </Link>
-            </MagneticButton>
+              <div className="mt-9 flex flex-wrap gap-3.5">
+                <MagneticButton>
+                  <a
+                    href="https://calendly.com/rixon7/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-2 px-6 py-3.5 text-sm font-semibold text-accent-foreground transition hover:brightness-110"
+                  >
+                    Get a Free Quote →
+                  </a>
+                </MagneticButton>
+                <MagneticButton>
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-glass-strong px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-accent"
+                  >
+                    Explore our services
+                  </Link>
+                </MagneticButton>
+              </div>
+            </div>
+
+            {/* Signature hero graphic — hidden below lg, where there's no
+                room for it beside the text without crowding either. */}
+            <div className="hidden shrink-0 lg:block lg:w-[340px] xl:w-[400px]">
+              <ChannelNetwork />
+            </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-3.5 sm:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 gap-3.5 sm:grid-cols-4">
             {stats.map((stat) => {
               const { prefix, number, suffix } = parseStatValue(stat.value);
               return (
