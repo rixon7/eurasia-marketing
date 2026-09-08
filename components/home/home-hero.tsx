@@ -5,6 +5,7 @@ import { MagneticButton } from '@/components/ui/magnetic-button';
 import { HeroHeadline } from '@/components/ui/hero-headline';
 import { Counter } from '@/components/ui/counter';
 import { Container } from '@/components/ui/container';
+import { Tilt3D } from '@/components/ui/tilt-3d';
 import { parseStatValue } from '@/lib/stat-format';
 
 type Stat = { value: string; label: string };
@@ -48,11 +49,13 @@ export function HomeHero({
                 HOUNSLOW · WEST LONDON
               </p>
 
-              <HeroHeadline
-                text={headline}
-                highlight={highlightWords}
-                className="max-w-[720px] text-[clamp(38px,6vw,66px)] font-bold leading-[1.03] text-foreground"
-              />
+              <Tilt3D>
+                <HeroHeadline
+                  text={headline}
+                  highlight={highlightWords}
+                  className="max-w-[720px] text-[clamp(38px,6vw,66px)] font-bold leading-[1.03] text-foreground"
+                />
+              </Tilt3D>
 
               <p className="mt-6 max-w-[480px] text-[17px] leading-relaxed text-foreground-soft">
                 {heroSubtitle}
