@@ -46,19 +46,10 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
         📅 Book a Free Call
       </a>
 
-      <div className="mb-3 flex flex-col gap-1.5 rounded-[var(--radius-md)] border border-border px-4 py-3">
-        {PHONE_NUMBERS.map((p) => (
-          <a
-            key={p.tel}
-            href={`tel:${p.tel}`}
-            onClick={onClose}
-            className="flex items-center justify-between text-sm text-primary dark:text-dark-text hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
-          >
-            <span className="text-xs font-semibold text-foreground-faint">{p.label}</span>
-            <span className="font-semibold">{p.display}</span>
-          </a>
-        ))}
-      </div>
+      {/* Phone numbers aren't repeated here — they're always visible in
+          the bar above this drawer now (see the mobile-only phone bar
+          in the main Navbar component), so duplicating them here would
+          just be clutter at the top of the menu. */}
 
       <ul className="flex flex-col gap-1">
         {/* Home, About */}
@@ -160,109 +151,131 @@ export default function Navbar() {
 
   return (
     <div className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-5">
-      <nav className="max-w-[1280px] mx-auto flex items-center justify-between px-4 sm:px-5 py-2.5 bg-background/85 backdrop-blur-xl rounded-2xl border border-border">
-        <Link href="/" className="flex-shrink-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="Eurasia Marketing" className="h-8 dark:brightness-0 dark:invert" />
-        </Link>
+      <nav className="max-w-[1280px] mx-auto bg-background/85 backdrop-blur-xl rounded-2xl border border-border">
+        <div className="flex items-center justify-between px-4 sm:px-5 py-2.5">
+          <Link href="/" className="flex-shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.svg" alt="Eurasia Marketing" className="h-8 dark:brightness-0 dark:invert" />
+          </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-1">
-          {linksStart.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
-                  pathname === link.href
-                    ? 'bg-primary text-white dark:bg-accent-blue'
-                    : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-
-          {/* Services dropdown */}
-          <li className="relative" ref={servicesDropdownRef}>
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className={`flex items-center gap-1 px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
-                isServicesActive
-                  ? 'bg-primary text-white dark:bg-accent-blue'
-                  : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
-              }`}
-            >
-              Services
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            {servicesOpen && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-dark-card rounded-[var(--radius-md)] shadow-lg border border-border-light dark:border-border-dark z-50 py-1">
-                <Link href="/services" onClick={() => setServicesOpen(false)} className="block px-4 py-2.5 text-xs font-semibold text-muted dark:text-dark-muted uppercase tracking-wider border-b border-border-light dark:border-border-dark hover:bg-sky dark:hover:bg-dark-surface transition-colors mb-1">
-                  All Services
+          {/* Desktop links */}
+          <ul className="hidden md:flex items-center gap-1">
+            {linksStart.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
+                    pathname === link.href
+                      ? 'bg-primary text-white dark:bg-accent-blue'
+                      : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
+                  }`}
+                >
+                  {link.label}
                 </Link>
-                {serviceLinks.map((s) => (
-                  <Link key={s.href} href={s.href} onClick={() => setServicesOpen(false)} className={`block px-4 py-2.5 text-sm transition-colors ${pathname === s.href ? 'bg-sky dark:bg-dark-surface text-accent-blue font-medium' : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-surface'}`}>
-                    {s.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </li>
+              </li>
+            ))}
 
-          {linksEnd.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
-                  pathname === link.href
+            {/* Services dropdown */}
+            <li className="relative" ref={servicesDropdownRef}>
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className={`flex items-center gap-1 px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
+                  isServicesActive
                     ? 'bg-primary text-white dark:bg-accent-blue'
                     : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
                 }`}
               >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center gap-3">
-          <div className="hidden md:flex flex-col items-end gap-0.5 text-xs font-semibold whitespace-nowrap">
-            {PHONE_NUMBERS.map((p) => (
-              <a
-                key={p.tel}
-                href={`tel:${p.tel}`}
-                className="flex items-center gap-1.5 text-primary dark:text-dark-text hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
-              >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.71 5.71l1.92-1.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 14.92z" />
+                Services
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>
+                  <polyline points="6 9 12 15 18 9" />
                 </svg>
-                <span className="text-foreground-faint font-normal">{p.label}</span>
-                <span>{p.display}</span>
-              </a>
+              </button>
+              {servicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-dark-card rounded-[var(--radius-md)] shadow-lg border border-border-light dark:border-border-dark z-50 py-1">
+                  <Link href="/services" onClick={() => setServicesOpen(false)} className="block px-4 py-2.5 text-xs font-semibold text-muted dark:text-dark-muted uppercase tracking-wider border-b border-border-light dark:border-border-dark hover:bg-sky dark:hover:bg-dark-surface transition-colors mb-1">
+                    All Services
+                  </Link>
+                  {serviceLinks.map((s) => (
+                    <Link key={s.href} href={s.href} onClick={() => setServicesOpen(false)} className={`block px-4 py-2.5 text-sm transition-colors ${pathname === s.href ? 'bg-sky dark:bg-dark-surface text-accent-blue font-medium' : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-surface'}`}>
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </li>
+
+            {linksEnd.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
+                    pathname === link.href
+                      ? 'bg-primary text-white dark:bg-accent-blue'
+                      : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
             ))}
+          </ul>
+
+          <div className="flex items-center gap-3">
+            <div className="hidden md:flex flex-col items-end gap-0.5 text-xs font-semibold whitespace-nowrap">
+              {PHONE_NUMBERS.map((p) => (
+                <a
+                  key={p.tel}
+                  href={`tel:${p.tel}`}
+                  className="flex items-center gap-1.5 text-primary dark:text-dark-text hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.71 5.71l1.92-1.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 14.92z" />
+                  </svg>
+                  <span className="text-foreground-faint font-normal">{p.label}</span>
+                  <span>{p.display}</span>
+                </a>
+              ))}
+            </div>
+            <a
+              href="https://calendly.com/rixon7/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-[var(--radius-md)] bg-accent-blue text-white text-sm font-semibold hover:bg-accent-blue/90 transition-colors"
+            >
+              📅 Book a Call
+            </a>
+            {/* Hamburger */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden flex flex-col gap-1.5 w-11 h-11 items-center justify-center"
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
+              <span className={`block w-5 h-0.5 bg-primary dark:bg-dark-text transition-transform ${open ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-primary dark:bg-dark-text transition-opacity ${open ? 'opacity-0' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-primary dark:bg-dark-text transition-transform ${open ? '-rotate-45 -translate-y-2' : ''}`} />
+            </button>
           </div>
-          <a
-            href="https://calendly.com/rixon7/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-[var(--radius-md)] bg-accent-blue text-white text-sm font-semibold hover:bg-accent-blue/90 transition-colors"
-          >
-            📅 Book a Call
-          </a>
-          {/* Hamburger */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden flex flex-col gap-1.5 w-11 h-11 items-center justify-center"
-            aria-label="Toggle menu"
-            aria-expanded={open}
-          >
-            <span className={`block w-5 h-0.5 bg-primary dark:bg-dark-text transition-transform ${open ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block w-5 h-0.5 bg-primary dark:bg-dark-text transition-opacity ${open ? 'opacity-0' : ''}`} />
-            <span className={`block w-5 h-0.5 bg-primary dark:bg-dark-text transition-transform ${open ? '-rotate-45 -translate-y-2' : ''}`} />
-          </button>
+        </div>
+
+        {/* Mobile-only phone bar — always visible under the main row,
+            since there's no room for it inline next to the logo and
+            hamburger at these widths. The desktop pair above (hidden
+            below md) covers md+; this covers everything below it. */}
+        <div className="flex md:hidden items-center justify-center gap-5 border-t border-border px-4 py-2 text-xs font-semibold">
+          {PHONE_NUMBERS.map((p) => (
+            <a
+              key={p.tel}
+              href={`tel:${p.tel}`}
+              className="flex items-center gap-1.5 text-primary dark:text-dark-text hover:text-accent-blue dark:hover:text-accent-blue transition-colors"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 5.71 5.71l1.92-1.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 14.92z" />
+              </svg>
+              <span className="text-foreground-faint font-normal">{p.label}</span>
+              <span>{p.display}</span>
+            </a>
+          ))}
         </div>
       </nav>
 
