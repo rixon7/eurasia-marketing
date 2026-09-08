@@ -137,7 +137,7 @@ export function ImageSlider() {
     <section className="py-8 md:py-12">
       <Container>
         <div
-          className="relative aspect-[16/7] overflow-hidden rounded-[28px] border border-border sm:aspect-[16/6] md:aspect-[16/5] lg:aspect-[16/5]"
+          className="relative aspect-[16/10] overflow-hidden rounded-[28px] border border-border sm:aspect-[16/9] md:aspect-[16/8] lg:aspect-[16/7]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
