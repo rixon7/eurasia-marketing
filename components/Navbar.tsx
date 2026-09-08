@@ -14,14 +14,7 @@ const linksEnd = [
 ];
 
 const serviceLinks = [
-  {
-    href: '/services/website-building',
-    label: '🌐 Website Building',
-    children: [
-      { href: '/services/website-building/ai-website',        label: '🤖 AI Website' },
-      { href: '/services/website-building/wordpress-website', label: '🔷 WordPress Website' },
-    ],
-  },
+  { href: '/services/website-building',    label: '🌐 Website Building' },
   { href: '/services/ai-automation',       label: '🤖 AI Automation' },
   { href: '/services/digital-advertising', label: '📈 Digital Advertising' },
   { href: '/services/social-media',        label: '📱 Social Media' },
@@ -32,7 +25,6 @@ const serviceLinks = [
 /* ─── Mobile menu as its own component so state resets on every open ─── */
 function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: string }) {
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [websiteOpen, setWebsiteOpen] = useState(false);
 
   const isServicesActive = pathname.startsWith('/services');
 
@@ -68,7 +60,7 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
         {/* Services */}
         <li>
           <button
-            onClick={() => { setServicesOpen(!servicesOpen); setWebsiteOpen(false); }}
+            onClick={() => setServicesOpen(!servicesOpen)}
             className={`w-full flex items-center justify-between px-4 py-3 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
               isServicesActive
                 ? 'bg-primary text-white dark:bg-accent-blue'
@@ -83,46 +75,17 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
 
           {servicesOpen && (
             <ul className="mt-1 ml-2 flex flex-col gap-1">
-              {serviceLinks.map((s) =>
-                s.children ? (
-                  <li key={s.href}>
-                    <button
-                      onClick={() => setWebsiteOpen(!websiteOpen)}
-                      className="w-full flex items-center justify-between px-4 py-2 rounded-[var(--radius-sm)] text-sm transition-colors text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card"
-                    >
-                      {s.label}
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${websiteOpen ? 'rotate-180' : ''}`}>
-                        <polyline points="6 9 12 15 18 9" />
-                      </svg>
-                    </button>
-                    {websiteOpen && (
-                      <ul className="mt-1 ml-2 flex flex-col gap-1">
-                        {s.children.map((child) => (
-                          <li key={child.href}>
-                            <Link
-                              href={child.href}
-                              onClick={onClose}
-                              className="block px-4 py-2 rounded-[var(--radius-sm)] text-sm transition-colors text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card"
-                            >
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ) : (
-                  <li key={s.href}>
-                    <Link
-                      href={s.href}
-                      onClick={onClose}
-                      className="block px-4 py-2 rounded-[var(--radius-sm)] text-sm transition-colors text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card"
-                    >
-                      {s.label}
-                    </Link>
-                  </li>
-                )
-              )}
+              {serviceLinks.map((s) => (
+                <li key={s.href}>
+                  <Link
+                    href={s.href}
+                    onClick={onClose}
+                    className="block px-4 py-2 rounded-[var(--radius-sm)] text-sm transition-colors text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card"
+                  >
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           )}
         </li>
@@ -153,14 +116,12 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [websiteSubOpen, setWebsiteSubOpen] = useState(false);
   const servicesDropdownRef = useRef<HTMLLIElement>(null);
 
   // Close desktop dropdowns and mobile menu on route change
   useEffect(() => {
     setOpen(false);
     setServicesOpen(false);
-    setWebsiteSubOpen(false);
   }, [pathname]);
 
   // Close desktop dropdowns on outside click
@@ -168,7 +129,6 @@ export default function Navbar() {
     function handleClick(e: MouseEvent) {
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(e.target as Node)) {
         setServicesOpen(false);
-        setWebsiteSubOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClick);
@@ -222,31 +182,11 @@ export default function Navbar() {
                 <Link href="/services" onClick={() => setServicesOpen(false)} className="block px-4 py-2.5 text-xs font-semibold text-muted dark:text-dark-muted uppercase tracking-wider border-b border-border-light dark:border-border-dark hover:bg-sky dark:hover:bg-dark-surface transition-colors mb-1">
                   All Services
                 </Link>
-                {serviceLinks.map((s) =>
-                  s.children ? (
-                    <div key={s.href} className="relative group/wb">
-                      <div className={`flex items-center justify-between px-4 py-2.5 text-sm hover:bg-sky dark:hover:bg-dark-surface transition-colors cursor-default ${pathname === s.href || pathname.startsWith(s.href + '/') ? 'text-accent-blue font-medium' : 'text-primary dark:text-dark-text'}`}>
-                        <Link href={s.href} onClick={() => setServicesOpen(false)} className="flex-1">
-                          {s.label}
-                        </Link>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 -rotate-90 opacity-40">
-                          <polyline points="6 9 12 15 18 9" />
-                        </svg>
-                      </div>
-                      <div className="absolute left-full top-0 w-48 bg-white dark:bg-dark-card rounded-[var(--radius-md)] shadow-lg border border-border-light dark:border-border-dark z-50 py-1 invisible group-hover/wb:visible opacity-0 group-hover/wb:opacity-100 transition-opacity duration-150">
-                        {s.children.map((child) => (
-                          <Link key={child.href} href={child.href} onClick={() => setServicesOpen(false)} className={`block px-4 py-2.5 text-sm transition-colors ${pathname === child.href ? 'bg-sky dark:bg-dark-surface text-accent-blue font-medium' : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-surface'}`}>
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <Link key={s.href} href={s.href} onClick={() => setServicesOpen(false)} className={`block px-4 py-2.5 text-sm transition-colors ${pathname === s.href ? 'bg-sky dark:bg-dark-surface text-accent-blue font-medium' : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-surface'}`}>
-                      {s.label}
-                    </Link>
-                  )
-                )}
+                {serviceLinks.map((s) => (
+                  <Link key={s.href} href={s.href} onClick={() => setServicesOpen(false)} className={`block px-4 py-2.5 text-sm transition-colors ${pathname === s.href ? 'bg-sky dark:bg-dark-surface text-accent-blue font-medium' : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-surface'}`}>
+                    {s.label}
+                  </Link>
+                ))}
               </div>
             )}
           </li>
