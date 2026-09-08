@@ -81,10 +81,20 @@ export function HomeHero({
                   </Link>
                 </MagneticButton>
               </div>
+
+              {/* Same signature graphic, shown in-flow below the CTAs on
+                  mobile/tablet rather than dropped entirely — the lg:block
+                  sidebar version below is hidden here since there's no
+                  room for it beside the text at those widths. Two mounted
+                  instances is fine: ChannelNetwork has no shared DOM ids
+                  to collide (unlike an SVG gradient-id case), just an
+                  extra always-on canvas loop that's negligible for a
+                  graphic this simple. */}
+              <div className="mt-10 flex justify-center lg:hidden">
+                <ChannelNetwork />
+              </div>
             </div>
 
-            {/* Signature hero graphic — hidden below lg, where there's no
-                room for it beside the text without crowding either. */}
             <div className="hidden shrink-0 lg:block lg:w-[340px] xl:w-[400px]">
               <ChannelNetwork />
             </div>
