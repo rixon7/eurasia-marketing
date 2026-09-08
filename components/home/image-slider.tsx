@@ -17,7 +17,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Container } from '@/components/ui/container';
 
 const ACCENTS = ['--accent', '--accent-2', '--accent-3'] as const;
@@ -38,7 +37,6 @@ const slides = [
       </svg>
     ),
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=90&auto=format&fit=crop',
-    href: '/services/website-building',
   },
   {
     title: 'Social Media Management',
@@ -54,7 +52,6 @@ const slides = [
       </svg>
     ),
     image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1920&q=90&auto=format&fit=crop',
-    href: '/services/social-media',
   },
   {
     title: 'SEO & Search Rankings',
@@ -69,7 +66,6 @@ const slides = [
       </svg>
     ),
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=90&auto=format&fit=crop',
-    href: '/services/seo-sem',
   },
   {
     title: 'AI Automation & Workflows',
@@ -84,7 +80,6 @@ const slides = [
       </svg>
     ),
     image: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=90&auto=format&fit=crop',
-    href: '/services/ai-automation',
   },
   {
     title: 'Digital Advertising',
@@ -98,7 +93,6 @@ const slides = [
       </svg>
     ),
     image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1920&q=90&auto=format&fit=crop',
-    href: '/services/digital-advertising',
   },
 ];
 
@@ -164,7 +158,7 @@ export function ImageSlider() {
 
                 {/* Content — bottom-anchored on mobile, centred on desktop */}
                 <div className="relative z-10 flex h-full max-w-2xl flex-col justify-end px-5 pb-14 sm:justify-center sm:px-8 sm:pb-0 md:px-16 lg:px-20">
-                  <div className="mb-3 sm:mb-5">
+                  <div className="mb-4 sm:mb-6">
                     <div
                       className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-surface-glass-strong text-foreground sm:h-14 sm:w-14 sm:rounded-2xl"
                     >
@@ -172,32 +166,15 @@ export function ImageSlider() {
                     </div>
                   </div>
 
-                  <h3 className="mb-1 text-lg font-bold tracking-tight text-foreground sm:mb-2 sm:text-2xl md:text-4xl lg:text-5xl">
+                  <h3 className="mb-2 text-lg font-bold tracking-tight text-foreground sm:mb-3 sm:text-2xl md:text-4xl lg:text-5xl">
                     {slide.title}
                   </h3>
-                  <p className="mb-1 text-xs font-medium text-foreground-soft sm:mb-2 sm:text-sm md:text-base">
+                  <p className="mb-2 text-xs font-medium text-foreground-soft sm:mb-3 sm:text-sm md:text-base">
                     {slide.subtitle}
                   </p>
-                  <p className="mb-4 hidden text-sm leading-relaxed text-foreground-faint sm:block md:text-base">
+                  <p className="hidden text-sm leading-relaxed text-foreground-faint sm:block md:text-base">
                     {slide.description}
                   </p>
-
-                  <div className="flex gap-2 sm:gap-3">
-                    <a
-                      href="https://calendly.com/rixon7/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="whitespace-nowrap rounded-full bg-gradient-to-r from-accent to-accent-2 px-4 py-2.5 text-xs font-semibold text-accent-foreground transition hover:brightness-110 sm:px-6 sm:py-3 sm:text-sm"
-                    >
-                      📅 Book a Free Call
-                    </a>
-                    <Link
-                      href="/services"
-                      className="whitespace-nowrap rounded-full border border-border bg-surface-glass-strong px-4 py-2.5 text-xs font-semibold text-foreground transition-colors hover:border-accent sm:px-6 sm:py-3 sm:text-sm"
-                    >
-                      Learn More
-                    </Link>
-                  </div>
                 </div>
               </div>
             );
