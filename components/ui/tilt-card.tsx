@@ -11,9 +11,26 @@ import { motion, useMotionValue, useReducedMotion, useTransform } from 'framer-m
 export function TiltCard({
   children,
   className = '',
+  accent = '--accent',
 }: {
   children: React.ReactNode;
   className?: string;
+  /** CSS custom property name (e.g. '--accent-2') to tint the hover
+   * spotlight/border/glow with. Defaults to the site accent so every
+   * existing caller (testimonials, work-showcase, recent-posts) is
+   * unaffected — only callers that want a per-card colour pass this.
+   *
+   * Piped through the `--card-accent` custom property (set via inline
+   * style below) rather than interpolated straight into the Tailwind
+   * arbitrary-value classes: Tailwind's JIT scanner only generates CSS
+   * for class strings it can see literally in source, and `accent` is
+   * a runtime prop — `var(${accent})` inside a template literal would
+   * produce a different class string per call that Tailwind never sees
+   * at build time, so nothing would actually apply. Referencing the
+   * fixed `var(--card-accent)` name keeps the class strings static
+   * (Tailwind generates them once) while the colour itself still
+   * varies per instance via the inline style. */
+  accent?: string;
 }) {
   const reduceMotion = useReducedMotion();
 
@@ -26,13 +43,19 @@ export function TiltCard({
   const spotY = useMotionValue(50);
   const spotlight = useTransform(
     [spotX, spotY],
-    ([sx, sy]) => `radial-gradient(240px circle at ${sx}% ${sy}%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%)`,
+    ([sx, sy]) => `radial-gradient(240px circle at ${sx}% ${sy}%, color-mix(in srgb, var(--card-accent) 18%, transparent), transparent 70%)`,
   );
 
-  const baseClassName = `group relative overflow-hidden rounded-[20px] border border-border bg-surface-glass backdrop-blur-xl transition-[border-color,box-shadow] duration-300 hover:border-accent/40 hover:shadow-[0_0_40px_-12px_color-mix(in_srgb,var(--accent)_38%,transparent)] ${className}`;
+  const cardStyle = { '--card-accent': `var(${accent})` } as React.CSSProperties;
+
+  const baseClassName = `group relative overflow-hidden rounded-[20px] border border-border bg-surface-glass backdrop-blur-xl transition-[border-color,box-shadow] duration-300 hover:border-[color-mix(in_srgb,var(--card-accent)_40%,transparent)] hover:shadow-[0_0_40px_-12px_color-mix(in_srgb,var(--card-accent)_38%,transparent)] ${className}`;
 
   if (reduceMotion) {
-    return <div className={baseClassName}>{children}</div>;
+    return (
+      <div className={baseClassName} style={cardStyle}>
+        {children}
+      </div>
+    );
   }
 
   return (
@@ -50,7 +73,7 @@ export function TiltCard({
       }}
       whileHover={{ y: -4 }}
       transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-      style={{ rotateX, rotateY, transformPerspective: 800 }}
+      style={{ ...cardStyle, rotateX, rotateY, transformPerspective: 800 }}
       className={baseClassName}
     >
       <motion.div

@@ -25,36 +25,48 @@ import { SERVICE_ILLUSTRATIONS } from '@/components/home/service-illustrations';
  * Data-Driven / Dedicated Support / Fast Turnaround) is folded in here as
  * a compact strip per user decision, rather than kept as its own section.
  */
+// Each card gets one of the three site accents, cycling so neighbouring
+// cards in the grid never repeat a colour at any breakpoint (3 columns at
+// lg, 2 at sm) — the whole point is variety, so a fixed 1-2-3-1-2-3 pattern
+// works out cleanly for a 6-item, 3-colour set either way.
+const ACCENTS = ['--accent', '--accent-2', '--accent-3'] as const;
+
 const SERVICES = [
   {
     slug: 'website-building',
     title: 'Website Building',
     description: 'We build fast, secure, and scalable websites that handle your growth while delivering the seamless experience today’s clients demand.',
+    accent: ACCENTS[0],
   },
   {
     slug: 'ai-automation',
     title: 'AI Automation',
     description: 'Save hours every week with intelligent workflows that automate lead follow-ups, content generation, reporting, and repetitive business tasks.',
+    accent: ACCENTS[1],
   },
   {
     slug: 'digital-advertising',
     title: 'Digital Advertising',
     description: 'Targeted ad campaigns across Google, Meta, LinkedIn, and display networks — built for maximum ROI and measurable business growth.',
+    accent: ACCENTS[2],
   },
   {
     slug: 'social-media',
     title: 'Social Media Management',
     description: 'Strategic content creation, community management, and analytics across every platform — building loyal audiences that drive real results.',
+    accent: ACCENTS[0],
   },
   {
     slug: 'seo-sem',
     title: 'SEO & SEM',
     description: 'Dominate your market’s search results with data-driven SEO strategies that consistently deliver page-one rankings for terms your ideal clients are searching for.',
+    accent: ACCENTS[1],
   },
   {
     slug: 'email-marketing',
     title: 'Email Marketing',
     description: 'Automated campaigns, personalised newsletters, and targeted sequences that keep your audience engaged and drive consistent repeat revenue.',
+    accent: ACCENTS[2],
   },
 ];
 
@@ -80,8 +92,20 @@ export function ServicesBento() {
           {SERVICES.map((service, i) => (
             <Reveal key={service.slug} delay={i * 0.06}>
               <Link href={`/services/${service.slug}`} className="block h-full">
-                <TiltCard className="flex h-full flex-col">
-                  <div className="flex h-40 items-center justify-center rounded-t-[20px] bg-surface-glass p-4 text-foreground/75 sm:h-48">
+                <TiltCard accent={service.accent} className="flex h-full flex-col">
+                  {/* Colour-coded top edge — the quickest visual cue that
+                      each card carries its own accent, echoed below in the
+                      illustration wash and (via TiltCard's accent prop)
+                      the hover glow/border. */}
+                  <div
+                    className="h-1 w-full"
+                    style={{ background: `linear-gradient(90deg, var(${service.accent}), color-mix(in srgb, var(${service.accent}) 40%, transparent))` }}
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="flex h-40 items-center justify-center p-4 text-foreground/75 sm:h-48"
+                    style={{ background: `radial-gradient(circle at 30% 15%, color-mix(in srgb, var(${service.accent}) 20%, transparent), transparent 65%), var(--surface-glass)` }}
+                  >
                     {SERVICE_ILLUSTRATIONS[service.slug]}
                   </div>
                   <div className="flex flex-1 flex-col p-6">
