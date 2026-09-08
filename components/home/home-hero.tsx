@@ -37,7 +37,7 @@ export function HomeHero({
   const highlightWords = heroHighlight.split(' ');
 
   return (
-    <section className="pb-8 pt-12 sm:pt-16">
+    <section className="pb-8 pt-4 sm:pt-6">
       <Container>
         <Spotlight
           className="relative overflow-hidden rounded-[28px] border border-border bg-[radial-gradient(480px_circle_at_var(--spot-x,30%)_var(--spot-y,20%),color-mix(in_srgb,var(--accent)_18%,transparent),transparent_60%),var(--surface-glass)] px-6 py-16 sm:px-12 sm:py-20"
