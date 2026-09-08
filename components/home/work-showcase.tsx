@@ -29,8 +29,9 @@ const PROJECTS = [
     location: '📍 Mumbai, India',
     tags: ['Website Building', 'SEO', 'Schema Markup'],
     description: 'A ground-up Next.js rebuild for a Mumbai-based AMFI-registered Mutual Fund Distributor — replacing an ageing WordPress site with a fast, secure platform and technical SEO built in from day one.',
-    image: 'https://image.thum.io/get/width/800/crop/600/https://bluegridfs.com/',
+    image: 'https://image.thum.io/get/width/1200/crop/750/https://bluegridfs.com/',
     href: 'https://bluegridfs.com',
+    domain: 'bluegridfs.com',
   },
   {
     title: 'MoveEasyMe',
@@ -38,8 +39,9 @@ const PROJECTS = [
     location: '📍 Dubai, UAE',
     tags: ['Website Building'],
     description: 'A full website rebuild for a Dubai-based movers, relocation, and freight company — covering warehousing, transportation, freight forwarding, and project logistics services.',
-    image: 'https://image.thum.io/get/width/800/crop/600/https://moveeasyme.vercel.app/',
+    image: 'https://image.thum.io/get/width/1200/crop/750/https://moveeasyme.vercel.app/',
     href: 'https://moveeasyme.vercel.app',
+    domain: 'moveeasyme.vercel.app',
   },
   {
     title: 'PRIME Teleservices',
@@ -47,8 +49,9 @@ const PROJECTS = [
     location: '📍 6 cities, India',
     tags: ['Website Building', 'Brand Identity'],
     description: 'A full Next.js rebuild for a managed-services and BPO provider spanning customer experience, back-office operations, and digital transformation — including a new brand system built directly from the client\'s own logo files.',
-    image: 'https://image.thum.io/get/width/800/crop/600/https://primetele-site.vercel.app/',
+    image: 'https://image.thum.io/get/width/1200/crop/750/https://primetele-site.vercel.app/',
     href: 'https://primetele-site.vercel.app',
+    domain: 'primetele-site.vercel.app',
   },
 ];
 
@@ -121,13 +124,23 @@ export function WorkShowcase() {
           {PROJECTS.map((project, i) => (
             <Reveal key={project.title} delay={i * 0.08}>
               <TiltCard className="flex h-full flex-col">
-                <div className="relative aspect-[16/9] flex-shrink-0 overflow-hidden rounded-t-[20px]">
+                <div className="flex items-center gap-3 bg-[#1e1e1e] px-4 py-3">
+                  <div className="flex flex-shrink-0 gap-1.5">
+                    <div className="h-3 w-3 rounded-full bg-red-500/80" />
+                    <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
+                    <div className="h-3 w-3 rounded-full bg-green-500/80" />
+                  </div>
+                  <div className="flex-1 truncate rounded-md bg-white/10 px-3 py-1 font-mono text-xs text-white/50">
+                    {project.domain}
+                  </div>
+                </div>
+                <div className="relative aspect-[16/10] flex-shrink-0 overflow-hidden bg-surface">
                   <Image
                     src={project.image}
                     alt={`${project.title} website`}
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
