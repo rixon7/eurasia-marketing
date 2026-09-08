@@ -5,47 +5,36 @@ import { Reveal } from '@/components/ui/reveal';
 import { TiltCard } from '@/components/ui/tilt-card';
 
 /**
- * Restyled from the "Our Work" section in app/page.tsx. Skin Health
- * Practice is a real, verifiable client (skinhealthpractice.com) and is
- * kept as the featured project, unmarked. The other four — Urban Cart,
- * Apex Build, Luxe Salon, GreenSpace Landscapes — could not be verified as
- * real during the rebuild audit and are rendered with the `.placeholder-
- * flag` marker (app/globals.css) per user decision, so the page can never
- * present them as genuine client work by accident. Replace with real
- * projects (or drop) as they become available.
+ * Restyled from the "Our Work" section in app/page.tsx. All three projects
+ * below are real, verifiable clients — no invented companies, metrics, or
+ * stock-photo stand-ins (the four fictional placeholder cards this section
+ * used to carry, each with fabricated results, were removed 2026-09-08).
+ *
+ * - Skin Health Practice (skinhealthpractice.com) — the featured project.
+ * - BlueGrid Financial Services (bluegridfs.com) — live on its own domain.
+ * - MoveEasyMe (moveeasyme.vercel.app) — the rebuild is real and live, but
+ *   the client's custom domain (moveeasyme.com) still points at their old
+ *   WordPress site pending cutover, so this links to the Vercel URL until
+ *   that happens. Update the URL here once the domain switch is done.
  */
 const PROJECTS = [
   {
-    title: 'Urban Cart',
-    industry: '🛍️ E-commerce & Retail',
-    location: '📍 London',
-    tags: ['E-commerce', 'Product Catalogue', 'Payments'],
-    description: 'A fully custom online store with product filtering, secure checkout, stock management, and a sleek mobile-first design built to maximise conversions.',
-    image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80&auto=format&fit=crop',
+    title: 'BlueGrid Financial Services',
+    industry: '💰 Financial Services',
+    location: '📍 Mumbai, India',
+    tags: ['Website Building', 'SEO', 'Schema Markup'],
+    description: 'A ground-up Next.js rebuild for a Mumbai-based AMFI-registered Mutual Fund Distributor — replacing an ageing WordPress site with a fast, secure platform and technical SEO built in from day one.',
+    image: 'https://image.thum.io/get/width/800/crop/600/https://bluegridfs.com/',
+    href: 'https://bluegridfs.com',
   },
   {
-    title: 'Apex Build',
-    industry: '🏗️ Construction & Renovation',
-    location: '📍 West London',
-    tags: ['Website Building', 'Local SEO', 'Lead Generation'],
-    description: 'A bold, trust-building website for a residential and commercial construction firm — showcasing projects, services, and driving inbound enquiries through targeted local SEO.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    title: 'Luxe Salon',
-    industry: '💇 Hair & Beauty',
-    location: '📍 Hounslow, London',
-    tags: ['Website Building', 'Booking System', 'Social Media'],
-    description: 'A premium salon website with online booking, a treatments menu, stylist profiles, and a gallery — paired with a social media strategy that grew their Instagram following by 3×.',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80&auto=format&fit=crop',
-  },
-  {
-    title: 'GreenSpace Landscapes',
-    industry: '🌿 Garden & Landscaping',
-    location: '📍 Surrey & West London',
-    tags: ['Website Building', 'SEO', 'Google Ads'],
-    description: 'A visually stunning website for a landscaping business featuring a project portfolio, service pages, and a Google Ads campaign that doubled their enquiries within 60 days.',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80&auto=format&fit=crop',
+    title: 'MoveEasyMe',
+    industry: '🚚 Movers & Freight',
+    location: '📍 Dubai, UAE',
+    tags: ['Website Building'],
+    description: 'A full website rebuild for a Dubai-based movers, relocation, and freight company — covering warehousing, transportation, freight forwarding, and project logistics services.',
+    image: 'https://image.thum.io/get/width/800/crop/600/https://moveeasyme.vercel.app/',
+    href: 'https://moveeasyme.vercel.app',
   },
 ];
 
@@ -114,15 +103,14 @@ export function WorkShowcase() {
           </div>
         </Reveal>
 
-        {/* Unverified projects — visibly flagged, not presented as genuine */}
         <div className="mt-16 grid gap-8 sm:grid-cols-2">
           {PROJECTS.map((project, i) => (
-            <Reveal key={project.title} delay={i * 0.08} className="placeholder-flag">
+            <Reveal key={project.title} delay={i * 0.08}>
               <TiltCard className="flex h-full flex-col">
                 <div className="relative aspect-[16/9] flex-shrink-0 overflow-hidden rounded-t-[20px]">
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} website`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, 50vw"
@@ -138,11 +126,24 @@ export function WorkShowcase() {
                   </div>
                   <h3 className="mb-2 text-lg font-bold text-foreground">{project.title}</h3>
                   <p className="mb-4 flex-1 text-sm leading-relaxed text-foreground-faint">{project.description}</p>
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-foreground-faint">
+                  <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-foreground-faint">
                     <span>{project.location}</span>
                     <span className="text-border-strong">|</span>
                     <span>{project.industry}</span>
                   </div>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:brightness-110"
+                  >
+                    Visit Live Site
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
                 </div>
               </TiltCard>
             </Reveal>
