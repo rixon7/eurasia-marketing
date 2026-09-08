@@ -21,6 +21,17 @@ import { TiltCard } from '@/components/ui/tilt-card';
  *   open, not yet client-approved or launched on its real domain). Added
  *   at the user's explicit choice despite that; update the URL and
  *   description once it's finished and cut over to primeteleservices.com.
+ *
+ * Images: BlueGrid and PRIME use static screenshots in public/images/
+ * portfolio/ rather than a live thum.io proxy URL (2026-09-08) — both
+ * sites' heroes run framer-motion entrance animations (word-reveal,
+ * fade-ins, a chart draw-in) that hadn't finished when thum.io's bot
+ * captured them, so the live proxy URLs were rendering near-blank heroes.
+ * Captured manually via a real browser with several seconds' wait for the
+ * animations to settle. MoveEasyMe's thum.io capture has no such issue
+ * (checked) — left as a live proxy URL, no static image needed. If either
+ * static screenshot goes stale (a redesign, new content), recapture the
+ * same way rather than switching back to thum.io.
  */
 const PROJECTS = [
   {
@@ -29,7 +40,7 @@ const PROJECTS = [
     location: '📍 Mumbai, India',
     tags: ['Website Building', 'SEO', 'Schema Markup'],
     description: 'A ground-up Next.js rebuild for a Mumbai-based AMFI-registered Mutual Fund Distributor — replacing an ageing WordPress site with a fast, secure platform and technical SEO built in from day one.',
-    image: 'https://image.thum.io/get/width/1200/crop/750/https://bluegridfs.com/',
+    image: '/images/portfolio/bluegridfs.jpg',
     href: 'https://bluegridfs.com',
     domain: 'bluegridfs.com',
   },
@@ -49,7 +60,7 @@ const PROJECTS = [
     location: '📍 6 cities, India',
     tags: ['Website Building', 'Brand Identity'],
     description: 'A full Next.js rebuild for a managed-services and BPO provider spanning customer experience, back-office operations, and digital transformation — including a new brand system built directly from the client\'s own logo files.',
-    image: 'https://image.thum.io/get/width/1200/crop/750/https://primetele-site.vercel.app/',
+    image: '/images/portfolio/primetele.jpg',
     href: 'https://primetele-site.vercel.app',
     domain: 'primetele-site.vercel.app',
   },
