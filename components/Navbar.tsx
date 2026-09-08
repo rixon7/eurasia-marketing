@@ -9,10 +9,6 @@ const linksStart = [
   { href: '/about', label: 'About' },
 ];
 
-const linksMid = [
-  { href: '/blog', label: 'Blog' },
-];
-
 const linksEnd = [
   { href: '/contact', label: 'Contact' },
 ];
@@ -33,29 +29,12 @@ const serviceLinks = [
   { href: '/services/email-marketing',     label: '📨 Email Marketing' },
 ];
 
-const areas = [
-  { href: '/areas/hounslow',  label: 'Hounslow' },
-  { href: '/areas/feltham',   label: 'Feltham' },
-  { href: '/areas/sunbury',   label: 'Sunbury' },
-  { href: '/areas/hampton',   label: 'Hampton' },
-  { href: '/areas/isleworth', label: 'Isleworth' },
-  { href: '/areas/heston',    label: 'Heston' },
-  { href: '/areas/brentford', label: 'Brentford' },
-  { href: '/areas/hayes',     label: 'Hayes' },
-  { href: '/areas/staines',   label: 'Staines' },
-  { href: '/areas/london',    label: 'London' },
-];
-
 /* ─── Mobile menu as its own component so state resets on every open ─── */
 function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: string }) {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [websiteOpen, setWebsiteOpen] = useState(false);
-  const [areasOpen, setAreasOpen] = useState(false);
 
   const isServicesActive = pathname.startsWith('/services');
-  const isAreasActive = pathname.startsWith('/areas');
-
-  const allLinks = [...linksStart, ...linksMid, ...linksEnd];
 
   return (
     <div className="md:hidden mt-2 rounded-2xl border border-border bg-background/95 backdrop-blur-xl px-4 py-4 overflow-y-auto max-h-[80vh]">
@@ -148,65 +127,6 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
           )}
         </li>
 
-        {/* Pricing, Blog */}
-        {linksMid.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              onClick={onClose}
-              className={`block px-4 py-3 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
-                pathname === link.href
-                  ? 'bg-primary text-white dark:bg-accent-blue'
-                  : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
-              }`}
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-
-        {/* Areas */}
-        <li>
-          <button
-            onClick={() => setAreasOpen(!areasOpen)}
-            className={`w-full flex items-center justify-between px-4 py-3 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
-              isAreasActive
-                ? 'bg-primary text-white dark:bg-accent-blue'
-                : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
-            }`}
-          >
-            Areas
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${areasOpen ? 'rotate-180' : ''}`}>
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-
-          {areasOpen && (
-            <ul className="mt-1 ml-2 flex flex-col gap-1">
-              <li>
-                <Link href="/areas" onClick={onClose} className="block px-4 py-2 rounded-[var(--radius-sm)] text-sm text-muted dark:text-dark-muted hover:bg-sky dark:hover:bg-dark-card transition-colors">
-                  All Areas
-                </Link>
-              </li>
-              {areas.map((area) => (
-                <li key={area.href}>
-                  <Link
-                    href={area.href}
-                    onClick={onClose}
-                    className={`block px-4 py-2 rounded-[var(--radius-sm)] text-sm transition-colors ${
-                      pathname === area.href
-                        ? 'text-accent-blue font-medium'
-                        : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
-                    }`}
-                  >
-                    {area.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-
         {/* Contact */}
         {linksEnd.map((link) => (
           <li key={link.href}>
@@ -232,26 +152,20 @@ function MobileMenu({ onClose, pathname }: { onClose: () => void; pathname: stri
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [areasOpen, setAreasOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [websiteSubOpen, setWebsiteSubOpen] = useState(false);
-  const dropdownRef = useRef<HTMLLIElement>(null);
   const servicesDropdownRef = useRef<HTMLLIElement>(null);
 
   // Close desktop dropdowns and mobile menu on route change
   useEffect(() => {
     setOpen(false);
     setServicesOpen(false);
-    setAreasOpen(false);
     setWebsiteSubOpen(false);
   }, [pathname]);
 
   // Close desktop dropdowns on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setAreasOpen(false);
-      }
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(e.target as Node)) {
         setServicesOpen(false);
         setWebsiteSubOpen(false);
@@ -261,7 +175,6 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
-  const isAreasActive = pathname.startsWith('/areas');
   const isServicesActive = pathname.startsWith('/services');
 
   return (
@@ -334,50 +247,6 @@ export default function Navbar() {
                     </Link>
                   )
                 )}
-              </div>
-            )}
-          </li>
-
-          {linksMid.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
-                  pathname === link.href
-                    ? 'bg-primary text-white dark:bg-accent-blue'
-                    : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-
-          {/* Areas dropdown */}
-          <li className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setAreasOpen(!areasOpen)}
-              className={`flex items-center gap-1 px-4 py-2 rounded-[var(--radius-sm)] text-sm font-medium transition-colors ${
-                isAreasActive
-                  ? 'bg-primary text-white dark:bg-accent-blue'
-                  : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-card'
-              }`}
-            >
-              Areas
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${areasOpen ? 'rotate-180' : ''}`}>
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            {areasOpen && (
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-dark-card rounded-[var(--radius-md)] shadow-lg border border-border-light dark:border-border-dark overflow-hidden z-50">
-                <Link href="/areas" onClick={() => setAreasOpen(false)} className="block px-4 py-2.5 text-xs font-semibold text-muted dark:text-dark-muted uppercase tracking-wider border-b border-border-light dark:border-border-dark hover:bg-sky dark:hover:bg-dark-surface transition-colors">
-                  All Areas
-                </Link>
-                {areas.map((area) => (
-                  <Link key={area.href} href={area.href} onClick={() => setAreasOpen(false)} className={`block px-4 py-2.5 text-sm transition-colors ${pathname === area.href ? 'bg-sky dark:bg-dark-surface text-accent-blue font-medium' : 'text-primary dark:text-dark-text hover:bg-sky dark:hover:bg-dark-surface'}`}>
-                    {area.label}
-                  </Link>
-                ))}
               </div>
             )}
           </li>
