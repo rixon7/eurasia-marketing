@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
+import { PHONE_NUMBERS } from '@/lib/contact';
 
 const linksStart = [
   { href: '/', label: 'Home' },
@@ -20,13 +21,6 @@ const serviceLinks = [
   { href: '/services/social-media',        label: '📱 Social Media' },
   { href: '/services/seo-sem',             label: '🔍 SEO & SEM' },
   { href: '/services/email-marketing',     label: '📨 Email Marketing' },
-];
-
-// Both office numbers, shared between the desktop bar and the mobile menu
-// so the two never drift out of sync with each other.
-const PHONE_NUMBERS = [
-  { label: 'UK',    display: '+44 20 3886 3311', tel: '+442038863311' },
-  { label: 'India', display: '+91 97696 72227',  tel: '+919769672227' },
 ];
 
 /* ─── Mobile menu as its own component so state resets on every open ─── */
