@@ -2,15 +2,18 @@
 
 // Floating WhatsApp click-to-chat widget — same pattern already built for
 // the BlueGrid Financial Services site (collapsed pill with a "Need Help?
-// Chat with us" tag, expanding to a small panel on click), adapted here for
-// two offices instead of one: Eurasia has both a UK and an India WhatsApp
-// number (see components/Navbar.tsx and components/Footer.tsx), so the
-// panel offers both as separate contact cards rather than a single one.
-// Both numbers are pulled from lib/contact.ts, the same shared source the
-// Navbar reads from, so this can never drift out of sync with the numbers
-// shown elsewhere on the site.
+// Chat with us" tag, expanding to a small panel on click).
+//
+// Originally built with two contact cards (UK + India, since the Navbar
+// shows both office phone numbers) — client decided against that after
+// learning WhatsApp Business only supports one number per app, and didn't
+// want to run two separate WhatsApp apps for the two offices. Single
+// number now (India), used for both UK and India visitors — no "India
+// Office" label on the card, since the number isn't India-specific from a
+// visitor's point of view. Number lives in lib/contact.ts (WHATSAPP_NUMBER),
+// shared with Footer.tsx's WhatsApp social icon so both stay in sync.
 import { useState } from 'react';
-import { PHONE_NUMBERS } from '@/lib/contact';
+import { WHATSAPP_NUMBER } from '@/lib/contact';
 
 const WHATSAPP_GREEN = '#25D366';
 
@@ -35,30 +38,27 @@ export function WhatsAppWidget() {
               Hi! Send us a message on WhatsApp and we&apos;ll get back to you.
             </p>
           </div>
-          <div className="space-y-2 p-3">
-            <p className="px-1 pb-1 text-xs text-foreground-faint">
+          <div className="p-3">
+            <p className="px-1 pb-2 text-xs text-foreground-faint">
               We typically reply within a few minutes.
             </p>
-            {PHONE_NUMBERS.map((p) => (
-              <a
-                key={p.tel}
-                href={`https://wa.me/${p.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 rounded-xl border border-border bg-surface-glass p-3 transition-colors hover:border-accent/40"
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-xl border border-border bg-surface-glass p-3 transition-colors hover:border-accent/40"
+            >
+              <span
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white"
+                style={{ backgroundColor: WHATSAPP_GREEN }}
               >
-                <span
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white"
-                  style={{ backgroundColor: WHATSAPP_GREEN }}
-                >
-                  <WhatsAppGlyph size={20} />
-                </span>
-                <span>
-                  <span className="block text-sm font-medium text-foreground">{p.label} Office</span>
-                  <span className="block text-xs text-foreground-soft">{p.display}</span>
-                </span>
-              </a>
-            ))}
+                <WhatsAppGlyph size={20} />
+              </span>
+              <span>
+                <span className="block text-sm font-medium text-foreground">Eurasia Marketing</span>
+                <span className="block text-xs text-foreground-soft">Chat with us</span>
+              </span>
+            </a>
           </div>
         </div>
       )}

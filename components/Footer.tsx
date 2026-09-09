@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { WHATSAPP_NUMBER } from '@/lib/contact';
 
 // Rebuilt for the 2026-08-26 Bento-dark homepage rebuild. All link lists,
 // contact details, and the copyright/legal line are unchanged — only the
@@ -143,7 +144,7 @@ export default function Footer() {
                 ),
               },
               {
-                href: 'https://wa.me/442038863311',
+                href: `https://wa.me/${WHATSAPP_NUMBER}`,
                 label: 'WHATSAPP',
                 brand: '#25D366',
                 icon: (
