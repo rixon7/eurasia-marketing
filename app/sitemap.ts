@@ -59,7 +59,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
-    ...['hounslow', 'feltham', 'sunbury', 'hampton', 'isleworth', 'heston', 'brentford', 'hayes', 'staines', 'london'].map((area) => ({
+    // 'mumbai' added ahead of its Sanity `area` doc existing — see the note
+    // in app/areas/page.tsx. Don't deploy until scripts/add-mumbai-area.mjs
+    // has actually run, or this points Google at a 404.
+    ...['hounslow', 'mumbai', 'feltham', 'sunbury', 'hampton', 'isleworth', 'heston', 'brentford', 'hayes', 'staines', 'london'].map((area) => ({
       url: `${baseUrl}/areas/${area}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,

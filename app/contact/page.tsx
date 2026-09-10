@@ -5,12 +5,12 @@ import ContactForm from '@/components/ContactForm';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Free Consultation Hounslow',
+  title: 'Contact Us - Free Consultation',
   description: 'Get a free consultation with Eurasia Marketing — offices in Hounslow, UK and Mumbai, India. Visit us at 65-73 Staines Road, Hounslow TW3 3HW.',
-  keywords: ['contact Eurasia Marketing', 'free marketing consultation Hounslow', 'digital marketing agency contact', 'marketing agency Hounslow phone', 'book consultation Hounslow'],
+  keywords: ['contact Eurasia Marketing', 'free website design consultation', 'digital marketing agency contact', 'marketing agency Hounslow phone', 'marketing agency Mumbai phone', 'book consultation'],
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact Eurasia Marketing | Free Consultation Hounslow',
+    title: 'Contact Eurasia Marketing | Free Consultation',
     description: 'Get a free consultation with Eurasia Marketing — offices in Hounslow, UK and Mumbai, India. Visit us at 65-73 Staines Road, Hounslow TW3 3HW.',
     url: 'https://eurasiamarketing.com/contact',
   },

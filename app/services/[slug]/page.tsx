@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = await client.fetch<ServiceData | null>(serviceBySlugQuery, { slug });
   if (!service) return { title: 'Not Found' };
   return {
-    title: `${service.name} Services in Hounslow`,
+    title: `${service.name} Services — Hounslow & Mumbai`,
     description: service.description,
     alternates: { canonical: `/services/${slug}` },
     openGraph: {

@@ -7,13 +7,13 @@ import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'About Eurasia Marketing Hounslow',
-  description: 'Eurasia Marketing is Hounslow\'s trusted digital marketing agency. Website design, SEO, social media & paid ads — helping local businesses grow online.',
-  keywords: ['about Eurasia Marketing', 'digital marketing agency Hounslow', 'Hounslow marketing team', 'local marketing experts Hounslow', 'marketing agency west London'],
+  title: 'About Eurasia Marketing',
+  description: 'Eurasia Marketing is a website design and digital marketing agency with teams in Hounslow, UK and Mumbai, India — building websites and growing businesses online.',
+  keywords: ['about Eurasia Marketing', 'website design agency Hounslow', 'website design company Mumbai', 'digital marketing agency Hounslow', 'digital marketing agency Mumbai'],
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Eurasia Marketing | Digital Marketing Agency Hounslow',
-    description: 'Eurasia Marketing is Hounslow\'s trusted digital marketing agency. Website design, SEO, social media & paid ads — helping local businesses grow online.',
+    title: 'About Eurasia Marketing | Website Design & Digital Marketing Agency',
+    description: 'Eurasia Marketing is a website design and digital marketing agency with teams in Hounslow, UK and Mumbai, India — building websites and growing businesses online.',
     url: 'https://eurasiamarketing.com/about',
   },
 };
@@ -37,7 +37,7 @@ const team = [
     name: 'Eurasia Marketing Team',
     initials: 'EM',
     role: 'Digital Marketing Specialists',
-    bio: 'Our team brings together expertise in SEO, paid advertising, social media, web design, and AI automation — delivering joined-up digital strategies for businesses across west London.',
+    bio: 'Our team brings together expertise in website design, SEO, paid advertising, social media, and AI automation — delivering joined-up digital strategies for businesses across west London and Mumbai.',
     linkedin: 'https://linkedin.com/company/eurasia-marketing',
   },
 ];
@@ -45,7 +45,7 @@ const team = [
 const values = [
   { icon: '🎯', title: 'Results First', description: 'We measure everything. Every campaign is tracked, analysed, and optimised to maximise your return on investment.' },
   { icon: '🤝', title: 'Honest Partnerships', description: 'No long-term contracts, no hidden fees. We earn your business every month by delivering real value.' },
-  { icon: '💡', title: 'Local Expertise', description: 'Based in Hounslow, we understand the west London market and tailor strategies to your specific audience and competitors.' },
+  { icon: '💡', title: 'Local Expertise', description: 'With teams in Hounslow, UK and Mumbai, India, we understand both markets and tailor strategies to your specific audience and competitors.' },
   { icon: '🚀', title: 'Always Innovating', description: 'From AI automation to the latest ad formats — we stay ahead so you benefit from cutting-edge marketing techniques.' },
 ];
 

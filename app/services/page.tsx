@@ -6,13 +6,13 @@ import ProcessStep from '@/components/ProcessStep';
 import CTA from '@/components/CTA';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services Hounslow',
-  description: 'Full-service digital marketing in Hounslow — web design, SEO, social media & paid ads. Tailored strategies that drive real results for local businesses.',
-  keywords: ['digital marketing services Hounslow', 'web design Hounslow', 'SEO services Hounslow', 'social media management Hounslow', 'Google Ads Hounslow', 'email marketing Hounslow', 'AI automation Hounslow'],
+  title: 'Website Design & Digital Marketing Services',
+  description: 'Website building, SEO, social media & paid ads — with teams in Hounslow, UK and Mumbai, India. Tailored strategies that drive real results.',
+  keywords: ['website design Hounslow', 'website design company Mumbai', 'web design agency Hounslow', 'affordable website design Mumbai', 'digital marketing services Hounslow', 'SEO services Hounslow', 'AI automation Mumbai'],
   alternates: { canonical: '/services' },
   openGraph: {
-    title: 'Digital Marketing Services in Hounslow | Eurasia Marketing',
-    description: 'Full-service digital marketing in Hounslow — web design, SEO, social media & paid ads. Tailored strategies that drive real results for local businesses.',
+    title: 'Website Design & Digital Marketing Services | Eurasia Marketing',
+    description: 'Website building, SEO, social media & paid ads — with teams in Hounslow, UK and Mumbai, India. Tailored strategies that drive real results.',
     url: 'https://eurasiamarketing.com/services',
   },
 };

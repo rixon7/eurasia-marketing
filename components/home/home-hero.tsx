@@ -46,7 +46,7 @@ export function HomeHero({
             <div className="lg:max-w-[600px]">
               <p className="mb-6 inline-flex items-center gap-2 font-mono text-xs tracking-[0.04em] text-accent-2">
                 <span className="eyebrow-dot h-1.5 w-1.5 rounded-full bg-accent-2" />
-                HOUNSLOW · WEST LONDON
+                HOUNSLOW, UK · MUMBAI, INDIA
               </p>
 
               <Tilt3D>
