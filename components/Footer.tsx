@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="mb-4 inline-block">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Eurasia Marketing" className="h-10 brightness-0 invert" />
+              <img src="/logo.svg" alt="Eurasia Marketing" className="h-10" />
             </Link>
             <p className="text-sm leading-relaxed text-foreground-faint">
               Helping businesses build powerful marketing strategies that drive real results and lasting growth.

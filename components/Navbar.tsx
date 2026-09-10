@@ -149,7 +149,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-4 sm:px-5 py-2.5">
           <Link href="/" className="flex-shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="Eurasia Marketing" className="h-8 dark:brightness-0 dark:invert" />
+            <img src="/logo.svg" alt="Eurasia Marketing" className="h-8" />
           </Link>
 
           {/* Desktop links */}
