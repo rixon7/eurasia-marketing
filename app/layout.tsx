@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Instrument_Sans, Manrope, JetBrains_Mono, Cormorant_Garamond } from 'next/font/google';
 import SiteChrome from '@/components/SiteChrome';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { ConversionTracking } from '@/components/ConversionTracking';
 import './globals.css';
 
 const instrument = Instrument_Sans({
@@ -232,6 +233,7 @@ export default function RootLayout({
             scoped to that div instead of the viewport. */}
         <div className="grain-overlay" aria-hidden="true" />
         <GoogleAnalytics />
+        <ConversionTracking />
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

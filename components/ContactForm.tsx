@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -24,6 +25,11 @@ export default function ContactForm() {
     });
 
     setStatus(res.ok ? 'success' : 'error');
+    // Fired only on a real successful submit (server confirmed the lead
+    // was captured), not on click — a click alone doesn't mean the form
+    // was valid or the request succeeded. 'generate_lead' is GA4's own
+    // recommended event name for this.
+    if (res.ok) trackEvent('generate_lead', { event_category: 'lead_generation', method: 'contact_form' });
   }
 
   if (status === 'success') {
