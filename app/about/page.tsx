@@ -27,8 +27,8 @@ const stats = [
 
 const team = [
   {
-    name: 'Rixon Lal',
-    initials: 'RL',
+    name: 'Rixon',
+    initials: 'R',
     role: 'Founder & Director',
     bio: 'With over a decade of experience in digital marketing and IT services, Rixon founded Eurasia Marketing to help local businesses compete online. He leads strategy, client relationships, and business development.',
     linkedin: 'https://linkedin.com/company/eurasia-marketing',
