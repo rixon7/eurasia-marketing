@@ -34,20 +34,20 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Eurasia Marketing | Website Design & Digital Marketing — Hounslow & Mumbai',
+    default: 'Eurasia Marketing | Website Design Agency London',
     template: '%s | Eurasia Marketing',
   },
-  description: 'Website design and digital marketing agency with offices in Hounslow, UK and Mumbai, India. Website building, SEO, social media, paid ads & AI automation — built to convert.',
+  description: 'Website design and digital marketing agency for London businesses, with offices in Hounslow, UK and Mumbai, India. Website building, SEO, social media, paid ads & AI automation.',
   keywords: [
+    'website design agency London',
+    'digital marketing agency London',
+    'web design London',
     'website design Hounslow',
+    'digital marketing agency Hounslow',
     'website design company Mumbai',
     'affordable website design company Mumbai',
-    'web design agency Hounslow',
-    'digital marketing agency Hounslow',
     'digital marketing agency Mumbai',
     'AI automation agency Mumbai',
-    'SEO services Hounslow',
-    'social media management Hounslow',
     'web design agency near me',
   ],
   authors: [{ name: 'Eurasia Marketing' }],
@@ -60,13 +60,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
     siteName: 'Eurasia Marketing',
-    title: 'Eurasia Marketing | Website Design & Digital Marketing — Hounslow & Mumbai',
-    description: 'Expert website design, SEO, social media, and AI automation — with local teams in Hounslow, UK and Mumbai, India. We help businesses grow online with proven strategies.',
+    title: 'Eurasia Marketing | Website Design Agency London',
+    description: 'Expert website design, SEO, social media, and AI automation for London businesses — with teams in Hounslow, UK and Mumbai, India.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eurasia Marketing | Website Design & Digital Marketing',
-    description: 'Expert website design, SEO, and digital marketing — with teams in Hounslow, UK and Mumbai, India. Grow your business with proven strategies.',
+    title: 'Eurasia Marketing | Website Design Agency London',
+    description: 'Expert website design, SEO, and digital marketing for London businesses — with teams in Hounslow, UK and Mumbai, India.',
   },
   metadataBase: new URL('https://eurasiamarketing.com'),
   alternates: {
@@ -143,6 +143,7 @@ const localBusinessSchema = {
     worstRating: '1',
   },
   areaServed: [
+    { '@type': 'City', name: 'London' },
     { '@type': 'City', name: 'Hounslow' },
     { '@type': 'City', name: 'Brentford' },
     { '@type': 'City', name: 'Feltham' },

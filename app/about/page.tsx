@@ -9,7 +9,7 @@ import AnimateIn from '@/components/AnimateIn';
 export const metadata: Metadata = {
   title: 'About Eurasia Marketing',
   description: 'Eurasia Marketing is a website design and digital marketing agency with teams in Hounslow, UK and Mumbai, India — building websites and growing businesses online.',
-  keywords: ['about Eurasia Marketing', 'website design agency Hounslow', 'website design company Mumbai', 'digital marketing agency Hounslow', 'digital marketing agency Mumbai'],
+  keywords: ['about Eurasia Marketing', 'website design agency London', 'digital marketing agency London', 'website design agency Hounslow', 'website design company Mumbai', 'digital marketing agency Mumbai'],
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Eurasia Marketing | Website Design & Digital Marketing Agency',
@@ -45,7 +45,7 @@ const team = [
 const values = [
   { icon: '🎯', title: 'Results First', description: 'We measure everything. Every campaign is tracked, analysed, and optimised to maximise your return on investment.' },
   { icon: '🤝', title: 'Honest Partnerships', description: 'No long-term contracts, no hidden fees. We earn your business every month by delivering real value.' },
-  { icon: '💡', title: 'Local Expertise', description: 'With teams in Hounslow, UK and Mumbai, India, we understand both markets and tailor strategies to your specific audience and competitors.' },
+  { icon: '💡', title: 'Local Expertise', description: 'With a London base in Hounslow, UK and a team in Mumbai, India, we understand both markets and tailor strategies to your specific audience and competitors.' },
   { icon: '🚀', title: 'Always Innovating', description: 'From AI automation to the latest ad formats — we stay ahead so you benefit from cutting-edge marketing techniques.' },
 ];
 

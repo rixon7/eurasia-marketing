@@ -8,7 +8,7 @@ import CTA from '@/components/CTA';
 export const metadata: Metadata = {
   title: 'Website Design & Digital Marketing Services',
   description: 'Website building, SEO, social media & paid ads — with teams in Hounslow, UK and Mumbai, India. Tailored strategies that drive real results.',
-  keywords: ['website design Hounslow', 'website design company Mumbai', 'web design agency Hounslow', 'affordable website design Mumbai', 'digital marketing services Hounslow', 'SEO services Hounslow', 'AI automation Mumbai'],
+  keywords: ['website design agency London', 'digital marketing agency London', 'website design Hounslow', 'website design company Mumbai', 'affordable website design Mumbai', 'SEO services London', 'AI automation Mumbai'],
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Website Design & Digital Marketing Services | Eurasia Marketing',
