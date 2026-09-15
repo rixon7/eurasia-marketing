@@ -6,12 +6,12 @@ import { getAllPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Tips & Insights',
-  description: 'Digital marketing tips from Hounslow\'s top agency. Practical SEO, social media, and web design advice to help local businesses grow online.',
-  keywords: ['digital marketing blog', 'SEO tips Hounslow', 'social media marketing tips', 'marketing insights', 'web design advice', 'local business marketing blog'],
+  description: 'Website design and digital marketing tips from our team in Hounslow, UK and Mumbai, India. Practical SEO, social media, and web design advice to help businesses grow online.',
+  keywords: ['digital marketing blog', 'website design tips', 'SEO tips Hounslow', 'SEO tips Mumbai', 'social media marketing tips', 'web design advice', 'small business marketing blog'],
   alternates: { canonical: '/blog' },
   openGraph: {
     title: 'Digital Marketing Tips & Insights | Eurasia Marketing Blog',
-    description: 'Digital marketing tips from Hounslow\'s top agency. Practical SEO, social media, and web design advice to help local businesses grow online.',
+    description: 'Website design and digital marketing tips from our team in Hounslow, UK and Mumbai, India. Practical SEO, social media, and web design advice to help businesses grow online.',
     url: 'https://eurasiamarketing.com/blog',
   },
 };

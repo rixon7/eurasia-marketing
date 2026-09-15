@@ -112,12 +112,11 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
       title: `Digital Marketing Agency in ${data.name} | SEO, Web Design & Google Ads`,
       description: data.description,
     },
-    other: {
-      'geo.region': 'GB-ENG',
-      'geo.placename': data.name,
-      'geo.position': '51.4685;-0.3614',
-      'ICBM': '51.4685, -0.3614',
-    },
+    // No geo.position/ICBM here (2026-09-15 fix) — it previously hardcoded
+    // Hounslow's own coordinates on every area page (Brentford, Feltham,
+    // Mumbai, etc. all claiming to sit at 51.4685,-0.3614), which is a false
+    // location signal. The homepage carries the real office coordinates;
+    // these spoke pages shouldn't fabricate their own.
   };
 }
 
@@ -136,22 +135,19 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
     ],
   };
 
+  // Was a separate `LocalBusiness` entity per area page (its own @id,
+  // duplicating the real business's name/telephone/address 10+ times over)
+  // — Google could read that as 10 near-duplicate business listings rather
+  // than 1 business serving 10 areas. Fixed 2026-09-15: this is now a
+  // `Service`, correctly linked back to the one real business via
+  // `provider`, with `areaServed` doing the location-targeting work
+  // instead of minting a new business entity.
   const serviceAreaSchema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `https://eurasiamarketing.com/areas/${area}`,
-    name: 'Eurasia Marketing',
-    url: `https://eurasiamarketing.com/areas/${area}`,
-    telephone: '+442038863311',
-    email: 'info@eurasiamarketing.com',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '65-73 Staines Road',
-      addressLocality: 'Hounslow',
-      addressRegion: 'London',
-      postalCode: 'TW3 3HW',
-      addressCountry: 'GB',
-    },
+    '@type': 'Service',
+    '@id': `https://eurasiamarketing.com/areas/${area}#service`,
+    name: `Digital Marketing Services in ${data.name}`,
+    provider: { '@id': 'https://eurasiamarketing.com/#business' },
     areaServed: { '@type': 'City', name: data.name },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -170,7 +166,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Do you offer digital marketing services in ${data.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Yes! Eurasia Marketing is based in ${data.name} and provides SEO, website design, social media management, and Google Ads for local businesses.` } },
+      { '@type': 'Question', name: `Do you offer digital marketing services in ${data.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Yes! Eurasia Marketing works with businesses across ${data.name}, providing SEO, website design, social media management, and Google Ads.` } },
       { '@type': 'Question', name: `How much does SEO cost in ${data.name}?`, acceptedAnswer: { '@type': 'Answer', text: 'Our SEO plans start from £300/month with no long-term contracts.' } },
       { '@type': 'Question', name: `Can you build a website for my ${data.name} business?`, acceptedAnswer: { '@type': 'Answer', text: 'Yes. We design professional, mobile-friendly websites from £500, SEO-optimised and built to convert.' } },
       { '@type': 'Question', name: `Do you manage Google Ads for businesses in ${data.name}?`, acceptedAnswer: { '@type': 'Answer', text: 'Yes, we manage Google Ads and Meta/Facebook campaigns — strategy, setup, daily optimisation and reporting.' } },
@@ -179,7 +175,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
   };
 
   const faqs = [
-    { q: `Do you offer digital marketing services in ${data.name}?`, a: `Yes! Eurasia Marketing is based in ${data.name} and provides a full range of digital marketing services including SEO, website design, social media management, and Google Ads for local businesses.` },
+    { q: `Do you offer digital marketing services in ${data.name}?`, a: `Yes! Eurasia Marketing works with businesses across ${data.name}, providing a full range of digital marketing services including SEO, website design, social media management, and Google Ads.` },
     { q: `How much does SEO cost in ${data.name}?`, a: 'Our SEO plans start from £300/month with no long-term contracts. We offer flexible monthly plans tailored to your budget and business goals.' },
     { q: `Can you build a website for my ${data.name} business?`, a: 'Absolutely. We design and build professional, mobile-friendly websites from £500. Every site is SEO-optimised, fast-loading, and built to convert visitors into paying customers.' },
     { q: `Do you manage Google Ads for businesses in ${data.name}?`, a: 'Yes, we manage Google Ads (PPC) and Meta/Facebook ad campaigns. We handle everything from strategy and setup to daily optimisation and reporting.' },
@@ -195,7 +191,11 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
       <Hero
         title="Digital Marketing Agency in"
         highlight={data.name}
-        subtitle={`Hounslow's #1 digital marketing agency — expert SEO, web design, social media & Google Ads for local businesses. No long-term contracts.`}
+        // Not city-specific (was hardcoded "Hounslow's #1..." on every
+        // page, including non-Hounslow ones) — this template is also used
+        // by the future Mumbai page once its Sanity doc exists, so nothing
+        // here should assert a specific UK region.
+        subtitle={`Digital marketing that works — expert SEO, web design, social media & Google Ads. No long-term contracts.`}
         displayFont
         buttons={[
           { label: '📅 Book a Free Call', href: 'https://calendly.com/rixon7/30min', variant: 'blue', external: true },
@@ -223,7 +223,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <AnimateIn>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-semibold mb-4">
-                📍 Based in {data.name}
+                📍 Serving {data.name}
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-primary dark:text-dark-text mb-4 leading-tight">
                 Your local digital marketing agency in {data.name}

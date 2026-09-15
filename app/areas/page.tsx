@@ -4,13 +4,25 @@ import Hero from '@/components/Hero';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'Areas We Serve | West London Digital Marketing',
-  description: 'Eurasia Marketing provides digital marketing services across Hounslow, Feltham, Sunbury, Hampton, Isleworth, Heston, Brentford, and Hayes.',
+  title: 'Areas We Serve | London & Mumbai Website Design',
+  description: 'Eurasia Marketing provides website design and digital marketing services across London (with a West London base in Hounslow) and Mumbai, India.',
   alternates: { canonical: '/areas' },
 };
 
+// NOTE: 'mumbai' is listed here but its /areas/mumbai page (a Sanity `area`
+// document, see scripts/add-mumbai-area.mjs) hasn't been created yet — the
+// write token in .env.local lacks create permission. Don't deploy this
+// change until that doc exists, or the Mumbai card links to a 404. See
+// memory/project_eurasia_marketing_redesign or ask Claude for the fix.
+//
+// 'london' moved to the top of this list (2026-09-15) — it's now the
+// primary hub keyword target (dual-location + Greater London-wide, not
+// Hounslow-only, per that date's strategy decision), with the West London
+// suburb pages and Mumbai as supporting spokes.
 const areas = [
-  { slug: 'hounslow',  name: 'Hounslow',  description: 'Our home base — helping Hounslow businesses dominate local search and grow online.' },
+  { slug: 'london',    name: 'London',    description: 'Our primary market — website design and digital marketing for businesses across Greater London.' },
+  { slug: 'hounslow',  name: 'Hounslow',  description: 'Our West London base — helping Hounslow businesses dominate local search and grow online.' },
+  { slug: 'mumbai',    name: 'Mumbai',    description: 'Affordable website design and AI-powered digital marketing for growing Mumbai businesses.' },
   { slug: 'feltham',   name: 'Feltham',   description: 'SEO, website design, and social media services for Feltham businesses.' },
   { slug: 'sunbury',   name: 'Sunbury',   description: 'Digital marketing strategies tailored to Sunbury-on-Thames businesses.' },
   { slug: 'hampton',   name: 'Hampton',   description: 'Helping Hampton businesses attract more local customers online.' },
@@ -26,7 +38,7 @@ export default function AreasPage() {
       <Hero
         title="Areas We"
         highlight="Serve"
-        subtitle="Based in Hounslow, we provide expert digital marketing services across West London and the surrounding areas."
+        subtitle="With a West London base in Hounslow, UK and a team in Mumbai, India, we provide expert website design and digital marketing services across Greater London and Mumbai."
       />
 
       <section className="py-12 md:py-24 px-4 sm:px-6">

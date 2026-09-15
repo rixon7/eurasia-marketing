@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { client } from '@/lib/sanity';
+import { client, allAreaSlugsQuery } from '@/lib/sanity';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://eurasiamarketing.com';
@@ -7,6 +7,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const rawPosts = await client.fetch<{ slug: string; date: string }[]>(
     `*[_type == "blogPost" && publishedAt <= now()] | order(publishedAt desc) { "slug": slug.current, "date": publishedAt }`
   );
+
+  // Fetched live from Sanity (2026-09-15 fix) rather than a hardcoded slug
+  // array — the array previously had to be kept in sync by hand with
+  // whatever `area` docs actually existed, and drifted out of sync when
+  // 'mumbai' was added here ahead of its doc existing. Fetching means a
+  // slug only ever appears once its doc is real, and a new area added in
+  // Sanity Studio shows up automatically without a code change.
+  const areaSlugs = await client.fetch<string[]>(allAreaSlugsQuery);
 
   const posts = rawPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -59,7 +67,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
-    ...['hounslow', 'feltham', 'sunbury', 'hampton', 'isleworth', 'heston', 'brentford', 'hayes', 'staines', 'london'].map((area) => ({
+    ...areaSlugs.map((area) => ({
       url: `${baseUrl}/areas/${area}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,

@@ -49,6 +49,7 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.08em] text-foreground-faint">Areas We Serve</h4>
             <ul className="space-y-2 text-sm text-foreground-soft">
+              <li><Link href="/areas/london" className="transition-colors hover:text-foreground">London</Link></li>
               <li><Link href="/areas/hounslow" className="transition-colors hover:text-foreground">Hounslow</Link></li>
               <li><Link href="/areas/brentford" className="transition-colors hover:text-foreground">Brentford</Link></li>
               <li><Link href="/areas/feltham" className="transition-colors hover:text-foreground">Feltham</Link></li>

@@ -84,7 +84,7 @@ export function ServicesBento() {
       <Container className="relative">
         <SectionHeading
           eyebrow="// Our Services"
-          title="Digital Marketing Services in Hounslow"
+          title="Website Design & Digital Marketing Services"
           description="From website design to SEO and social media — tailored solutions for your business, measured against the same results."
         />
 
