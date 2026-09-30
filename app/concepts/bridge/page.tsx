@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { title: 'Website Building', desc: 'Modern, responsive websites built to convert visitors into customers.' },
+  { title: 'Website Design and Development', desc: 'Modern, responsive websites built to convert visitors into customers.' },
   { title: 'AI Automation', desc: 'Custom workflows that automate lead follow-ups and reporting.' },
   { title: 'Digital Advertising', desc: 'Targeted campaigns across search, social, and display.' },
   { title: 'SEO & SEM', desc: 'Local rankings and paid search working toward the same keywords.' },

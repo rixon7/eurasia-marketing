@@ -34,7 +34,7 @@ const ACCENTS = ['--accent', '--accent-2', '--accent-3'] as const;
 const SERVICES = [
   {
     slug: 'website-building',
-    title: 'Website Building',
+    title: 'Website Design and Development',
     description: 'We build fast, secure, and scalable websites that handle your growth while delivering the seamless experience today’s clients demand.',
     accent: ACCENTS[0],
   },

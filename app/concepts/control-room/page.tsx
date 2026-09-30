@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const modules = [
-  { code: 'MOD.01', title: 'Website Building', desc: 'Fast, conversion-built sites — SEO-ready from the first deploy.' },
+  { code: 'MOD.01', title: 'Website Design and Development', desc: 'Fast, conversion-built sites — SEO-ready from the first deploy.' },
   { code: 'MOD.02', title: 'AI Automation', desc: 'Workflows that run lead follow-ups and reporting without a human in the loop.' },
   { code: 'MOD.03', title: 'Digital Advertising', desc: 'Search, social, and display campaigns tuned to a target ROAS.' },
   { code: 'MOD.04', title: 'SEO & SEM', desc: 'Local rankings and paid search working the same keyword map.' },

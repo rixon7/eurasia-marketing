@@ -40,7 +40,7 @@ const homepageSettings = {
   // class of drift — this document is kept in sync as the canonical
   // record for any other future consumer).
   featuredServices: [
-    { icon: '🌐', title: 'Website Building',    href: '/services/website-building',   description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-ready, and beautifully designed.' },
+    { icon: '🌐', title: 'Website Design and Development', href: '/services/website-building',   description: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-ready, and beautifully designed.' },
     { icon: '🤖', title: 'AI Automation',        href: '/services/ai-automation',       description: 'Save hours every week with custom AI workflows that automate lead follow-ups, reporting, and more.' },
     { icon: '📈', title: 'Digital Advertising',  href: '/services/digital-advertising', description: 'Targeted ad campaigns across search, social, and display channels that maximize your ROI.' },
     { icon: '📱', title: 'Social Media Management', href: '/services/social-media',    description: 'Strategic content creation, community management, and analytics across every platform.' },

@@ -13,7 +13,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How much do your services cost?',
-    a: 'Our pricing starts from just £100/month for website building and email marketing, £200/month for social media management, and £300/month for SEO management. We also offer custom bundles with discounts when you combine multiple services.',
+    a: 'Our pricing starts from just £100/month for website design and development and email marketing, £200/month for social media management, and £300/month for SEO management. We also offer custom bundles with discounts when you combine multiple services.',
   },
   {
     q: 'Do you require long-term contracts?',

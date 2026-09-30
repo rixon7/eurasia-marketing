@@ -127,7 +127,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* Website Building Process — shown only on the website-building page */}
+      {/* Website Design and Development Process — shown only on the website-building page */}
       {slug === 'website-building' && (
         <section className="py-10 md:py-16 px-4 sm:px-6">
           <div className="max-w-[1280px] mx-auto">

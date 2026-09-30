@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     default: 'Eurasia Marketing | Website Design Agency London',
     template: '%s | Eurasia Marketing',
   },
-  description: 'Website design and digital marketing agency for London businesses, with offices in Hounslow, UK and Mumbai, India. Website building, SEO, social media, paid ads & AI automation.',
+  description: 'Website design and digital marketing agency for London businesses, with offices in Hounslow, UK and Mumbai, India. Website design and development, SEO, social media, paid ads & AI automation.',
   keywords: [
     'website design agency London',
     'digital marketing agency London',
@@ -91,7 +91,7 @@ const localBusinessSchema = {
   '@type': ['LocalBusiness', 'ProfessionalService'],
   '@id': 'https://eurasiamarketing.com/#business',
   name: 'Eurasia Marketing',
-  description: 'Website design and digital marketing agency offering website building, SEO, social media management, digital advertising, email marketing, and AI automation services, with offices in Hounslow, UK and Mumbai, India.',
+  description: 'Website design and digital marketing agency offering website design and development, SEO, social media management, digital advertising, email marketing, and AI automation services, with offices in Hounslow, UK and Mumbai, India.',
   url: 'https://eurasiamarketing.com',
   telephone: '+442038863311',
   email: 'info@eurasiamarketing.com',

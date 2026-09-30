@@ -38,7 +38,7 @@ const PROJECTS = [
     title: 'BlueGrid Financial Services',
     industry: '💰 Financial Services',
     location: '📍 Mumbai, India',
-    tags: ['Website Building', 'SEO', 'Schema Markup'],
+    tags: ['Website Design and Development', 'SEO', 'Schema Markup'],
     description: 'A ground-up Next.js rebuild for a Mumbai-based AMFI-registered Mutual Fund Distributor — replacing an ageing WordPress site with a fast, secure platform and technical SEO built in from day one.',
     image: '/images/portfolio/bluegridfs.jpg',
     href: 'https://bluegridfs.com',
@@ -48,7 +48,7 @@ const PROJECTS = [
     title: 'MoveEasyMe',
     industry: '🚚 Movers & Freight',
     location: '📍 Dubai, UAE',
-    tags: ['Website Building'],
+    tags: ['Website Design and Development'],
     description: 'A full website rebuild for a Dubai-based movers, relocation, and freight company — covering warehousing, transportation, freight forwarding, and project logistics services.',
     image: 'https://image.thum.io/get/width/1200/crop/750/https://moveeasyme.vercel.app/',
     href: 'https://moveeasyme.vercel.app',
@@ -58,7 +58,7 @@ const PROJECTS = [
     title: 'PRIME Teleservices',
     industry: '📞 Managed Services & BPO',
     location: '📍 6 cities, India',
-    tags: ['Website Building', 'Brand Identity'],
+    tags: ['Website Design and Development', 'Brand Identity'],
     description: 'A full Next.js rebuild for a managed-services and BPO provider spanning customer experience, back-office operations, and digital transformation — including a new brand system built directly from the client\'s own logo files.',
     image: '/images/portfolio/primetele.jpg',
     href: 'https://primetele-site.vercel.app',
@@ -99,7 +99,7 @@ export function WorkShowcase() {
 
             <div>
               <div className="mb-5 flex flex-wrap gap-2">
-                {['Website Building', 'Local SEO', 'Booking Integration'].map((tag) => (
+                {['Website Design and Development', 'Local SEO', 'Booking Integration'].map((tag) => (
                   <span key={tag} className="rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold text-accent">
                     {tag}
                   </span>

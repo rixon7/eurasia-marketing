@@ -36,7 +36,7 @@ const doc = {
     { _key: 'f6', title: 'Design Handoff & Assets', description: 'Receive all final design files, brand assets, and style guides so you own everything we create for you.' },
   ],
   faqs: [
-    { _key: 'q1', q: 'What is the difference between web design and website building?', a: 'Web design is the visual and UX layer — how it looks and feels. Website building is the technical layer — turning that design into a working, live website. We offer both as a combined service or separately.' },
+    { _key: 'q1', q: 'What is the difference between web design and website design and development?', a: 'Web design is the visual and UX layer — how it looks and feels. Website design and development is the technical layer — turning that design into a working, live website. We offer both as a combined service or separately.' },
     { _key: 'q2', q: 'Can you redesign my existing website?', a: 'Absolutely. We can give your existing site a full visual refresh without rebuilding it from scratch, or we can redesign and rebuild it entirely depending on your needs.' },
     { _key: 'q3', q: 'Do you provide design mockups before building?', a: 'Yes. We always share design concepts and mockups for your approval before any development begins, so you know exactly what you\'re getting.' },
     { _key: 'q4', q: 'How many design revisions are included?', a: 'We include two rounds of revisions in every project to ensure you\'re completely happy with the result before we move to development.' },

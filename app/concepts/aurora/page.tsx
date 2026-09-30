@@ -21,7 +21,7 @@ const proof = [
 ];
 
 const features = [
-  { title: 'Website Building', desc: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-ready, and beautifully designed.' },
+  { title: 'Website Design and Development', desc: 'Modern, responsive websites built to convert visitors into customers — fast, SEO-ready, and beautifully designed.' },
   { title: 'AI Automation', desc: 'Custom AI workflows that automate lead follow-ups, reporting, and the busywork that eats your week.' },
   { title: 'Digital Advertising', desc: 'Targeted campaigns across search, social, and display that maximise return on every pound spent.' },
   { title: 'SEO & SEM', desc: 'Local rankings and paid search working from the same keyword map, not two separate strategies.' },

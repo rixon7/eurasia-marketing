@@ -15,7 +15,7 @@ const linksEnd = [
 ];
 
 const serviceLinks = [
-  { href: '/services/website-building',    label: '🌐 Website Building' },
+  { href: '/services/website-building',    label: '🌐 Website Design and Development' },
   { href: '/services/ai-automation',       label: '🤖 AI Automation' },
   { href: '/services/digital-advertising', label: '📈 Digital Advertising' },
   { href: '/services/social-media',        label: '📱 Social Media' },

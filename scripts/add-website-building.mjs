@@ -22,7 +22,7 @@ const client = createClient({
 const doc = {
   _type: 'service',
   _id: 'service-website-building',
-  name: 'Website Building',
+  name: 'Website Design and Development',
   slug: { _type: 'slug', current: 'website-building' },
   icon: '🌐',
   tagline: 'Stunning websites that convert visitors into customers',

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const stops = [
-  'Website Building',
+  'Website Design and Development',
   'AI Automation',
   'Digital Advertising',
   'SEO & SEM',
@@ -27,7 +27,7 @@ const board = [
 ];
 
 const stations = [
-  { title: 'Website Building', desc: 'Fast, mobile-first sites built to convert visitors into customers.', bar: 'var(--dep-red)' },
+  { title: 'Website Design and Development', desc: 'Fast, mobile-first sites built to convert visitors into customers.', bar: 'var(--dep-red)' },
   { title: 'AI Automation', desc: 'Workflows that handle lead follow-ups and reporting automatically.', bar: 'var(--dep-amber)' },
   { title: 'Digital Advertising', desc: 'Search, social, and display campaigns tuned for ROI, not just clicks.', bar: 'var(--dep-surface-raised)' },
   { title: 'SEO & SEM', desc: 'Local rankings and paid search that get you found in Hounslow and beyond.', bar: 'var(--dep-red)' },

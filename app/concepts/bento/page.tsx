@@ -22,7 +22,7 @@ const stats = [
 ];
 
 const services = [
-  { icon: '◈', title: 'Website Building', desc: 'Modern, responsive sites built to convert.', wide: true },
+  { icon: '◈', title: 'Website Design and Development', desc: 'Modern, responsive sites built to convert.', wide: true },
   { icon: '◇', title: 'AI Automation', desc: 'Workflows that run lead follow-ups on their own.', wide: false },
   { icon: '◆', title: 'Digital Advertising', desc: 'Search, social and display, tuned for ROI.', wide: false },
   { icon: '◉', title: 'SEO & SEM', desc: 'Local rankings and paid search, same keyword map.', wide: false },
@@ -30,7 +30,7 @@ const services = [
   { icon: '◑', title: 'Email Marketing', desc: 'Lifecycle sends that bring customers back.', wide: false },
 ];
 
-const ticker = ['Website Building', 'AI Automation', 'Digital Advertising', 'SEO & SEM', 'Social Media', 'Email Marketing'];
+const ticker = ['Website Design and Development', 'AI Automation', 'Digital Advertising', 'SEO & SEM', 'Social Media', 'Email Marketing'];
 
 export default function Bento() {
   return (
