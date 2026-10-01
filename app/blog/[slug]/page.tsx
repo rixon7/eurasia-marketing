@@ -82,11 +82,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       '@type': 'Person',
       name: meta.author,
       jobTitle: meta.authorTitle,
-      worksFor: { '@type': 'Organization', name: 'Eurasia Marketing', url: 'https://eurasiamarketing.com' },
+      worksFor: { '@type': 'Organization', name: 'Eurasia Marketing & Software Solutions', url: 'https://eurasiamarketing.com' },
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Eurasia Marketing',
+      name: 'Eurasia Marketing & Software Solutions',
       url: 'https://eurasiamarketing.com',
       logo: { '@type': 'ImageObject', url: 'https://eurasiamarketing.com/logo.svg' },
     },
@@ -129,7 +129,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </div>
             <div>
               <p className="text-sm font-semibold text-primary dark:text-dark-text">{meta.author}</p>
-              <p className="text-xs text-muted dark:text-dark-muted">{meta.authorTitle} · Eurasia Marketing</p>
+              <p className="text-xs text-muted dark:text-dark-muted">{meta.authorTitle} · Eurasia Marketing & Software Solutions</p>
             </div>
           </div>
 

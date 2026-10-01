@@ -3,7 +3,7 @@ import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
-  description: 'Terms and conditions for using Eurasia Marketing digital marketing services in Hounslow, including website design, SEO, and social media management.',
+  description: 'Terms and conditions for using Eurasia Marketing & Software Solutions digital marketing services in Hounslow, including website design, SEO, and social media management.',
   alternates: { canonical: '/terms' },
 };
 
@@ -24,13 +24,13 @@ export default function TermsPage() {
           <div className="space-y-10 text-sm text-muted dark:text-dark-muted leading-relaxed">
             <section>
               <h2 className="text-xl font-semibold text-primary dark:text-dark-text mb-3">1. Introduction</h2>
-              <p>These Terms and Conditions (&ldquo;Terms&rdquo;) govern your use of the Eurasia Marketing website and services. By accessing our website or engaging our services, you agree to be bound by these Terms. If you do not agree, please do not use our website or services.</p>
-              <p className="mt-3">Eurasia Marketing is operated from 65-73 Staines Road, Hounslow TW3 3HW, United Kingdom.</p>
+              <p>These Terms and Conditions (&ldquo;Terms&rdquo;) govern your use of the Eurasia Marketing & Software Solutions website and services. By accessing our website or engaging our services, you agree to be bound by these Terms. If you do not agree, please do not use our website or services.</p>
+              <p className="mt-3">Eurasia Marketing & Software Solutions is operated from 65-73 Staines Road, Hounslow TW3 3HW, United Kingdom.</p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-primary dark:text-dark-text mb-3">2. Services</h2>
-              <p>Eurasia Marketing provides digital marketing services including but not limited to social media management, SEO, website design and development, email marketing, content marketing, and digital advertising. The specific scope of services will be agreed upon in writing before any project commences.</p>
+              <p>Eurasia Marketing & Software Solutions provides digital marketing services including but not limited to social media management, SEO, website design and development, email marketing, content marketing, and digital advertising. The specific scope of services will be agreed upon in writing before any project commences.</p>
             </section>
 
             <section>
@@ -68,7 +68,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-semibold text-primary dark:text-dark-text mb-3">6. Intellectual Property</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>All content, designs, and materials created by Eurasia Marketing remain our intellectual property until full payment has been received.</li>
+                <li>All content, designs, and materials created by Eurasia Marketing & Software Solutions remain our intellectual property until full payment has been received.</li>
                 <li>Upon full payment, ownership of bespoke deliverables (e.g., website designs, graphics) transfers to the client unless otherwise agreed.</li>
                 <li>We reserve the right to showcase completed work in our portfolio and marketing materials unless you request otherwise in writing.</li>
                 <li>Third-party assets (stock images, fonts, plugins) are subject to their respective licence terms.</li>
@@ -78,7 +78,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-xl font-semibold text-primary dark:text-dark-text mb-3">7. Limitation of Liability</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Eurasia Marketing shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services.</li>
+                <li>Eurasia Marketing & Software Solutions shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services.</li>
                 <li>We do not guarantee specific results such as search engine rankings, follower counts, or conversion rates, as these depend on many factors beyond our control.</li>
                 <li>Our total liability for any claim shall not exceed the total fees paid by you in the 3 months preceding the claim.</li>
               </ul>

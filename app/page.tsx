@@ -25,7 +25,7 @@ import { Faq } from '@/components/home/faq';
 import { CtaBand } from '@/components/ui/cta-band';
 
 const defaultTestimonials = [
-  { quote: 'Eurasia Marketing transformed our online presence completely. Our leads have tripled in just six months.', initials: 'AK', name: 'Amira Khan', role: 'CEO, TechFlow Solutions' },
+  { quote: 'Eurasia Marketing & Software Solutions transformed our online presence completely. Our leads have tripled in just six months.', initials: 'AK', name: 'Amira Khan', role: 'CEO, TechFlow Solutions' },
   { quote: 'Professional, creative, and always on top of the latest trends. They feel like an extension of our team.', initials: 'DM', name: 'David Morris', role: 'Founder, GreenLeaf Co.' },
 ];
 

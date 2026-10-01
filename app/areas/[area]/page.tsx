@@ -87,7 +87,7 @@ export async function generateMetadata({ params }: { params: Promise<{ area: str
   if (!data) return { title: 'Not Found' };
   return {
     title: {
-      absolute: `Digital Marketing Agency in ${data.name} | SEO, Web Design & Google Ads | Eurasia Marketing`,
+      absolute: `Digital Marketing Agency in ${data.name} | SEO, Web Design & Google Ads | Eurasia Marketing & Software Solutions`,
     },
     description: data.description,
     keywords: [
@@ -166,7 +166,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `Do you offer digital marketing services in ${data.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Yes! Eurasia Marketing works with businesses across ${data.name}, providing SEO, website design, social media management, and Google Ads.` } },
+      { '@type': 'Question', name: `Do you offer digital marketing services in ${data.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Yes! Eurasia Marketing & Software Solutions works with businesses across ${data.name}, providing SEO, website design, social media management, and Google Ads.` } },
       { '@type': 'Question', name: `How much does SEO cost in ${data.name}?`, acceptedAnswer: { '@type': 'Answer', text: 'Our SEO plans start from £300/month with no long-term contracts.' } },
       { '@type': 'Question', name: `Can you build a website for my ${data.name} business?`, acceptedAnswer: { '@type': 'Answer', text: 'Yes. We design professional, mobile-friendly websites from £500, SEO-optimised and built to convert.' } },
       { '@type': 'Question', name: `Do you manage Google Ads for businesses in ${data.name}?`, acceptedAnswer: { '@type': 'Answer', text: 'Yes, we manage Google Ads and Meta/Facebook campaigns — strategy, setup, daily optimisation and reporting.' } },
@@ -175,7 +175,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
   };
 
   const faqs = [
-    { q: `Do you offer digital marketing services in ${data.name}?`, a: `Yes! Eurasia Marketing works with businesses across ${data.name}, providing a full range of digital marketing services including SEO, website design, social media management, and Google Ads.` },
+    { q: `Do you offer digital marketing services in ${data.name}?`, a: `Yes! Eurasia Marketing & Software Solutions works with businesses across ${data.name}, providing a full range of digital marketing services including SEO, website design, social media management, and Google Ads.` },
     { q: `How much does SEO cost in ${data.name}?`, a: 'Our SEO plans start from £300/month with no long-term contracts. We offer flexible monthly plans tailored to your budget and business goals.' },
     { q: `Can you build a website for my ${data.name} business?`, a: 'Absolutely. We design and build professional, mobile-friendly websites from £500. Every site is SEO-optimised, fast-loading, and built to convert visitors into paying customers.' },
     { q: `Do you manage Google Ads for businesses in ${data.name}?`, a: 'Yes, we manage Google Ads (PPC) and Meta/Facebook ad campaigns. We handle everything from strategy and setup to daily optimisation and reporting.' },
@@ -281,7 +281,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             tag="// Why Us"
-            title={`Why ${data.name} Businesses Choose Eurasia Marketing`}
+            title={`Why ${data.name} Businesses Choose Eurasia Marketing & Software Solutions`}
             subtitle="Local expertise, proven results, no long-term contracts"
           />
           <div className="grid sm:grid-cols-3 gap-4 md:gap-5">
@@ -373,7 +373,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
         <div className="max-w-[1280px] mx-auto">
           <SectionHeader
             tag="// Find Us"
-            title="Visit Eurasia Marketing"
+            title="Visit Eurasia Marketing & Software Solutions"
             subtitle="65-73 Staines Road, Hounslow TW3 3HW"
           />
           <AnimateIn>
@@ -387,7 +387,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Eurasia Marketing — Digital Marketing Agency Hounslow"
+                title="Eurasia Marketing & Software Solutions — Digital Marketing Agency Hounslow"
               />
             </div>
             <div className="flex flex-col sm:flex-row gap-3">

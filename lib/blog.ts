@@ -67,7 +67,7 @@ export async function getAllPosts(): Promise<PostMeta[]> {
     tags: post.tags ?? [],
     readingTime: estimateReadingTime(post.body ?? []),
     image: resolveImage(post.mainImage),
-    author: post.author ?? 'Eurasia Marketing',
+    author: post.author ?? 'Eurasia Marketing & Software Solutions',
     authorTitle: post.authorTitle ?? 'Digital Marketing Expert',
   }));
 }
@@ -99,7 +99,7 @@ export async function getPostBySlug(slug: string): Promise<{
       tags: post.tags ?? [],
       readingTime: estimateReadingTime(post.body ?? []),
       image: resolveImage(post.mainImage),
-      author: post.author ?? 'Eurasia Marketing',
+      author: post.author ?? 'Eurasia Marketing & Software Solutions',
       authorTitle: post.authorTitle ?? 'Digital Marketing Expert',
     },
     body: post.body ?? [],

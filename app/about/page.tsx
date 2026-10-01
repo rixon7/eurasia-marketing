@@ -7,13 +7,13 @@ import CTA from '@/components/CTA';
 import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
-  title: 'About Eurasia Marketing',
-  description: 'Eurasia Marketing is a website design and digital marketing agency with teams in Hounslow, UK and Mumbai, India — building websites and growing businesses online.',
-  keywords: ['about Eurasia Marketing', 'website design agency London', 'digital marketing agency London', 'website design agency Hounslow', 'website design company Mumbai', 'digital marketing agency Mumbai'],
+  title: 'About Eurasia Marketing & Software Solutions',
+  description: 'Eurasia Marketing & Software Solutions is a website design and digital marketing agency with teams in Hounslow, UK and Mumbai, India — building websites and growing businesses online.',
+  keywords: ['about Eurasia Marketing & Software Solutions', 'website design agency London', 'digital marketing agency London', 'website design agency Hounslow', 'website design company Mumbai', 'digital marketing agency Mumbai'],
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Eurasia Marketing | Website Design & Digital Marketing Agency',
-    description: 'Eurasia Marketing is a website design and digital marketing agency with teams in Hounslow, UK and Mumbai, India — building websites and growing businesses online.',
+    title: 'About Eurasia Marketing & Software Solutions | Website Design & Digital Marketing Agency',
+    description: 'Eurasia Marketing & Software Solutions is a website design and digital marketing agency with teams in Hounslow, UK and Mumbai, India — building websites and growing businesses online.',
     url: 'https://eurasiamarketing.com/about',
   },
 };
@@ -30,11 +30,11 @@ const team = [
     name: 'Rixon',
     initials: 'R',
     role: 'Founder & Director',
-    bio: 'With over a decade of experience in digital marketing and IT services, Rixon founded Eurasia Marketing to help local businesses compete online. He leads strategy, client relationships, and business development.',
+    bio: 'With over a decade of experience in digital marketing and IT services, Rixon founded Eurasia Marketing & Software Solutions to help local businesses compete online. He leads strategy, client relationships, and business development.',
     linkedin: 'https://linkedin.com/company/eurasia-marketing',
   },
   {
-    name: 'Eurasia Marketing Team',
+    name: 'Eurasia Marketing & Software Solutions Team',
     initials: 'EM',
     role: 'Digital Marketing Specialists',
     bio: 'Our team brings together expertise in website design, SEO, paid advertising, social media, and AI automation — delivering joined-up digital strategies for businesses across west London and Mumbai.',
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 Built on a belief that every business deserves great marketing
               </h2>
               <p className="text-sm sm:text-base text-muted dark:text-dark-muted mb-4 leading-relaxed">
-                Eurasia Marketing is a trading name for Eurasia Supply and Services Limited — a company established in 2013 that has been successfully delivering IT and digital services for over a decade. Registered in England & Wales.
+                Eurasia Marketing & Software Solutions is a trading name for Eurasia Supply and Services Limited — a company established in 2013 that has been successfully delivering IT and digital services for over a decade. Registered in England & Wales.
               </p>
               <p className="text-sm sm:text-base text-muted dark:text-dark-muted mb-6 sm:mb-8 leading-relaxed">
                 Built on years of technical expertise and a genuine passion for helping businesses grow, we combine creative thinking with data-driven strategies to deliver marketing that moves the needle. Our team brings together expertise in web design, digital advertising, SEO, social media, and AI automation to provide holistic solutions for local businesses.

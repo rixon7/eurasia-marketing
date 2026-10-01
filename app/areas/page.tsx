@@ -5,7 +5,7 @@ import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
   title: 'Areas We Serve | London & Mumbai Website Design',
-  description: 'Eurasia Marketing provides website design and digital marketing services across London (with a West London base in Hounslow) and Mumbai, India.',
+  description: 'Eurasia Marketing & Software Solutions provides website design and digital marketing services across London (with a West London base in Hounslow) and Mumbai, India.',
   alternates: { canonical: '/areas' },
 };
 

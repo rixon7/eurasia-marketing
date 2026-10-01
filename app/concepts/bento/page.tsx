@@ -118,7 +118,7 @@ export default function Bento() {
           </div>
           <div className="bn-proof-grid">
             <div className="bn-glass bn-proof-card">
-              <blockquote>&ldquo;Eurasia Marketing transformed our online presence completely. Our leads have tripled in just six months.&rdquo;</blockquote>
+              <blockquote>&ldquo;Eurasia Marketing & Software Solutions transformed our online presence completely. Our leads have tripled in just six months.&rdquo;</blockquote>
               <cite><b>Amira Khan</b> — CEO, TechFlow Solutions</cite>
             </div>
             <div className="bn-glass bn-proof-card">

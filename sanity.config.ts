@@ -8,7 +8,7 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
 
 export default defineConfig({
   name: 'eurasia-marketing',
-  title: 'Eurasia Marketing',
+  title: 'Eurasia Marketing & Software Solutions',
   projectId,
   dataset,
   plugins: [

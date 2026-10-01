@@ -128,7 +128,7 @@ export default function Departures() {
           <div className="dep-announcements">
             <div className="dep-announcement">
               <span className="dep-announcement-tag">Announcement — TechFlow Solutions</span>
-              <p className="quote">&ldquo;Eurasia Marketing transformed our online presence completely. Our leads have tripled in just six months.&rdquo;</p>
+              <p className="quote">&ldquo;Eurasia Marketing & Software Solutions transformed our online presence completely. Our leads have tripled in just six months.&rdquo;</p>
               <cite><b>Amira Khan</b> — CEO, TechFlow Solutions</cite>
             </div>
             <div className="dep-announcement">

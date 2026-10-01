@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: service.description,
     alternates: { canonical: `/services/${slug}` },
     openGraph: {
-      title: `${service.name} | Eurasia Marketing`,
+      title: `${service.name} | Eurasia Marketing & Software Solutions`,
       description: service.description,
       url: `https://eurasiamarketing.com/services/${slug}`,
     },

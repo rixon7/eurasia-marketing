@@ -51,7 +51,7 @@ export default function Aurora() {
           <div className="au-aurora-bg" aria-hidden="true" />
           <div className="au-grain" aria-hidden="true" />
           <div className="au-hero-spot" aria-hidden="true" />
-          <p className="au-eyebrow">Eurasia Marketing — Hounslow, London</p>
+          <p className="au-eyebrow">Eurasia Marketing & Software Solutions — Hounslow, London</p>
           <h1 className="au-h1">
             Marketing with <em>momentum.</em>
           </h1>
@@ -99,7 +99,7 @@ export default function Aurora() {
       </div>
 
       <div className="au-quote-wrap">
-        <p className="au-quote">&ldquo;Eurasia Marketing transformed our online presence completely. Our leads have <span>tripled</span> in just six months.&rdquo;</p>
+        <p className="au-quote">&ldquo;Eurasia Marketing & Software Solutions transformed our online presence completely. Our leads have <span>tripled</span> in just six months.&rdquo;</p>
         <p className="au-quote-cite"><b>Amira Khan</b> — CEO, TechFlow Solutions</p>
       </div>
 

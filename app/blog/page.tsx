@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   keywords: ['digital marketing blog', 'website design tips', 'SEO tips Hounslow', 'SEO tips Mumbai', 'social media marketing tips', 'web design advice', 'small business marketing blog'],
   alternates: { canonical: '/blog' },
   openGraph: {
-    title: 'Digital Marketing Tips & Insights | Eurasia Marketing Blog',
+    title: 'Digital Marketing Tips & Insights | Eurasia Marketing & Software Solutions Blog',
     description: 'Website design and digital marketing tips from our team in Hounslow, UK and Mumbai, India. Practical SEO, social media, and web design advice to help businesses grow online.',
     url: 'https://eurasiamarketing.com/blog',
   },

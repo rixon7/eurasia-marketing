@@ -3,7 +3,7 @@ import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'How Eurasia Marketing collects, uses, and protects your personal data. Read our privacy policy for our digital marketing services in Hounslow.',
+  description: 'How Eurasia Marketing & Software Solutions collects, uses, and protects your personal data. Read our privacy policy for our digital marketing services in Hounslow.',
   alternates: { canonical: '/privacy' },
 };
 
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           <div className="space-y-10 text-sm text-muted dark:text-dark-muted leading-relaxed">
             <section>
               <h2 className="text-xl font-semibold text-primary dark:text-dark-text mb-3">1. Introduction</h2>
-              <p>Eurasia Marketing (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+              <p>Eurasia Marketing & Software Solutions (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
               <p className="mt-3">Our registered address is 65-73 Staines Road, Hounslow TW3 3HW, United Kingdom.</p>
             </section>
 

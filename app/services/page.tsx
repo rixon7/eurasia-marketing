@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: ['website design agency London', 'digital marketing agency London', 'website design Hounslow', 'website design company Mumbai', 'affordable website design Mumbai', 'SEO services London', 'AI automation Mumbai'],
   alternates: { canonical: '/services' },
   openGraph: {
-    title: 'Website Design & Digital Marketing Services | Eurasia Marketing',
+    title: 'Website Design & Digital Marketing Services | Eurasia Marketing & Software Solutions',
     description: 'Website design and development, SEO, social media & paid ads — with teams in Hounslow, UK and Mumbai, India. Tailored strategies that drive real results.',
     url: 'https://eurasiamarketing.com/services',
   },

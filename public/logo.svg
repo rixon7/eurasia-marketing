@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 50">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 50">
   <!-- Violet badge behind the globe icon -->
   <circle cx="25" cy="25" r="22" fill="#7c6cf6"/>
 
@@ -16,6 +16,6 @@
   <!-- Dot accent -->
   <circle cx="152" cy="21" r="3" fill="#7c6cf6"/>
 
-  <!-- Tagline -->
-  <text x="55" y="40" font-family="DM Mono, monospace" font-size="10" font-weight="500" fill="#f3f3f6" letter-spacing="3.5">MARKETING</text>
+  <!-- Tagline (expanded) -->
+  <text x="55" y="40" font-family="DM Mono, monospace" font-size="10" font-weight="500" fill="#f3f3f6" letter-spacing="2.5">MARKETING &amp; SOFTWARE</text>
 </svg>

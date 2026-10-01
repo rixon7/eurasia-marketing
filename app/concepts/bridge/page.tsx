@@ -36,7 +36,7 @@ export default function Bridge() {
 
       <section className="br-hero">
         <div className="br-hero-left">
-          <p className="br-eyebrow">Eurasia Marketing — Hounslow, London</p>
+          <p className="br-eyebrow">Eurasia Marketing & Software Solutions — Hounslow, London</p>
           <h1 className="br-h1 br-serif">
             Marketing that moves <em>between worlds.</em>
           </h1>
@@ -91,7 +91,7 @@ export default function Bridge() {
 
         <section className="br-quote-wrap">
           <span className="br-quote-mark" aria-hidden="true">&rdquo;</span>
-          <p className="br-quote">Eurasia Marketing transformed our online presence completely. Our leads have tripled in just six months.</p>
+          <p className="br-quote">Eurasia Marketing & Software Solutions transformed our online presence completely. Our leads have tripled in just six months.</p>
           <p className="br-quote-cite"><b>Amira Khan</b> — CEO, TechFlow Solutions</p>
         </section>
 

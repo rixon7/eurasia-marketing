@@ -55,7 +55,7 @@ export function WhatsAppWidget() {
                 <WhatsAppGlyph size={20} />
               </span>
               <span>
-                <span className="block text-sm font-medium text-foreground">Eurasia Marketing</span>
+                <span className="block text-sm font-medium text-foreground">Eurasia Marketing & Software Solutions</span>
                 <span className="block text-xs text-foreground-soft">Chat with us</span>
               </span>
             </a>

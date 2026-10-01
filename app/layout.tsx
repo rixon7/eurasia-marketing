@@ -35,8 +35,8 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Eurasia Marketing | Website Design Agency London',
-    template: '%s | Eurasia Marketing',
+    default: 'Eurasia Marketing & Software Solutions | Website Design Agency London',
+    template: '%s | Eurasia Marketing & Software Solutions',
   },
   description: 'Website design and digital marketing agency for London businesses, with offices in Hounslow, UK and Mumbai, India. Website design and development, SEO, social media, paid ads & AI automation.',
   keywords: [
@@ -51,22 +51,22 @@ export const metadata: Metadata = {
     'AI automation agency Mumbai',
     'web design agency near me',
   ],
-  authors: [{ name: 'Eurasia Marketing' }],
-  creator: 'Eurasia Marketing',
-  publisher: 'Eurasia Marketing',
+  authors: [{ name: 'Eurasia Marketing & Software Solutions' }],
+  creator: 'Eurasia Marketing & Software Solutions',
+  publisher: 'Eurasia Marketing & Software Solutions',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    siteName: 'Eurasia Marketing',
-    title: 'Eurasia Marketing | Website Design Agency London',
+    siteName: 'Eurasia Marketing & Software Solutions',
+    title: 'Eurasia Marketing & Software Solutions | Website Design Agency London',
     description: 'Expert website design, SEO, social media, and AI automation for London businesses — with teams in Hounslow, UK and Mumbai, India.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eurasia Marketing | Website Design Agency London',
+    title: 'Eurasia Marketing & Software Solutions | Website Design Agency London',
     description: 'Expert website design, SEO, and digital marketing for London businesses — with teams in Hounslow, UK and Mumbai, India.',
   },
   metadataBase: new URL('https://eurasiamarketing.com'),
@@ -90,7 +90,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': ['LocalBusiness', 'ProfessionalService'],
   '@id': 'https://eurasiamarketing.com/#business',
-  name: 'Eurasia Marketing',
+  name: 'Eurasia Marketing & Software Solutions',
   description: 'Website design and digital marketing agency offering website design and development, SEO, social media management, digital advertising, email marketing, and AI automation services, with offices in Hounslow, UK and Mumbai, India.',
   url: 'https://eurasiamarketing.com',
   telephone: '+442038863311',
@@ -182,7 +182,7 @@ const indiaOfficeSchema = {
   '@context': 'https://schema.org',
   '@type': ['LocalBusiness', 'ProfessionalService'],
   '@id': 'https://eurasiamarketing.com/#business-india',
-  name: 'Eurasia Marketing — India Office',
+  name: 'Eurasia Marketing & Software Solutions — India Office',
   branchOf: { '@id': 'https://eurasiamarketing.com/#business' },
   url: 'https://eurasiamarketing.com',
   telephone: '+919769672227',
@@ -203,7 +203,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   '@id': 'https://eurasiamarketing.com/#website',
   url: 'https://eurasiamarketing.com',
-  name: 'Eurasia Marketing',
+  name: 'Eurasia Marketing & Software Solutions',
   publisher: { '@id': 'https://eurasiamarketing.com/#business' },
   potentialAction: {
     '@type': 'SearchAction',

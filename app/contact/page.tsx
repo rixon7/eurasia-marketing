@@ -6,12 +6,12 @@ import AnimateIn from '@/components/AnimateIn';
 
 export const metadata: Metadata = {
   title: 'Contact Us - Free Consultation',
-  description: 'Get a free consultation with Eurasia Marketing — offices in Hounslow, UK and Mumbai, India. Visit us at 65-73 Staines Road, Hounslow TW3 3HW.',
-  keywords: ['contact Eurasia Marketing', 'free website design consultation', 'digital marketing agency contact', 'marketing agency Hounslow phone', 'marketing agency Mumbai phone', 'book consultation'],
+  description: 'Get a free consultation with Eurasia Marketing & Software Solutions — offices in Hounslow, UK and Mumbai, India. Visit us at 65-73 Staines Road, Hounslow TW3 3HW.',
+  keywords: ['contact Eurasia Marketing & Software Solutions', 'free website design consultation', 'digital marketing agency contact', 'marketing agency Hounslow phone', 'marketing agency Mumbai phone', 'book consultation'],
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact Eurasia Marketing | Free Consultation',
-    description: 'Get a free consultation with Eurasia Marketing — offices in Hounslow, UK and Mumbai, India. Visit us at 65-73 Staines Road, Hounslow TW3 3HW.',
+    title: 'Contact Eurasia Marketing & Software Solutions | Free Consultation',
+    description: 'Get a free consultation with Eurasia Marketing & Software Solutions — offices in Hounslow, UK and Mumbai, India. Visit us at 65-73 Staines Road, Hounslow TW3 3HW.',
     url: 'https://eurasiamarketing.com/contact',
   },
 };
@@ -103,7 +103,7 @@ export default function ContactPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Eurasia Marketing — Digital Marketing Agency Hounslow"
+                title="Eurasia Marketing & Software Solutions — Digital Marketing Agency Hounslow"
               />
             </div>
             <div className="mt-4 flex flex-col sm:flex-row gap-3">
@@ -143,7 +143,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Eurasia Marketing — India Office, Mumbai"
+                  title="Eurasia Marketing & Software Solutions — India Office, Mumbai"
                 />
               </div>
               <div className="mt-4">

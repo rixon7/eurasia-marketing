@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   }
 
   const { error } = await resend.emails.send({
-    from: 'Eurasia Marketing <noreply@eurasiamarketing.com>',
+    from: 'Eurasia Marketing & Software Solutions <noreply@eurasiamarketing.com>',
     to: 'rixon@eurasiamarketing.com',
     replyTo: email,
     subject: subject ? `Contact Form: ${subject}` : `New enquiry from ${name}`,

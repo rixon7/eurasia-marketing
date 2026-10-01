@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="mb-4 inline-block">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Eurasia Marketing" className="h-10" />
+              <img src="/logo.svg" alt="Eurasia Marketing & Software Solutions" className="h-10" />
             </Link>
             <p className="text-sm leading-relaxed text-foreground-faint">
               Helping businesses build powerful marketing strategies that drive real results and lasting growth.
@@ -86,7 +86,7 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-foreground-faint">
-            <p>&copy; 2026 Eurasia Marketing. All rights reserved. · Eurasia Supply and Services Ltd · Registered in England &amp; Wales</p>
+            <p>&copy; 2026 <Link href="/" className="transition-colors hover:text-foreground">Eurasia Marketing &amp; Software Solutions</Link>. All rights reserved. · Eurasia Supply and Services Ltd · Registered in England &amp; Wales</p>
             <span className="hidden sm:inline text-border-strong">|</span>
             <Link href="/privacy" className="transition-colors hover:text-foreground">Privacy Policy</Link>
             <Link href="/terms" className="transition-colors hover:text-foreground">Terms</Link>
@@ -176,7 +176,7 @@ export default function Footer() {
           used on every site built for this agency. */}
       <div className="border-t border-border bg-surface py-3">
         <p className="text-center text-xs font-bold tracking-wide text-foreground">
-          Powered by Eurasia Marketing (UK, India)
+          Powered by Eurasia Marketing & Software Solutions (UK, India)
         </p>
       </div>
     </footer>

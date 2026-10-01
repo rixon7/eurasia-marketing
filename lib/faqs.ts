@@ -8,7 +8,7 @@
  */
 export const FAQS: { q: string; a: string }[] = [
   {
-    q: 'What services does Eurasia Marketing offer?',
+    q: 'What services does Eurasia Marketing & Software Solutions offer?',
     a: 'We provide a full range of digital marketing services including social media management, SEO & SEM, website design and development, Google Business Profile management, content marketing, email marketing, brand strategy, and digital advertising.',
   },
   {
